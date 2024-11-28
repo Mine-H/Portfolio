@@ -11,10 +11,11 @@ body {
 	font-family: open_sansregular, arial, sans-serif;
 }
 
+.oBgImg1 { background-image: url('Images/Dash_Into_Explosion_Square_In_A_Box.png'); }
+.oBgImg2 { background-image: url('Images/Walking_In_The_Dark.png'); }
 .openingBackground {
 	width: 100%;
 	height: 50vw;
-	background-image: url('Images/Dash_Into_Explosion_Square_In_A_Box.png');
 	background-repeat: repeat-y;
 	background-attachment: fixed;
 	background-size: 100% auto;
@@ -22,35 +23,30 @@ body {
 	align-content: center;
 	box-shadow: 0 -20px 10px #050505 inset;
 }
-
-.openingBackgroundText {
+.oBgText {
 	position: relative;
-	left: 60%;
 
 	min-height: 10em;
 	width: 35vw;
-	border-left: 2px solid white;
-	padding-left: 10px;
 	box-sizing: border-box;
+	
+	text-shadow: 0 0 4px #000000;
 
 	align-content: center;
 }
-@media screen and (max-width: 800px) {
-	.openingBackgroundText {
-		position: static;
-
-		min-height: 1em;
-		width: 75vw;
-		border-left: 0;
-		padding-left: 0;
-		border-bottom: 2px solid white;
-		padding-bottom: 10px;
-		box-sizing: content-box;
-		margin: 0 auto;
-
-		text-shadow: 0 0 4px #000000;
-		text-align: center;
-	}
+.oBgText h1 {
+	font-size: 2.1em;
+}
+.oBgTLeft {
+	left: 60%;
+	border-left: 2px solid white;
+	padding-left: 10px;
+}
+.oBgTRight {
+	left: 5%;
+	border-right: 2px solid white;
+	padding-right: 10px;
+	text-align: right;
 }
 
 .sections {
@@ -73,12 +69,83 @@ body {
 
 	transition: background-color 0.18s;
 }
-
 .sections a:hover {
 	background-color: #0B0C11;
 }
-
 .sections i {
 	font-size: 3.5em;
 	text-decoration: none;
+}
+
+.textBoxes {
+	width: calc(100%-2em);
+	margin: 1em;
+	padding: 1em;
+	border-radius: 0.2em;
+
+	background-color: #11121D;
+	display: flex;
+}
+
+.textBoxes .title {
+	width: 21%;
+	float: left;
+	box-sizing: border-box;
+	border-right: 2px solid white;
+	padding-right: 10px;
+
+	text-align: right;
+	align-content: center;
+}
+.textBoxes .content {
+	width: 79%;
+	float: left;
+	padding-left: 10px;
+}
+
+@media screen and (max-width: 800px) {
+	.oBgText {
+		position: static;
+
+		min-height: 1em;
+		width: 75vw;
+		border-bottom: 2px solid white;
+		padding-bottom: 10px;
+		box-sizing: content-box;
+		margin: 0 auto;
+
+		text-align: center;
+		font-size: 0.9em;
+	}
+	.oBgTLeft {
+		border-left: none;
+		padding-left: 0;
+	}
+	.oBgTRight {
+		border-right: none;
+		padding-right: 0;
+	}
+
+
+	.textBoxes {
+		display: block;
+	}
+	.textBoxes .title {
+		width: 100%;
+		float: none;
+
+		border-right: none;
+		padding-right: 0;
+		border-bottom: 2px solid white;
+		padding-bottom: 10px;
+		text-align: center;
+	}
+
+	.textBoxes .content {
+		width: 100%;
+		float: none;
+		padding-left: 0;
+		padding-top: 10px;
+	}
+
 }
