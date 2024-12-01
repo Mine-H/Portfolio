@@ -1,34 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=book_2");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
 html,
 body {
 	width: 100%;
 	height: 100%;
-
+	
 	margin: 0;
-
+	
 	background-color: #050505;
 	color: white;
 	
-	font-family: open_sansregular, arial, sans-serif;
+	font-size: 100%;
+	font-family: "Open Sans", sans-serif;
 }
 
-.oBgImg1 { background-image: url('Images/Dash_Into_Explosion_Square_In_A_Box.png'); }
-.oBgImg2 { background-image: url('Images/Walking_In_The_Dark.png'); }
-.openingBackground {
+* {
+	box-sizing: border-box;
+}
+
+.opening {
 	width: 100%;
 	height: 50vw;
+	align-content: center;
+}
+.oBgImg1 { background-image: url('Images/Dash_Into_Explosion_Square_In_A_Box.png'); }
+.oBgImg2 { background-image: url('Images/Walking_In_The_Dark.png'); }
+.oBackground {
+	width: inherit;
+	height: inherit;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+
 	background-repeat: repeat-y;
 	background-attachment: fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
 	background-size: 100% auto;
 
-	align-content: center;
 	box-shadow: 0 -20px 10px #050505 inset;
+	outline: 2px solid #050505;
+	outline-offset: -1px;
 }
 .oBgText {
 	position: relative;
+	z-index: 1;
 
 	min-height: 10em;
 	width: 35vw;
-	box-sizing: border-box;
+
+	max-height: 50vw;
+	overflow: auto;
 	
 	text-shadow: 0 0 4px #000000;
 
@@ -36,6 +63,8 @@ body {
 }
 .oBgText h1 {
 	font-size: 2.1em;
+	font-family: Merriweather, serif;
+	font-weight: 500;
 }
 .oBgTLeft {
 	left: 60%;
@@ -54,10 +83,14 @@ body {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	margin: 3em 0;
 }
-
+/* .sections .title {
+	width: 100%;
+	text-align: center;
+} */
 .sections a {
-	width: 7em;
+	width: 8.7em;
 	border-radius: 0.2em;
 	float: left;
 	text-align: center;
@@ -78,34 +111,95 @@ body {
 }
 
 .textBoxes {
-	width: calc(100%-2em);
-	margin: 1em;
-	padding: 1em;
+	width: -moz-calc(100% - 4em);
+	width: -webkit-calc(100% - 4em);
+	width: calc(100% - 4em);
+	max-width: 1400px;
+	margin: 3em auto;
+	padding: 1em 2em;
 	border-radius: 0.2em;
 
 	background-color: #11121D;
-	display: flex;
+	
+	position: relative;
+	z-index: 1;
 }
-
+.flexTextBoxes { display: flex; }
 .textBoxes .title {
-	width: 21%;
+	width: 30%;
+	max-width: 14em;
 	float: left;
-	box-sizing: border-box;
 	border-right: 2px solid white;
 	padding-right: 10px;
 
 	text-align: right;
 	align-content: center;
+
+	font-family: Merriweather, serif;
 }
+.textBoxes .title h1 { font-size: 1.5em; }
+.textBoxes .mainTitle {
+	width: 100%;
+
+	border-bottom: 2px solid white;
+	padding-bottom: 10px;
+	text-align: center;
+	align-content: center;
+
+	font-family: Merriweather, serif;
+}
+.textBoxes h1 { font-weight: 500; }
 .textBoxes .content {
-	width: 79%;
+	min-width: -moz-calc(100% - 14em);
+	min-width: -webkit-calc(100% - 14em);
+	min-width: calc(100% - 14em);
+	width: 70%;
 	float: left;
 	padding-left: 10px;
+
+	position: relative;
+	z-index: 1;
+}
+.textBoxes .centeredContent {
+	width: 100%;
+	padding-top: 10px;
+	text-align: center;
+	align-content: center;
+}
+.textBoxes .highlighted {
+	background-color: #0B0C11;
+	outline: 0.15em solid #0B0C11;
+	text-decoration: underline;
+
+	position: relative;
+	z-index: -1;
+}
+.textBoxes .highlighted::selection {
+	background-color: #34394B;
+}
+
+.footer {
+	width: 100%;
+	display: flex;
+	background-color: #11121D;
+}
+.footer a {
+	width: 3.6em;
+	text-align: center;
+	float: left;
+	padding: 1em;
+}
+.footer a:hover {
+	background-color: #0B0C11;
+}
+.footer i {
+	font-size: 1.5em;
+	text-decoration: none;
 }
 
 @media screen and (max-width: 800px) {
 	.oBgText {
-		position: static;
+		left: 0;
 
 		min-height: 1em;
 		width: 75vw;
@@ -132,6 +226,7 @@ body {
 	}
 	.textBoxes .title {
 		width: 100%;
+		max-width: none;
 		float: none;
 
 		border-right: none;
@@ -140,7 +235,6 @@ body {
 		padding-bottom: 10px;
 		text-align: center;
 	}
-
 	.textBoxes .content {
 		width: 100%;
 		float: none;
