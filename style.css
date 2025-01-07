@@ -174,12 +174,14 @@ a { color: white; }
 	max-width: 14em;
 	float: left;
 	display: flex;
+	justify-content: right;
 	align-items: center;
 	margin-right: 10px;
 }
 .textBoxes .scOpposite
 {
 	order: 2;
+	justify-content: left;
 	margin-right: 0;
 	margin-left: 10px;
 }
@@ -259,6 +261,11 @@ a { color: white; }
 		padding-right: 0;
 	}
 
+	
+	.sections {
+		margin: 2em 0;
+	}
+
 
 	.textBoxes {
 		width: -moz-calc(100% - 3em);
@@ -267,13 +274,23 @@ a { color: white; }
 
 		display: block;
 		padding: 0.75em 1.5em;
+
+		margin: 2em auto;
 	}
-	.flexTextBoxes { display: block; }
+	.flexTextBoxes {
+		display: block;
+		margin-bottom: 40px;
+	}
+	.flexTextBoxes:last-of-type {
+		margin-bottom: 20px;
+	}
 	.textBoxes .sideContent {
 		width: 100%;
 		max-width: none;
 		float: none;
 		margin-right: 0;
+
+		justify-content: center;
 	}
 	.textBoxes .scOpposite
 	{
