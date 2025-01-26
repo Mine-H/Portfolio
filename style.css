@@ -198,6 +198,21 @@ a { color: white; }
 	text-align: center;
 	align-content: center;
 }
+.showcase .textBoxes .sideContent {
+	width: 40%;
+	max-width: 28em;
+	margin-right: 30px;
+}
+.showcase .textBoxes .scOpposite {
+	margin-right: 0;
+	margin-left: 30px;
+}
+.showcase .textBoxes .content {
+	min-width: -moz-calc(100% - 28em);
+	min-width: -webkit-calc(100% - 28em);
+	min-width: calc(100% - 28em);
+	width: 60%;
+}
 
 .textBoxes .toggleDiv { overflow: hidden; }
 .textBoxes .toggleDivClick:hover { background-color: #0B0C11; }
@@ -279,7 +294,7 @@ a { color: white; }
 	}
 	.flexTextBoxes {
 		display: block;
-		margin-bottom: 40px;
+		margin-bottom: 50px;
 	}
 	.flexTextBoxes:last-of-type {
 		margin-bottom: 20px;
@@ -310,8 +325,22 @@ a { color: white; }
 	}
 	.textBoxes .content {
 		width: 100%;
+		min-width: none;
 		float: none;
 		padding-top: 10px;
+	}
+
+	.showcase .textBoxes .sideContent {
+		width: 100%;
+		max-width: none;
+		margin-right: 0;
+	}
+	.showcase .textBoxes .scOpposite {
+		margin-left: 0;
+	}
+	.showcase .textBoxes .content {
+		width: 100%;
+		min-width: none;
 	}
 
 }
