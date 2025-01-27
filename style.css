@@ -294,10 +294,10 @@ a { color: white; }
 	}
 	.flexTextBoxes {
 		display: block;
-		margin-bottom: 50px;
+		margin-bottom: 3.125em;
 	}
 	.flexTextBoxes:last-of-type {
-		margin-bottom: 20px;
+		margin-bottom: 1.25em;
 	}
 	.textBoxes .sideContent {
 		width: 100%;
