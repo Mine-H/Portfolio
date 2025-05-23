@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans");
+@import url("Styles/titleSection.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
@@ -18,76 +18,9 @@ body {
 	
 	font-size: 100%;
 	font-family: "Open Sans", sans-serif;
+	position: relative;
 }
 a { color: white; }
-
-.opening {
-	width: 100%;
-	padding-top: 50%;
-}
-.oBgImg1 { background-image: url('Images/Dash_Into_Explosion_Square_In_A_Box.png'); }
-.oBgImg2 { background-image: url('Images/Walking_In_The_Dark.png'); }
-.oBgImg3 { background-image: url('Images/Neon_Tank_City.png'); }
-.oBgImg4 { background-image: url('Images/Table_Solar_System.png'); }
-.oBackground {
-	width: inherit;
-	padding-top: inherit;
-
-	position: absolute;
-	left: 0;
-	top: 0;
-
-	background-repeat: repeat-y;
-	background-attachment: fixed;
-	-webkit-background-size: 100% auto;
-	-moz-background-size: 100% auto;
-	-o-background-size: 100% auto;
-	background-size: 100% auto;
-
-	box-shadow: 0 -20px 10px -10px #050505 inset;
-	outline: 2px solid #050505;
-	outline-offset: -1px;
-}
-.oBgTContainer {
-	width: 100%;
-	height: 50vw;
-	position: absolute;
-	left: 0;
-	top: 0;
-	align-content: center;
-}
-.oBgText {
-	position: relative;
-	z-index: 1;
-
-	min-height: 10em;
-	width: 35vw;
-
-	max-height: 50vw;
-	overflow: auto;
-	
-	text-shadow: 0 0 4px #000000;
-
-	align-content: center;
-
-	background-color: #05050530;
-}
-.oBgText h1 {
-	font-size: 2.1em;
-	font-family: Merriweather, serif;
-	font-weight: 500;
-}
-.oBgTLeft {
-	left: 60%;
-	border-left: 2px solid white;
-	padding-left: 10px;
-}
-.oBgTRight {
-	left: 5%;
-	border-right: 2px solid white;
-	padding-right: 10px;
-	text-align: right;
-}
 
 
 .sections {
@@ -254,29 +187,6 @@ a { color: white; }
 
 
 @media screen and (max-width: 800px) {
-	.oBgText {
-		left: 0;
-
-		min-height: 1em;
-		width: 75vw;
-		border-bottom: 2px solid white;
-		padding-bottom: 10px;
-		box-sizing: content-box;
-		margin: 0 auto;
-
-		text-align: center;
-		font-size: 0.9em;
-	}
-	.oBgTLeft {
-		border-left: none;
-		padding-left: 0;
-	}
-	.oBgTRight {
-		border-right: none;
-		padding-right: 0;
-	}
-
-	
 	.sections {
 		margin: 2em 0;
 	}
