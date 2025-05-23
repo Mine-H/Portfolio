@@ -45,6 +45,7 @@
 .opening {
 	width: 100%;
 	padding-top: 50%; /* Height is 50% of the width */
+	position: relative;
 }
 
 /* Places page content in front of the title and gives it a shadow to fade the title out */
@@ -58,7 +59,7 @@
 	background-color: #050505;
 	box-shadow: 0 0px 10px 11px #050505;
 }
-.content > *:first-child { margin-top: 0; }
+.oContent > *:first-child { margin-top: 0; }
 
 
 /* Background Image */
