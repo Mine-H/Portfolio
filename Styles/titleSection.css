@@ -48,7 +48,7 @@
 }
 
 /* Places page content in front of the title and gives it a shadow to fade the title out */
-.content {
+.oContent {
 	position: relative;
 	z-index: 1;
 	
