@@ -12,12 +12,12 @@
 }
 
 @keyframes overshootUp {
-	from { top: calc(min(100vh, 50vw) + 1em); }
-	to { top: calc(min(100vh, 50vw) - 4.07em); }
+	from { transform: translate(0, 1em); }
+	to { transform: translate(0, -4.07em); }
 }
 @keyframes fallInPosition {
-	from { top: calc(min(100vh, 50vw) - 4.07em); }
-	to { top: calc(min(100vh, 50vw) - 4em); }
+	from { transform: translate(0, -4.07em); }
+	to { transform: translate(0, -4em); }
 }
 
 @keyframes spin360 {
@@ -153,7 +153,7 @@
 	animation: growCircle 1.2s ease 3s both,
 		spin360 1.2s ease 3s backwards;
 }
-.oBgTArrow p {
+.oBgTArrow i {
 	height: auto;
 	margin: 0;
 	animation: growArrow 1.2s ease 3s both;
@@ -166,6 +166,7 @@
 
 	position: absolute;
 	left: 0;
+	top: min(100vh, 50vw);
 
 	animation: overshootUp .8s cubic-bezier(.4, .81, .54, 1) 2s backwards,
 		fallInPosition .2s cubic-bezier(.3, 0, .7, 1) 2.8s forwards;
@@ -206,7 +207,8 @@
 	}
 
 	
-	/* Removes scroll-down Arrow */
+	/* Places scroll-down Arrow on bottom-left corner */
+	/*
 	.oBgTArrow {
 		border-radius: 5em;
 		background-color: #11121D;
@@ -223,16 +225,11 @@
 		margin: 0;
 		animation: growArrow 1.2s ease 3s both;
 	}
+	*/
 	.oBgTAContainer {
-		width: 100%;
-		height: auto;
-		display: flex;
-		justify-content: center;
-
-		position: absolute;
-		left: 0;
-
-		animation: overshootUp .8s cubic-bezier(.4, .81, .54, 1) 2s backwards,
-			fallInPosition .2s cubic-bezier(.3, 0, .7, 1) 2.8s forwards;
+		width: auto;
+		
+		left: 1em;
+		top: 100vh;
 	}
 }
