@@ -63,6 +63,15 @@
 
 
 /* Background Image */
+.oBgImage {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+/*
 .oBackground {
 	width: inherit;
 	padding-top: inherit;
@@ -74,17 +83,18 @@
 	background-repeat: repeat-y;
 	background-attachment: fixed;
 
-	/* Background-Size */
+	/* Background-Size *
 	-webkit-background-size: 100% auto;
 	-moz-background-size: 100% auto;
 	-o-background-size: 100% auto;
 	background-size: 100% auto;
 }
-/* Image Choices */
+/* Image Choices *
 .oBgImg1 { background-image: url('../Images/Dash_Into_Explosion_Square_In_A_Box.png'); }
 .oBgImg2 { background-image: url('../Images/Walking_In_The_Dark.png'); }
 .oBgImg3 { background-image: url('../Images/Neon_Tank_City.png'); }
 .oBgImg4 { background-image: url('../Images/Table_Solar_System.png'); }
+*/
 
 
 /* Box where the text is contained: almost same height as parent */
