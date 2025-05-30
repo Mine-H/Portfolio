@@ -178,6 +178,13 @@
 		height: -webkit-calc(100vh - 0.3em);
 		height: calc(100vh - 0.3em);
 	}
+	@supports (height: 100svh) {
+		.opening, .opening > div {
+		    height: -moz-calc(100svh - 0.3em);
+		    height: -webkit-calc(100svh - 0.3em);
+		    height: calc(100svh - 0.3em);
+	    }
+	}
 	.opening + div { padding-top: 2em; }
 	
 	.opening.bgLeft > div > img { object-position: 32% 50%; }
