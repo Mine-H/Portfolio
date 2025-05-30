@@ -137,7 +137,9 @@
 		animation: overshootUp .7s cubic-bezier(.4, .81, .54, 1) 2s backwards,
 			fallInPosition .175s cubic-bezier(.3, 0, .7, 1) 2.7s forwards;
 	}
-	.arrowBox > div { /* Circle */
+	
+	.arrowBox > a { /* Circle */
+		text-decoration: none;
 		border-radius: 5em;
 		background-color: #11121D;
 
@@ -147,7 +149,9 @@
 
 		animation: growCircle .95s ease 2.875s both;
 	}
-	.arrowBox > div i { /* Arrow */
+	.arrowBox > a:hover { background-color: #0B0C11; }
+
+	.arrowBox > a i { /* Arrow */
 		height: auto; margin: 0;
 		animation: growArrow .95s ease-out 2.875s both,
 			spinArrow .95s ease 2.875s backwards;
