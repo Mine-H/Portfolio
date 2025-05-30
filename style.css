@@ -3,11 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
-* {
-	box-sizing: border-box;
-}
-html,
-body {
+* { box-sizing: border-box; }
+html, body {
 	width: 100%;
 	height: 100%;
 	

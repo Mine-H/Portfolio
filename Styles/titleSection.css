@@ -1,226 +1,143 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans");
 
-@keyframes titleFadeIn {
-	from {
-		top: 1em;
-		opacity: 0;
-	}
-	to {
-		top: 0;
-		opacity: 1;
-	}
-}
 
-@keyframes overshootUp {
-	from { transform: translate(0, 1em); }
-	to { transform: translate(0, -4.07em); }
-}
-@keyframes fallInPosition {
-	from { transform: translate(0, -4.07em); }
-	to { transform: translate(0, -4em); }
-}
+/* #region Animations */
+	@keyframes titleFadeIn {
+		from { top: 1em; opacity: 0; }
+		to { top: 0; opacity: 1;	}
+	}
 
-@keyframes spin360 {
-	from { transform: rotate(-270deg); }
-	to { transform: rotate(0deg); }
-}
-@keyframes growCircle {
-	from {
-		width: 1em;
-		height: 1em;
+	@keyframes overshootUp {
+		from { transform: translate(0, 1em); }
+		to { transform: translate(0, -5.081em); }
 	}
-	to {
-		width: 2.1em;
-		height: 2.1em;
+	@keyframes fallInPosition {
+		from { transform: translate(0, -5.081em); }
+		to { transform: translate(0, -5em); }
 	}
-}
-@keyframes growArrow {
-	from { font-size: 0; }
-	to { font-size: 1em; }
-}
+
+	@keyframes growCircle {
+		from {
+			width: 1em; height: 1em;
+			box-shadow: 0 0 .15em .015em #050505F2;
+		}
+		to {
+			width: 2.1em; height: 2.1em;
+			box-shadow: 0 0 .315em .015em #050505F2;
+		}
+	}
+	@keyframes spinArrow {
+		from { transform: rotate(-270deg); }
+		to { transform: rotate(0deg); }
+	}
+	@keyframes growArrow {
+		from { font-size: 0; }
+		to { font-size: 1em; }
+	}
+/* #endregion */
+
 
 /* Title Section */
 
-/* Controls section's size */
-.opening {
-	width: 100%;
-	padding-top: 50%; /* Height is 50% of the width */
-	position: relative;
-}
+/* Draft HTML:
+<div class="opening">
+	<div>
+		<img src="Background.png">
+		<div class="titleBox bgLeft">
+			<h1>Title</h1>
+			<p>Subtitle</p>
+		</div>
 
-/* Places page content in front of the title and gives it a shadow to fade the title out */
-.oContent {
-	position: relative;
-	z-index: 1;
-	
-	width: 100%;
-	padding-top: 3em;
+		<div class="arrowBox">
+			<div>
+				<i class="material-symbols-outlined">south</i>
+			</div>
+		</div>
+	</div>
+</div>
 
-	background-color: #050505;
-	box-shadow: 0 0px 10px 11px #050505;
-}
-.oContent > *:first-child { margin-top: 0; }
-
-
-/* Background Image */
-.oBgImage {
-	width: 100%;
-	height: auto;
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: -1;
-}
-/*
-.oBackground {
-	width: inherit;
-	padding-top: inherit;
-
-	position: fixed;
-	left: 0;
-	top: 0;
-
-	background-repeat: repeat-y;
-	background-attachment: fixed;
-
-	/* Background-Size *
-	-webkit-background-size: 100% auto;
-	-moz-background-size: 100% auto;
-	-o-background-size: 100% auto;
-	background-size: 100% auto;
-}
-/* Image Choices *
-.oBgImg1 { background-image: url('../Images/Dash_Into_Explosion_Square_In_A_Box.png'); }
-.oBgImg2 { background-image: url('../Images/Walking_In_The_Dark.png'); }
-.oBgImg3 { background-image: url('../Images/Neon_Tank_City.png'); }
-.oBgImg4 { background-image: url('../Images/Table_Solar_System.png'); }
-*/
+<div>...</div> */
 
 
-/* Box where the text is contained: almost same height as parent */
-.oBgTContainer {
-	width: 100%;
-	height: 50vw;
-	position: fixed;
-	left: 0;
-	top: 0;
-	z-index: 1; /* Stays in front of background */
-	align-content: center; /* Centers text box vertically */
-}
-
-/* The text box (white border with text to its side) */
-.oBgText {
-	position: relative;
-
-	/* Desired text box size */
-	min-height: 10em;
-	width: 35%;
-
-	max-height: 50vw;
-	overflow: auto;
-	
-	/* Easier to see in brighter backgrounds */
-	text-shadow: 0 0 4px #000000;
-	background-color: #05050530;
-
-	/* Centers content vertically */
-	align-content: center;
-}
-/* Text box positioning and border */
-.oBgTLeft {
-	left: 60%;
-	border-left: 2px solid white;
-	padding-left: 10px;
-}
-.oBgTRight {
-	left: 5%;
-	border-right: 2px solid white;
-	padding-right: 10px;
-	text-align: right;
-}
-/* Fancy header */
-.oBgText h1 {
-	font-size: 2.1em;
-	font-family: Merriweather, serif;
-	font-weight: 500;
-
-	position: relative;
-	animation: titleFadeIn 0.95s ease backwards;
-}
-.oBgText p {
-	position: relative;
-	animation: titleFadeIn 0.95s ease .7s backwards;
-}
-
-/* Scroll-down Arrow */
-.oBgTArrow {
-	border-radius: 5em;
-	background-color: #11121D;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	animation: growCircle 1.2s ease 3s both,
-		spin360 1.2s ease 3s backwards;
-}
-.oBgTArrow i {
-	height: auto;
-	margin: 0;
-	animation: growArrow 1.2s ease 3s both;
-}
-.oBgTAContainer {
-	width: 100%;
-	height: auto;
-	display: flex;
-	justify-content: center;
-
-	position: absolute;
-	left: 0;
-	top: min(100vh, 50vw);
-
-	animation: overshootUp .8s cubic-bezier(.4, .81, .54, 1) 2s backwards,
-		fallInPosition .2s cubic-bezier(.3, 0, .7, 1) 2.8s forwards;
-}
-
-
-/* For Phones */
-@media screen and (max-width: 800px) {
-	.content { padding-top: 2em; }
-
-	.oBgText {
-		/* Unpositions text box */
-		left: 0;
-
-		/* New desired text box size */
-		min-height: 1em;
-		width: 75vw;
-		
-		box-sizing: content-box;
-		margin: 0 auto;
-
-		/* New border */
-		border-bottom: 2px solid white;
-		padding-bottom: 10px;
-
-		/* Centers content horizontally */
-		text-align: center;
-		font-size: 0.9em; /* Fits more text */
+/* #region Section Container */
+	.opening, .opening > div { /* Controls section's size in the page (2:1 ratio) */
+		width: 100%; height: 50vw; max-height: 100vh;
 	}
-	/* Undoes previous border */
-	.oBgTLeft {
-		border-left: none;
-		padding-left: 0;
-	}
-	.oBgTRight {
-		border-right: none;
-		padding-right: 0;
+	.opening > div { /* Where everything is actually contained; fixed position to not scroll */
+		position: fixed; left: 0; top: 0;
+		align-content: center; /* Centers content vertically */
+		overflow: hidden;
 	}
 
-	
-	/* Places scroll-down Arrow on bottom-left corner */
-	/*
-	.oBgTArrow {
+	.opening > div > img { /* Background Image */
+		width: 100%; height: 100%; object-fit: cover; /* Covers the background */
+
+		position: absolute; left: 0; top: 0; /* Doesn't occupy space */
+		z-index: -1; /* Makes it a background */
+	}
+/* #endregion */
+
+
+/* #region TitleBox */
+
+	/* #region Title Container (white border with text to its side) */
+
+		.opening .titleBox {
+			position: relative;
+			min-height: 10em; width: 35%; /* Desired text box size */
+
+			max-height: 100%; overflow: auto; /* Caps title box */
+			
+			/* Easier to see in brighter backgrounds */
+			text-shadow: 0 0 4px #000000;
+			background-color: #05050530;
+
+			align-content: center; /* Centers content vertically */
+		}
+		/* #region Positioning and Border */
+			.opening.bgLeft .titleBox {
+				left: 60%;
+				border-left: 2px solid white;
+				padding-left: 10px;
+			}
+			.opening.bgRight .titleBox {
+				left: 5%;
+				border-right: 2px solid white;
+				padding-right: 10px;
+				text-align: right;
+			}
+		/* #endregion */
+
+	/* #endregion */
+
+	.opening .titleBox h1 { /* Header Decor */
+		font-size: 2.1em; font-weight: 500;
+		font-family: Merriweather, serif;
+		margin: .47619em 0;
+	}
+
+	/* #region Animations */
+		.opening .titleBox h1, .opening .titleBox p { /* Text fade-in */
+			position: relative;
+			animation: titleFadeIn 0.95s ease backwards;
+		}
+		.opening .titleBox p { animation-delay: .7s; } /* Subtitle delay */
+	/* #endregion */
+
+/* #endregion */
+
+
+/* #region Scroll-down Arrow */
+	.arrowBox { /* Container */
+		width: 100%; height: auto;
+		display: flex; justify-content: center;
+
+		position: absolute; left: 0; top: 100%;
+
+		animation: overshootUp .7s cubic-bezier(.4, .81, .54, 1) 2s backwards,
+			fallInPosition .175s cubic-bezier(.3, 0, .7, 1) 2.7s forwards;
+	}
+	.arrowBox > div { /* Circle */
 		border-radius: 5em;
 		background-color: #11121D;
 
@@ -228,19 +145,60 @@
 		align-items: center;
 		justify-content: center;
 
-		animation: growCircle 1.2s ease 3s both,
-			spin360 1.2s ease 3s backwards;
+		animation: growCircle .95s ease 2.875s both;
 	}
-	.oBgTArrow p {
-		height: auto;
-		margin: 0;
-		animation: growArrow 1.2s ease 3s both;
+	.arrowBox > div i { /* Arrow */
+		height: auto; margin: 0;
+		animation: growArrow .95s ease-out 2.875s both,
+			spinArrow .95s ease 2.875s backwards;
 	}
-	*/
-	.oBgTAContainer {
-		width: auto;
+/* #endregion */
+
+
+/* #region Post-Title Content */
+	.opening + div { /* Places the content in front of the title and gives it a fade-in shadow */
+		position: relative; z-index: 1;
 		
-		left: 1em;
-		top: 100vh;
+		width: 100%;
+		padding-top: 3em;
+
+		background-color: #050505;
+		box-shadow: 0 0 .625em .6875em #050505;
+	}
+	/* Prevents the first element's margin from messing up spacing */
+	.opening + div > *:first-child { margin-top: 0; }
+/* #endregion */
+
+
+
+/* ---- For Phones ---- */
+@media screen and (orientation: portrait) {
+	.opening, .opening > div {
+		height: -moz-calc(100vh - 0.3em);
+		height: -webkit-calc(100vh - 0.3em);
+		height: calc(100vh - 0.3em);
+	}
+	.opening + div { padding-top: 2em; }
+	
+	.opening.bgLeft > div > img { object-position: 32% 50%; }
+	.opening.bgRight > div > img { object-position: 62% 50%; }
+
+	.opening .titleBox {
+		min-height: 1em; width: 75vw; /* New desired text box size */
+		margin: 0 auto; /* Centers itself horizontally */
+		/* New border */
+		border-bottom: 2px solid white;
+		border-top: 2px solid white;
+	}
+	/* Undoes previous border */
+	.opening.bgLeft .titleBox {
+		left: 0; padding-left: 0;
+		border-left: none;
+		text-align: center;
+	}
+	.opening.bgRight .titleBox {
+		left: 0; padding-right: 0;
+		border-right: none;
+		text-align: center;
 	}
 }
