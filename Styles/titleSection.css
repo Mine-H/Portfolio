@@ -61,7 +61,7 @@
 
 /* #region Section Container */
 	.opening, .opening > div { /* Controls section's size in the page (2:1 ratio) */
-		width: 100%; height: 50vw; max-height: 100vh;
+		width: 100%; height: 50vw; max-height: 100vh; max-height: 100svh;
 	}
 	.opening > div { /* Where everything is actually contained; fixed position to not scroll */
 		position: fixed; left: 0; top: 0;
