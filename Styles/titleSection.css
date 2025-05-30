@@ -137,7 +137,7 @@
 		animation: overshootUp .7s cubic-bezier(.4, .81, .54, 1) 2s backwards,
 			fallInPosition .175s cubic-bezier(.3, 0, .7, 1) 2.7s forwards;
 	}
-	
+
 	.arrowBox > a { /* Circle */
 		text-decoration: none;
 		border-radius: 5em;
@@ -146,10 +146,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		
+		transition: background-color 0.18s, transform 0.12s ease-out;
 
 		animation: growCircle .95s ease 2.875s both;
 	}
-	.arrowBox > a:hover { background-color: #0B0C11; }
+	.arrowBox > a:hover {
+		background-color: #0B0C11;
+		transform: scale(1.05, 1.05);
+	}
 
 	.arrowBox > a i { /* Arrow */
 		height: auto; margin: 0;
