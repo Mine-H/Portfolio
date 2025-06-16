@@ -4,20 +4,27 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<base href="../">
+
 	
-	<link href="../style.css" rel="stylesheet" type="text/css" />
+	<link href="style.less" rel="stylesheet/less" type="text/css" />
+	<script src="less.min.js"></script>
+
+	
+	<link rel="canonical" href="projects-showcase/" />
 	
 	<title>Projects Showcase | Henrique's Portfolio</title>
 </head>
 
 <body class="showcase">
-	<script src="../script.js"></script>
+	<script src="script.js"></script>
 
 	
-	<div class="opening bgRight">
+	<div class="opening">
 		<div>
-			<img src="../Images/Table_Solar_System.png">
-			<div class="titleBox">
+			<img class="bgMid" src="Images/Table_Solar_System.png">
+			<div class="titleBox tBLeft">
 				<h1>Projects Showcase</h1>
 				<p>An assembly of the highlights of my work</p>
 			</div>
@@ -31,16 +38,16 @@
 	</div>
 	
 	<div id="pageContent">
-		<div class="sections">
-			<a href="../">
+		<div class="navLinks">
+			<a href="">
 				<i class="material-icons">home</i>
 				<p>Home</p>
 			</a>
-			<a href="../about/">
+			<a href="about/">
 				<i class="material-icons">person</i>
 				<p>About Me</p>
 			</a>
-			<a href="../education-and-achievements/">
+			<a href="education-and-achievements/">
 				<i class="material-symbols-outlined">book_2</i>
 				<p>Education and Achievements</p>
 			</a>
@@ -56,7 +63,7 @@
 			</div>
 			<div class="toggleDiv" id="UnityContent" style="padding-top: 10px;">
 				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="../Images/TankGame.png" width="100%"></div>
+					<div class="sideContent"><img src="Images/TankGame.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<h2><a href="https://www.youtube.com/playlist?list=PLd1an7leeXOjvPgyhp4SmwYAhyQR_TtJP" target="_blank">Tank Game</a> - Ongoing</h2>
@@ -66,7 +73,7 @@
 				</div>
 
 				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="../Images/Walking_In_The_Dark.png" width="100%"></div>
+					<div class="sideContent scOpposite"><img src="Images/Walking_In_The_Dark.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<p>Author's Choice</p>
@@ -77,7 +84,7 @@
 				</div>
 
 				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="../Images/6-Week.png" width="100%"></div>
+					<div class="sideContent"><img src="Images/6-Week.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<h2><a href="https://www.youtube.com/watch?v=hkK36lpIyYw&list=PLd1an7leeXOimR8180lKtLXiNQEGjLs2M&index=3&t=2s&pp=iAQB" target="_blank">6-Week</a> - May 2024</h2>
@@ -87,7 +94,7 @@
 				</div>
 
 				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="../Images/3-Week.png" width="100%"></div>
+					<div class="sideContent scOpposite"><img src="Images/3-Week.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<h2><a href="https://www.youtube.com/watch?v=sPBy3ZTfwUA&list=PLd1an7leeXOimR8180lKtLXiNQEGjLs2M&index=1&pp=iAQB" target="_blank">3-Week</a> - April 2024</h2>
@@ -100,7 +107,7 @@
 				</div>
 
 				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="../Images/Dash_Into_Explosion_Square_In_A_Box.png" width="100%"></div>
+					<div class="sideContent"><img src="Images/Dash_Into_Explosion_Square_In_A_Box.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<h2>Square-in-a-box - Mid-2022 to May 2023</h2>
@@ -120,7 +127,7 @@
 			</div>
 			<div class="toggleDiv" id="UnrealContent" style="padding-top: 10px;">
 				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="../Images/C4Engines.png" width="100%"></div>
+					<div class="sideContent"><img src="Images/C4Engines.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<h2><a href="https://youtu.be/1hyZLO3XiFk?si=aEhe99oaGfaIZ7re" target="_blank">C++ for Engines</a> - November 2024</h2>
@@ -133,7 +140,7 @@
 				</div>
 
 				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="../Images/Neon_Tank_City.png" width="100%"></div>
+					<div class="sideContent scOpposite"><img src="Images/Neon_Tank_City.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<p>Author's Choice</p>
@@ -167,7 +174,7 @@
 			</div>
 			<div class="toggleDiv" id="MiscContent" style="padding-top: 10px;">
 				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="../Images/Table_Solar_System.png" width="100%"></div>
+					<div class="sideContent"><img src="Images/Table_Solar_System.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<h2><a href="https://www.youtube.com/watch?v=6xRuM9K6pCg&list=PLd1an7leeXOjSSH0vsWRA8B9oaEYxk5IO&index=1&pp=iAQB" target="_blank">C++ OpenGL Solar Table</a> - May 2024</h2>
@@ -180,7 +187,7 @@
 				</div>
 
 				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="../Images/Tree_Game.png" width="100%"></div>
+					<div class="sideContent scOpposite"><img src="Images/Tree_Game.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<h2><a href="https://www.youtube.com/watch?v=ArhJ2mVF5bY&list=PLd1an7leeXOg2jDHtzkpSVp-n1Deu0g_n" target="_blank">C++ Seasons</a> - November 2023</h2>
@@ -193,7 +200,7 @@
 				</div>
 
 				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="../Images/DiscordBot.png" width="100%"></div>
+					<div class="sideContent"><img src="Images/DiscordBot.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<h2>Python Order of Operations + Dice - Early 2024</h2>
@@ -206,7 +213,7 @@
 				</div>
 
 				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="../Images/Pong.png" width="100%"></div>
+					<div class="sideContent scOpposite"><img src="Images/Pong.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<h2><a href="https://mine-h.github.io/Pong/" target="_blank">HTML Pong</a> - Mid-2022</h2>
@@ -220,7 +227,7 @@
 				</div>
 
 				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="../Images/Floating_Point.png" width="100%"></div>
+					<div class="sideContent"><img src="Images/Floating_Point.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<h2><a href="https://mine-h.github.io/FloatingPointHelp/" target="_blank">HTML Floating Point Visualisation</a> - Early-2022</h2>
@@ -233,11 +240,11 @@
 				</div>
 
 				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="../Images/Website_Image.png" width="100%"></div>
+					<div class="sideContent scOpposite"><img src="Images/Website_Image.png" width="100%"></div>
 					<div class="content">
 						<div class="mainTitle">
 							<p>Author's Choice</p>
-							<h2><a href="../">HTML Portfolio</a> - Ongoing</h2>
+							<h2><a href="">HTML Portfolio</a> - Ongoing</h2>
 						</div>
 						<p>
 							An ever-growing project where I can organise my past work and put myself forward to the world.

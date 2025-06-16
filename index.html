@@ -4,8 +4,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<base href="./">
+
 	
-	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="style.less" rel="stylesheet/less" type="text/css" />
+	<script src="less.min.js"></script>
+
+	
+	<link rel="canonical" href="./" />
 	
 	<title>Henrique's Portfolio</title>
 </head>
@@ -14,13 +21,13 @@
 	<script src="script.js"></script>
 
 	
-	<div class="opening bgLeft">
+	<section class="opening">
 		<div>
-			<img src="Images/Dash_Into_Explosion_Square_In_A_Box.png">
-			<div class="titleBox">
+			<img class="bgLeft" src="Images/Dash_Into_Explosion_Square_In_A_Box.png">
+			<header class="titleBox tBRight">
 				<h1>Henrique Matos</h1>
 				<p>Second-Year student of Games Design and Programming at the University of Staffordshire</p>
-			</div>
+			</header>
 
 			<div class="arrowBox">
 				<a href="#pageContent">
@@ -28,10 +35,10 @@
 				</a>
 			</div>
 		</div>
-	</div>
+	</section>
 	
 	<div id="pageContent">
-		<div class="sections">
+		<nav class="navLinks">
 			<!-- <h2 class="title">Links</h2> -->
 			<a>
 				<i class="material-icons">home</i>
@@ -53,7 +60,7 @@
 				<i class="material-icons">more_horiz</i>
 				<p>Misc</p>
 			</a> -->
-		</div>
+		</nav>
 		
 		<div class="textBoxes">
 			<div class="mainTitle"><h1>Welcome</h1></div>
@@ -68,11 +75,11 @@
 			</div>
 		</div>
 
-		<div class="footer">
-			<a href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><i class="fa">&#xf16a;</i></a>
-			<a href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><i class="fa">&#xf08c;</i></a>
-			<a href="https://github.com/Mine-H" target="_blank"><i class="fa">&#xf09b;</i></a>
-		</div>
+		<footer class="footer">
+			<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><i class="fa">&#xf16a;</i></a>
+			<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><i class="fa">&#xf08c;</i></a>
+			<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><i class="fa">&#xf09b;</i></a>
+		</footer>
 	</div>
 </body>
 

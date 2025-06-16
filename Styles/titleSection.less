@@ -1,0 +1,171 @@
+@import (css) url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans");
+@import "variables.less";
+
+
+/* ---- Title Section ---- */
+
+/* Draft HTML:
+<div class="opening">
+	<div>
+		<img src="Background.png">
+		<div class="titleBox bgLeft">
+			<h1>Title</h1>
+			<p>Subtitle</p>
+		</div>
+
+		<div class="arrowBox">
+			<a href="#pageContent">
+				<i class="material-symbols-outlined">south</i>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div id="pageContent">...</div> */
+
+
+// #region Animations
+	@keyframes titleFadeIn {
+		from { top: 1em; opacity: 0; }
+		to { top: 0; opacity: 1; }
+	} // Title Box's title and subtitle
+
+
+	// #region Full-Width Arrow Container
+		@keyframes overshootUp {
+			from { transform: translate(0, 1em); }
+			to { transform: translate(0, -5.081em); }
+		}
+		@keyframes fallInPosition {
+			from { transform: translate(0, -5.081em); }
+			to { transform: translate(0, -5em); }
+		}
+		
+		@keyframes growthPosCorrection {
+			from { transform: translate(0, -5em); }
+			to { transform: translate(0, -5.9em); }
+		}
+	// #endregion Full-Width Arrow Container
+
+	// #region Circular Scroll-Down Link
+		@keyframes growCircle {
+			from {
+				width: 1em; height: 1em;
+				box-shadow: 0 2px 2px -2px #000000;
+			}
+			to {
+				width: 2.8em; height: 2.8em;
+				box-shadow: 0 2px 5px -2px #000000;
+			}
+		}
+	// #endregion Circular Link
+
+	// #region Arrow Icon
+		@keyframes spinArrow {
+			from { transform: rotate(-270deg); }
+			to { transform: rotate(0deg); }
+		}
+		@keyframes growArrow {
+			from { font-size: 0; }
+			to { font-size: 1.4em; }
+		}
+	// #endregion Arrow Icon
+// #endregion
+
+.opening {
+	&, >div { width: 100%; height: 100vh; height: 100svh; } // Controls section's size in the page
+	position: relative;
+	
+	>div {
+		position: fixed; left: 0; top: 0; align-content: center; overflow: hidden;
+	
+		>img {
+			width: 100%; height: 100%; object-fit: cover;
+			position: absolute; left: 0; top: 0; z-index: -1;
+			
+			&.bg { 
+				&Left { object-position: 32% 50%; }
+				&Mid { object-position: 50% 50%; }
+				&Right { object-position: 63% 50%; }
+			} // Image zoom-position
+		} // Background Image
+	} // Fixed-position true container
+
+
+	.titleBox {
+		@title-bgC: fade(@card-bg-color, 19%); @title-border: 2px solid @card-txt-color;
+
+		position: relative; color: @card-txt-color; align-content: center;
+		min-height: 10em; width: 35%; max-height: 100%; overflow: auto; // Desired size
+
+		@media @phone-req {
+			min-height: 1em; width: 75vw; max-width: 500px; margin: 0 auto; // New desired size, centers self
+			border-top: @title-border; border-bottom: @title-border; // New border
+		} // Resizes, self-centers, and borders up top and bottom
+		
+		&.tB {
+			@media @not-phone-req {
+				&Right { left: 60%; border-left: @title-border; padding-left: 10px; }
+				&Left { left: 5%; border-right: @title-border; padding-right: 10px; text-align: right; }
+			}
+			@media @phone-req { &Right, &Left { padding: 0 1ex; text-align: center; } }
+		} // Positioning and Border
+
+
+		
+		text-shadow: 0 0 4px #000; background-color: @title-bgC; // Easier to see in brighter backgrounds
+	
+		h1 {
+			font-family: Merriweather, serif; font-weight: 500;
+			font-size: 2.1em; margin: (1em / $font-size) 0;
+		} // Header Decor
+
+		h1, p { position: relative; animation: titleFadeIn 0.95s ease backwards; }
+		p { animation-delay: .7s; } // Subtitle delay
+	} // Title Box - borders, page title, and subtitle
+
+
+	.arrowBox {
+		width: 100%; height: auto;
+		display: flex; justify-content: center;
+
+		position: absolute; left: 0; top: 100%;
+
+		@upTime: .7s; @upDelay: 2s;
+		@fallTime: .175s; @fallDelay: (@upDelay + @upTime);
+		@arrowTime: .95s; @arrowDelay: (@fallDelay + @fallTime);
+
+		animation: overshootUp @upTime cubic-bezier(.4, .81, .54, 1) @upDelay backwards,
+			fallInPosition @fallTime cubic-bezier(.3, 0, .7, 1) @fallDelay forwards,
+			growthPosCorrection @arrowTime ease @arrowDelay forwards;
+
+		>a {
+			text-decoration: none; border-radius: 5em;
+			display: flex; align-items: center; justify-content: center;
+
+			// Hover background transition
+			background-color: @bgSec1;
+			&:hover { background-color: @bgSec1H; transform: scale(1.1, 1.1); }
+			transition: background-color 0.18s, transform 0.12s ease-out;
+			
+			animation: growCircle @arrowTime ease @arrowDelay both; // Circle growth anim
+		
+			i {
+				height: auto; margin: 0;
+				animation: growArrow @arrowTime ease-out @arrowDelay both,
+					spinArrow @arrowTime ease @arrowDelay backwards;
+			} // Arrow Icon (anims. font increase and rotation)
+		} // Scroll-Down Circular Link (anims. circle growth)
+	} // Horiz. strip containing the scroll-down arrow (anims. overshoot, fall, and circle growth correction)
+
+
+	+div {
+		width: 100%; position: relative; z-index: 1;
+		display: flex; justify-content: center; flex-wrap: wrap;
+		
+		@content-spacing: 2.5em;
+		padding-top: calc(@content-spacing - 11px); gap: @content-spacing;
+
+		background-color: @bgBody; box-shadow: 0 0 10px 11px @bgBody;
+	} // Post-Title Content - Places the page content in front of the title and gives it a fade-in shadow
+}

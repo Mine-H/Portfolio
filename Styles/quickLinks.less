@@ -1,0 +1,45 @@
+@import "variables.less";
+
+
+/* ---- Navigation Section ---- */
+
+.navLinks {
+	width: 100%; padding: 0 1em;
+	display: flex; justify-content: center;
+	flex-wrap: wrap; gap: 1em;
+
+	a {
+		width: 8.7em; border-radius: 0.2em; float: left;
+		padding: 1em; text-align: center;
+
+		background-color: @bgSec1;
+		&[href]:hover { background-color: @bgSec1H; }
+		transition: background-color 0.18s;
+
+		&:not([href]) {
+			filter: brightness(50%) contrast(97.5%);
+			* { filter: blur(0.5px); }
+		}
+
+		i { font-size: 3.5em; text-decoration: none; }
+		p { margin-bottom: 0; }
+	}
+}
+
+
+/* ---- Footer Section ---- */
+
+.footer {
+	width: 100%; display: flex;
+	background-color: @bgSec1;
+
+	a {
+		width: 3.6em; float: left;
+		padding: 1em; text-align: center;
+
+		&:hover { background-color: @bgSec1H; }
+		transition: background-color 0.18s;
+	}
+
+	i { font-size: 1.5em; text-decoration: none; }
+}

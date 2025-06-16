@@ -11,3 +11,7 @@ function toggleHide(idContent, idIcon) {
         icon.innerHTML = "keyboard_arrow_down";
     }
 }
+
+function ArrowScroll() {
+    document.body.scrollTop = document.documentElement.clientHeight * 0.75;
+}

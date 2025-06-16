@@ -1,0 +1,82 @@
+@import url("variables.css");
+
+/* ---- Project Cards Section ---- */
+
+/* Draft HTML:
+<div class="projectCard">
+	<img src="Background.jpg">
+	
+	<div class="title">
+		<!-- (OPTIONAL) <p>Author's Choice</p> -->
+		<h2>Project Title</h2>
+	</div>
+
+	<div class="content">
+    	<div class="tags">
+        	<!-- Type (bg1): <p>Platformer</p> <p>3rd-Person Shooter</p> <p>1st-Person Shooter</p>... -->
+        	<!-- Languages (bg2): <p>Unity</p> <p>UE5</p> <p>HTML</p> <p>Python</p> <p>C++</p> <p>C#</p> -->
+        	<!-- Purpose (bg3): <p>University</p> <p>Game Jam</p> <p>Personal</p> -->
+        </div>
+    	<p>Description</p>
+    	<p>Description p2</p>
+	</div>
+</div> */
+
+:root { --cardC: #fff; --cardBgC: #000; --cardBgC2: #0008; }
+
+.projectCard {
+	width: 12em; height: 16em; position: relative; overflow: hidden;
+	color: var(--cardC); text-shadow: 0 0 4px var(--cardBgC);
+	text-align: center;	
+	
+	display: grid; grid-template-rows: 1fr auto 0fr;
+	transition: grid-template-rows .3s;
+}
+.projectCard:hover { grid-template-rows: 0fr auto 1fr; }
+
+:root { --cardTH: .3s; --cardTHSlow: .5s; }
+.projectCard > img {
+	width: 100%; height: 100%; object-fit: cover;
+	position: absolute; top: 0; left: 0; z-index: -1;
+
+	transition: width var(--cardTH), height var(--cardTH),
+		top var(--cardTH), left var(--cardTH),
+		filter var(--cardTH);
+}
+.projectCard:hover > img {
+	width: 110%; height: 110%;
+	top: -5%; left: -5%;
+	filter: blur(1.5px);
+
+	transition: width var(--cardTHSlow), height var(--cardTHSlow),
+		top var(--cardTHSlow), left var(--cardTHSlow),
+		filter var(--cardTHSlow);
+}
+
+.projectCard > .title {
+	grid-row-start: 2;
+	background-color: var(--cardBgC2); padding: .8em 0;
+	display: flex; flex-direction: column;
+}
+.projectCard h2, .projectCard p { margin: 0; }
+.projectCard > .title > p { font-size: .9em; }
+
+.projectCard > .content {
+	grid-row-start: 3; border-top: 2px solid var(--cardC);
+	
+	overflow: hidden; overflow-wrap: break-word;
+	
+	background-color: var(--cardBgC2); padding: 1ex;
+	
+	display: grid; grid-template-rows: auto; grid-auto-rows: 1fr;
+	place-items: center; gap: 1ex;
+}
+
+.projectCard > .content > .tags {
+	display: flex; gap: 1ex;
+	justify-content: center; flex-wrap: wrap;
+}
+.projectCard > .content > .tags > p { padding: .2em .8ex; border-radius: .6em; }
+.projectCard > .content > .tags > .bg1 { background-color: #131420; }
+.projectCard > .content > .tags > .bg2 { background-color: #393C60; }
+.projectCard > .content > .tags > .bg3 { background-color: #262840; }

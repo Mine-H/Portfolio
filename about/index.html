@@ -4,20 +4,24 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<base href="../">
+
 	
-	<link href="../style.css" rel="stylesheet" type="text/css" />
+	<link href="style.less" rel="stylesheet/less" type="text/css" />
+	<script src="less.min.js"></script>
+
+
+	<link rel="canonical" href="about/" />
 	
 	<title>About Me | Henrique's Portfolio</title>
 </head>
 
 <body>
-	<script src="../script.js"></script>
-
-	
-	<div class="opening bgRight">
+	<div class="opening">
 		<div>
-			<img src="../Images/Walking_In_The_Dark.png">
-			<div class="titleBox">
+			<img class="bgRight" src="Images/Walking_In_The_Dark.png">
+			<div class="titleBox tBLeft">
 				<h1>About Me</h1>
 				<p>"Sometimes I spend 30 minutes playtesting a variable I'm implementing to find its sweetspot and it just... works! It's so satisfying when that happens" - Henrique Matos</p>
 			</div>
@@ -31,8 +35,8 @@
 	</div>
 	
 	<div id="pageContent">
-		<div class="sections">
-			<a href="../">
+		<div class="navLinks">
+			<a href="">
 				<i class="material-icons">home</i>
 				<p>Home</p>
 			</a>
@@ -40,11 +44,11 @@
 				<i class="material-icons">person</i>
 				<p>About Me</p>
 			</a>
-			<a href="../education-and-achievements/">
+			<a href="education-and-achievements/">
 				<i class="material-symbols-outlined">book_2</i>
 				<p>Education and Achievements</p>
 			</a>
-			<a href="../projects-showcase/">
+			<a href="projects-showcase/">
 				<i class="material-icons">folder_open</i>
 				<p>Projects Showcase</p>
 			</a>
@@ -100,6 +104,7 @@
 			<a href="https://github.com/Mine-H" target="_blank"><i class="fa">&#xf09b;</i></a>
 		</div>
 	</div>
+	<script src="script.js"></script>
 </body>
 
 </html>

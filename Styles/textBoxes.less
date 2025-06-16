@@ -1,0 +1,105 @@
+@import "variables.less";
+
+
+.flexTextBoxes {
+	display: flex;
+	margin-bottom: 20px;
+
+	@media @phone-req {
+		display: block;
+		margin-bottom: 3.125em;
+		&:last-of-type { margin-bottom: 1.25em; }
+	}
+}
+.textBoxes {
+	width: calc(100% - 4em); max-width: 1400px; padding: 1em 2em;
+	@media @phone-req { width: calc(100% - 3em); display: block; padding: 0.75em 1.5em; }
+
+	background-color: @bgSec1; border-radius: 0.2em;
+	position: relative; z-index: 1;
+
+	h1, h2 { font-weight: 500; margin: 10px 0; }
+	.title {
+		border-right: 2px solid @text-color; padding-right: 10px;
+		text-align: right; align-content: center;
+
+		font-family: Merriweather, serif;
+
+		@media @phone-req {
+			width: 100%; max-width: none; float: none;
+
+			text-align: center; border-right: none; padding-right: 0;
+			border-bottom: 2px solid @text-color; padding-bottom: 10px;
+		}
+	}
+	.mainTitle {
+		width: 100%; position: relative;
+
+		border-bottom: 2px solid @text-color;
+		padding-bottom: 10px; margin-bottom: 10px;
+		text-align: center; align-content: center;
+
+		font-family: Merriweather, serif;
+	}
+	.sideContent {
+		width: 30%; max-width: 14em;
+		float: left; margin-right: 10px;
+		display: flex; justify-content: right; align-items: center;
+		
+		@media @phone-req {
+			width: 100%; max-width: none;
+			float: none; margin-right: 0;
+			justify-content: center;
+		}
+
+		h1 { font-size: 1.5em; }
+		img { width: 100%; }
+	}
+	.scOpposite {
+		order: 2; justify-content: left;
+		margin-right: 0; margin-left: 10px;
+		@media @phone-req { order: 1; margin-left: 0; }
+	}
+
+	.content {
+		min-width: calc(100% - 14em); width: 70%; float: left;
+
+		@media @phone-req {
+			width: 100%; min-width: none;
+			float: none; padding-top: 10px;
+		}
+	}
+	.centeredContent { width: 100%; text-align: center; align-content: center; }
+	
+	.showcase & {
+		.sideContent { width: 40%; max-width: 28em; margin-right: 30px; }
+		.scOpposite { margin-right: 0; margin-left: 30px; }
+		.content { min-width: calc(100% - 28em); width: 60%; }
+
+		@media @phone-req {
+			.sideContent { width: 100%; max-width: none; margin-right: 0; }
+			.scOpposite { margin-left: 0; }
+			.content { width: 100%; min-width: none; }
+		}
+	}
+
+
+	.toggleDiv { overflow: hidden; }
+	.toggleDivClick:hover { background-color: @bgSec1H; }
+	
+	.openCloseIcon {
+		position: absolute; right: 0;
+		font-size: inherit;
+	}
+
+	a {
+		text-decoration: underline;
+		box-shadow: 0 0 0 0 @bgSec1;
+		transition: background-color 0.18s, box-shadow 0.18s;
+		&:hover {
+			text-decoration: underline;
+			background-color: @bgSec1H;
+			box-shadow: 0.15em 0 @bgSec1H, -0.15em 0 @bgSec1H;
+		}
+	}
+}

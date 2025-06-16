@@ -1,43 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans");
+@import url("variables.css");
 
 
-/* #region Animations */
-	@keyframes titleFadeIn {
-		from { top: 1em; opacity: 0; }
-		to { top: 0; opacity: 1;	}
-	}
-
-	@keyframes overshootUp {
-		from { transform: translate(0, 1em); }
-		to { transform: translate(0, -5.081em); }
-	}
-	@keyframes fallInPosition {
-		from { transform: translate(0, -5.081em); }
-		to { transform: translate(0, -5em); }
-	}
-
-	@keyframes growCircle {
-		from {
-			width: 1em; height: 1em;
-			box-shadow: 0 0 .15em .015em #050505F2;
-		}
-		to {
-			width: 2.1em; height: 2.1em;
-			box-shadow: 0 0 .315em .015em #050505F2;
-		}
-	}
-	@keyframes spinArrow {
-		from { transform: rotate(-270deg); }
-		to { transform: rotate(0deg); }
-	}
-	@keyframes growArrow {
-		from { font-size: 0; }
-		to { font-size: 1em; }
-	}
-/* #endregion */
-
-
-/* Title Section */
+/* ---- Title Section ---- */
 
 /* Draft HTML:
 <div class="opening">
@@ -49,75 +14,89 @@
 		</div>
 
 		<div class="arrowBox">
-			<div>
+			<a href="#pageContent">
 				<i class="material-symbols-outlined">south</i>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>
 
-<div>...</div> */
+<div id="pageContent">...</div> */
 
 
 /* #region Section Container */
-	.opening, .opening > div { /* Controls section's size in the page (2:1 ratio) */
-		width: 100%; height: 50vw; max-height: 100vh; max-height: 100svh;
-	}
-	.opening > div { /* Where everything is actually contained; fixed position to not scroll */
-		position: fixed; left: 0; top: 0;
-		align-content: center; /* Centers content vertically */
-		overflow: hidden;
-	}
 
-	.opening > div > img { /* Background Image */
-		width: 100%; height: 100%; object-fit: cover; /* Covers the background */
+	/* Controls section's size in the page */
+	.opening, .opening > div { width: 100%; height: 100vh; height: 100svh; }
 
-		position: absolute; left: 0; top: 0; /* Doesn't occupy space */
-		z-index: -1; /* Makes it a background */
-	}
-/* #endregion */
+	.opening { position: relative; }
+
+	/* Where everything is actually contained; fixed position to not scroll */
+	.opening > div { position: fixed; left: 0; top: 0; align-content: center; overflow: hidden; }
+	
+	/* #region Background Image */
+		.opening > div > img {
+			width: 100%; height: 100%; object-fit: cover; /* Covers the background */
+
+			position: absolute; left: 0; top: 0; /* Doesn't occupy space */
+			z-index: -1; /* Makes it a background */
+		}
+		
+		/* #region Image zoom-position */
+			.opening > div > img.bgLeft { object-position: 32% 50%; }
+			.opening > div > img.bgMid { object-position: 50% 50%; }
+			.opening > div > img.bgRight { object-position: 63% 50%; }
+		/* #endregion Image zoom-position */
+	/* #endregion Background Image */
+
+/* #endregion Section Container */
 
 
 /* #region TitleBox */
 
+	@keyframes titleFadeIn {
+		from { top: 1em; opacity: 0; }
+		to { top: 0; opacity: 1; }
+	}
+
 	/* #region Title Container (white border with text to its side) */
 
+		:root { --title-bgC: #00000030; --title-txtC: #ffffff; }
+
 		.opening .titleBox {
-			position: relative;
+			position: relative; color: var(--title-txtC);
 			min-height: 10em; width: 35%; /* Desired text box size */
 
 			max-height: 100%; overflow: auto; /* Caps title box */
 			
 			/* Easier to see in brighter backgrounds */
-			text-shadow: 0 0 4px #000000;
-			background-color: #05050530;
+			text-shadow: 0 0 4px #000000; background-color: var(--title-bgC);
 
 			align-content: center; /* Centers content vertically */
 		}
 		/* #region Positioning and Border */
-			.opening.bgLeft .titleBox {
-				left: 60%;
-				border-left: 2px solid white;
+			.opening .titleBox.tBRight {
+				left: 60%; border-left: 2px solid var(--title-txtC);
 				padding-left: 10px;
 			}
-			.opening.bgRight .titleBox {
-				left: 5%;
-				border-right: 2px solid white;
-				padding-right: 10px;
-				text-align: right;
+			.opening .titleBox.tBLeft {
+				left: 5%; border-right: 2px solid var(--title-txtC);
+				padding-right: 10px; text-align: right;
 			}
 		/* #endregion */
 
 	/* #endregion */
-
-	.opening .titleBox h1 { /* Header Decor */
+	
+	/* Header Decor */
+	.opening .titleBox h1 {
 		font-size: 2.1em; font-weight: 500;
 		font-family: Merriweather, serif;
 		margin: .47619em 0;
 	}
 
 	/* #region Animations */
-		.opening .titleBox h1, .opening .titleBox p { /* Text fade-in */
+		/* Text fade-in */
+		.opening .titleBox h1, .opening .titleBox p {
 			position: relative;
 			animation: titleFadeIn 0.95s ease backwards;
 		}
@@ -128,89 +107,103 @@
 
 
 /* #region Scroll-down Arrow */
-	.arrowBox { /* Container */
-		width: 100%; height: auto;
-		display: flex; justify-content: center;
-
-		position: absolute; left: 0; top: 100%;
-
-		animation: overshootUp .7s cubic-bezier(.4, .81, .54, 1) 2s backwards,
-			fallInPosition .175s cubic-bezier(.3, 0, .7, 1) 2.7s forwards;
-	}
-
-	.arrowBox > a { /* Circle */
-		text-decoration: none;
-		border-radius: 5em;
-		background-color: #11121D;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	/* #region Full-Width Arrow Container */
+		@keyframes overshootUp {
+			from { transform: translate(0, 1em); }
+			to { transform: translate(0, -5.081em); }
+		}
+		@keyframes fallInPosition {
+			from { transform: translate(0, -5.081em); }
+			to { transform: translate(0, -5em); }
+		}
 		
-		transition: background-color 0.18s, transform 0.12s ease-out;
+		@keyframes growthCompensation {
+			from { transform: translate(0, -5em); }
+			to { transform: translate(0, -5.75em); }
+		}
+		
+		.arrowBox {
+			width: 100%; height: auto;
+			display: flex; justify-content: center;
 
-		animation: growCircle .95s ease 2.875s both;
-	}
-	.arrowBox > a:hover {
-		background-color: #0B0C11;
-		transform: scale(1.05, 1.05);
-	}
+			position: absolute; left: 0; top: 100%;
 
-	.arrowBox > a i { /* Arrow */
-		height: auto; margin: 0;
-		animation: growArrow .95s ease-out 2.875s both,
-			spinArrow .95s ease 2.875s backwards;
-	}
+			animation: overshootUp .7s cubic-bezier(.4, .81, .54, 1) 2s backwards,
+				fallInPosition .175s cubic-bezier(.3, 0, .7, 1) 2.7s forwards,
+				growthCompensation .95s ease 2.875s forwards;
+		}
+	/* #endregion Full-Width Arrow Container */
+
+	/* #region Circular Link */
+		@keyframes growCircle {
+			from {
+				width: 1em; height: 1em;
+				box-shadow: 0 2px 2px -2px #000000;
+			}
+			to {
+				width: 2.5em; height: 2.5em;
+				box-shadow: 0 2px 5px -2px #000000;
+			}
+		}
+		.arrowBox > a {
+			text-decoration: none; border-radius: 5em;
+			background-color: var(--bgSec1);
+
+			display: flex; align-items: center; justify-content: center;
+			
+			transition: background-color 0.18s, transform 0.12s ease-out;
+			animation: growCircle .95s ease 2.875s both;
+		}
+		.arrowBox > a:hover { background-color: var(--bgSec1H); transform: scale(1.05, 1.05); }
+	/* #endregion Circular Link */
+
+	/* #region Arrow Icon */
+		@keyframes spinArrow {
+			from { transform: rotate(-270deg); }
+			to { transform: rotate(0deg); }
+		}
+		@keyframes growArrow {
+			from { font-size: 0; }
+			to { font-size: 1.2em; }
+		}
+		
+		.arrowBox > a i {
+			height: auto; margin: 0;
+			animation: growArrow .95s ease-out 2.875s both,
+				spinArrow .95s ease 2.875s backwards;
+		}
+	/* #endregion Arrow Icon */
 /* #endregion */
 
 
 /* #region Post-Title Content */
-	.opening + div { /* Places the content in front of the title and gives it a fade-in shadow */
+	:root { --content-spacing: 2.5em; }
+	/* Places the page content in front of the title and gives it a fade-in shadow */
+	.opening + div {
 		position: relative; z-index: 1;
 		
-		width: 100%;
-		padding-top: 3em;
+		width: 100%; padding-top: calc(var(--content-spacing) - 11px);
+		display: flex;justify-content: center; flex-wrap: wrap; gap: var(--content-spacing);
 
-		background-color: #050505;
-		box-shadow: 0 0 .625em .6875em #050505;
+		background-color: var(--bgBody); box-shadow: 0 0 10px 11px var(--bgBody);
 	}
-	/* Prevents the first element's margin from messing up spacing */
-	.opening + div > *:first-child { margin-top: 0; }
 /* #endregion */
 
 
 
 /* ---- For Phones ---- */
-@media screen and (orientation: portrait) {
-	.opening, .opening > div {
-		height: -moz-calc(100vh - 0.3em);
-		height: -webkit-calc(100vh - 0.3em);
-		height: calc(100vh - 0.3em);
-		height: -moz-calc(100svh - 0.3em);
-		height: -webkit-calc(100svh - 0.3em);
-		height: calc(100svh - 0.3em);
-	}
-	.opening + div { padding-top: 2em; }
-	
-	.opening.bgLeft > div > img { object-position: 32% 50%; }
-	.opening.bgRight > div > img { object-position: 62% 50%; }
-
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
 	.opening .titleBox {
-		min-height: 1em; width: 75vw; /* New desired text box size */
+		min-height: 1em; width: 75vw; max-width: 500px; /* New desired text box size */
 		margin: 0 auto; /* Centers itself horizontally */
 		/* New border */
-		border-bottom: 2px solid white;
-		border-top: 2px solid white;
+		border-bottom: 2px solid var(--title-txtC);
+		border-top: 2px solid var(--title-txtC);
 	}
-	/* Undoes previous border */
-	.opening.bgLeft .titleBox {
-		left: 0; padding-left: 0;
-		border-left: none;
-		text-align: center;
-	}
-	.opening.bgRight .titleBox {
-		left: 0; padding-right: 0;
-		border-right: none;
-		text-align: center;
-	}
+	/* #region Undoes previous border */
+		.opening .titleBox.tBLeft { border-right: none; }
+		.opening .titleBox.tBRight { border-left: none; }
+		.opening .titleBox.tBRight, .opening .titleBox.tBLeft
+		{ left: 0; padding: 0 1ex; text-align: center; }
+	/* #endregion Undoes previous border */
 }
