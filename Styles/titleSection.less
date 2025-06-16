@@ -74,13 +74,13 @@
 
 .opening {
 	&, >div { width: 100%; height: 100vh; height: 100svh; } // Controls section's size in the page
-	position: relative;
+	position: relative; overflow: hidden;
 	
 	>div {
 		position: fixed; left: 0; top: 0; align-content: center; overflow: hidden;
 	
 		>img {
-			width: 100%; height: 100%; object-fit: cover;
+			width: 100%; height: 100%; object-fit: cover; background-color: #000;
 			position: absolute; left: 0; top: 0; z-index: -1;
 			
 			&.bg { 
@@ -139,8 +139,10 @@
 			fallInPosition @fallTime cubic-bezier(.3, 0, .7, 1) @fallDelay forwards,
 			growthPosCorrection @arrowTime ease @arrowDelay forwards;
 
-		>a {
-			text-decoration: none; border-radius: 5em;
+		>button {
+			padding: 0; border: none; border-radius: 5em;
+			font-size: 1em; color: white; cursor: pointer;
+
 			display: flex; align-items: center; justify-content: center;
 
 			// Hover background transition

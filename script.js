@@ -12,6 +12,4 @@ function toggleHide(idContent, idIcon) {
     }
 }
 
-function ArrowScroll() {
-    document.body.scrollTop = document.documentElement.clientHeight * 0.75;
-}
+function ArrowScroll() { window.scroll(0, document.documentElement.clientHeight * 0.65); }
