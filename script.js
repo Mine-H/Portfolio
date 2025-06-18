@@ -12,4 +12,4 @@ function toggleHide(idContent, idIcon) {
     }
 }
 
-function ArrowScroll() { window.scroll(0, document.documentElement.clientHeight * 0.65); }
+function ArrowScroll() { window.scroll(0, document.querySelector(".opening").offsetHeight * 0.75); }
