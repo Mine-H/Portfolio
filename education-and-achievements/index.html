@@ -6,32 +6,36 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<base href="../">
+	<link rel="canonical" href="education-and-achievements/" />
 
-	<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,south" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
 	
+	<!-- Preloading critical styles -->
+	<link href="Styles/style.css" rel="preload" as="style" type="text/css" />
+	<link href="Styles/base-styles.less" rel="preload" as="fetch" type="text/css" crossorigin />
 	<link href="Styles/titleSection.less" rel="preload" as="fetch" type="text/css" crossorigin />
 	<link href="Styles/variables.less" rel="preload" as="fetch" type="text/css" crossorigin />
-	<link href="style.less" rel="stylesheet/less" type="text/css" />
+	
+	<link href="Styles/style.css" rel="stylesheet" type="text/css" />
+
+	<link href="Styles/base-styles.less" rel="stylesheet/less" type="text/css" />
+	<link href="Styles/titleSection.less" rel="stylesheet/less" type="text/css" />
 	<link href="Styles/quickLinks.less" rel="stylesheet/less" type="text/css" />
 	<link href="Styles/textBoxes.less" rel="stylesheet/less" type="text/css" />
-	<link href="Styles/titleSection.less" rel="stylesheet/less" type="text/css" />
 	<script> less = { async: true, fileAsync: true, }; </script>
 	<script src="less.min.js"></script>
 
-	
-	<link rel="canonical" href="education-and-achievements/" />
-	
+	<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,south" rel="stylesheet" />
+
 	<title>Education and Achievements | Henrique's Portfolio</title>
 </head>
 
 <body>
 	<div class="opening">
 		<div>
-			<img class="bgMid" src="Images/Neon_Tank_City.png">
+			<img src="Images/TitleBgs/EducationBg.jpg">
 			<div class="titleBox tBLeft">
 				<h1>Education and Achievements</h1>
 				<p>From University to GCSEs to Maths competitions, you can find it all here</p>
@@ -150,9 +154,9 @@
 		</div>
 
 		<div class="footer">
-			<a href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><i class="fa">&#xf16a;</i></a>
-			<a href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><i class="fa">&#xf08c;</i></a>
-			<a href="https://github.com/Mine-H" target="_blank"><i class="fa">&#xf09b;</i></a>
+			<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><svg class="icon"><use href="Styles/symbol-defs.svg#i-youtube"></use></svg></a>
+			<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><svg class="icon i-linkedin"><use href="Styles/symbol-defs.svg#i-linkedin"></use></svg></a>
+			<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="Styles/symbol-defs.svg#i-github"></use></svg></a>
 		</div>
 	</div>
 

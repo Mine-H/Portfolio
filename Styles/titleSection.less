@@ -3,26 +3,6 @@
 
 /* ---- Title Section ---- */
 
-/* Draft HTML:
-<div class="opening">
-	<div>
-		<img src="Background.png">
-		<div class="titleBox bgLeft">
-			<h1>Title</h1>
-			<p>Subtitle</p>
-		</div>
-
-		<div class="arrowBox">
-			<a href="#pageContent">
-				<i class="material-symbols-outlined">south</i>
-			</a>
-		</div>
-	</div>
-</div>
-
-<div id="pageContent">...</div> */
-
-
 // #region Animations
 	@keyframes titleFadeIn {
 		from { top: 1em; opacity: 0; }
@@ -72,42 +52,23 @@
 // #endregion
 
 .opening {
-	&, >div { width: 100%; height: 100vh; height: 100svh; } // Controls section's size in the page
-	position: relative; overflow: hidden;
-	
-	>div {
-		position: fixed; left: 0; top: 0; align-content: center; overflow: hidden;
-	
-		>img {
-			width: 100%; height: 100%; object-fit: cover; background-color: #000;
-			position: absolute; left: 0; top: 0; z-index: -1;
-			
-			&.bg { 
-				&Left { object-position: 32% 50%; }
-				&Mid { object-position: 50% 50%; }
-				&Right { object-position: 63% 50%; }
-			} // Image zoom-position
-		} // Background Image
-	} // Fixed-position true container
-
-
 	.titleBox {
 		@title-bgC: fade(@card-bg-color, 19%); @title-border: 2px solid @card-txt-color;
 
-		position: relative; color: @card-txt-color; align-content: center;
-		min-height: 10em; width: 35%; max-height: 100%; overflow: auto; // Desired size
+		position: relative; color: @card-txt-color; align-content: center; padding: 0 2ex;
+		min-height: 10em; width: 35%; max-width: 60ex; max-height: 100%; overflow: auto; // Desired size
 
 		@media @phone-req {
-			min-height: 1em; width: 75vw; max-width: 500px; margin: 0 auto; // New desired size, centers self
+			min-height: 1em; width: 75%; max-width: 500px; margin: 0 auto; // New desired size, centers self
 			border-top: @title-border; border-bottom: @title-border; // New border
 		} // Resizes, self-centers, and borders up top and bottom
 		
 		&.tB {
 			@media @not-phone-req {
-				&Right { left: 60%; border-left: @title-border; padding-left: 10px; }
-				&Left { left: 5%; border-right: @title-border; padding-right: 10px; text-align: right; }
+				&Right { margin-left: 60%; border-left: @title-border; }
+				&Left { margin-right: 60%; border-right: @title-border; float: right; text-align: right; }
 			}
-			@media @phone-req { &Right, &Left { padding: 0 1ex; text-align: center; } }
+			@media @phone-req { &Right, &Left { text-align: center; } }
 		} // Positioning and Border
 
 
@@ -145,8 +106,8 @@
 			display: flex; align-items: center; justify-content: center;
 
 			// Hover background transition
-			background-color: @bgSec1;
-			&:hover { background-color: @bgSec1H; transform: scale(1.1, 1.1); }
+			#mixin_b.quick-bg(s_1);
+			&:hover { #mixin_b.quick-bg(s_1, hover); transform: scale(1.1, 1.1); }
 			transition: background-color 0.18s, transform 0.12s ease-out;
 			
 			animation: growCircle @arrowTime ease @arrowDelay both; // Circle growth anim
@@ -167,6 +128,7 @@
 		@content-spacing: 2.5em;
 		padding-top: calc(@content-spacing - 11px); gap: @content-spacing;
 
-		background-color: @bgBody; box-shadow: 0 0 10px 11px @bgBody;
+		#mixin_b.quick-bg(body);
+		#mixin_b.mode-color({ box-shadow: 0 0 10px 11px @c-ref[def]; }, body);
 	} // Post-Title Content - Places the page content in front of the title and gives it a fade-in shadow
 }

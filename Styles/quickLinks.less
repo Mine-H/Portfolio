@@ -12,9 +12,9 @@
 		width: 8.7em; border-radius: 0.2em;
 		padding: 1em 1ex; text-align: center;
 
-		background-color: @bgSec1;
-		&[href]:hover { background-color: @bgSec1H; }
-		transition: background-color 0.18s;
+		#mixin_b.quick-bg(s_1);
+		&[href]:hover { #mixin_b.quick-bg(s_1, hover); }
+		transition: background-color .18s;
 
 		&:not([href]) {
 			filter: brightness(50%) contrast(97.5%);
@@ -30,14 +30,22 @@
 
 .footer {
 	width: 100%; display: flex;
-	background-color: @bgSec1;
+	#mixin_b.quick-bg(s_1);
 
 	a {
-		width: 3.6em; padding: 1em; text-align: center;
+		width: 3.6em; padding: 1em; text-align: center; justify-items: center;
 
-		&:hover { background-color: @bgSec1H; }
-		transition: background-color 0.18s;
+		&:hover { #mixin_b.quick-bg(s_1, hover); }
+		transition: background-color .18s;
 	}
 
-	i { font-size: 1.5em; }
+	i, svg { font-size: 1.5em; }
+}
+
+.i {
+	&con {
+		display: block; width: 1em; height: 1em;
+		stroke-width: 0; stroke: currentColor; fill: currentColor;
+	}
+	&-github, &-linkedin { width: 0.857421875em; }
 }
