@@ -12,9 +12,9 @@
 	
 	<!-- Preloading critical styles -->
 	<link href="Styles/style.css" rel="preload" as="style" type="text/css" />
+	<link href="Styles/variables.less" rel="preload" as="fetch" type="text/css" crossorigin />
 	<link href="Styles/base-styles.less" rel="preload" as="fetch" type="text/css" crossorigin />
 	<link href="Styles/titleSection.less" rel="preload" as="fetch" type="text/css" crossorigin />
-	<link href="Styles/variables.less" rel="preload" as="fetch" type="text/css" crossorigin />
 	
 	<link href="Styles/style.css" rel="stylesheet" type="text/css" />
 
@@ -25,9 +25,14 @@
 	<script> less = { async: true, fileAsync: true, }; </script>
 	<script src="less.min.js"></script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,south" rel="stylesheet" />
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Open Sans" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
+	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,south" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
+	<noscript>
+		<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,south" rel="stylesheet" />
+	</noscript>
 	
 	<title>Henrique's Portfolio</title>
 </head>

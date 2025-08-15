@@ -25,9 +25,14 @@
 	<script> less = { async: true, fileAsync: true, }; </script>
 	<script src="less.min.js"></script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,keyboard_arrow_down,keyboard_arrow_up,south" rel="stylesheet" />
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Open Sans" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
+	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,keyboard_arrow_down,keyboard_arrow_up,south" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
+	<noscript>
+		<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,keyboard_arrow_down,keyboard_arrow_up,south" rel="stylesheet" />
+	</noscript>
 	
 	<title>Projects Showcase | Henrique's Portfolio</title>
 </head>
