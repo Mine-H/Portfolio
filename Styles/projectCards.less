@@ -4,21 +4,21 @@
 
 /* Draft HTML:
 <div class="projectCard">
-	<img src="Background.jpg">
+	<img src="background.jpg">
 	
-	<div class="title">
+	<div class="ctitle">
 		<!-- (OPTIONAL) <p>Author's Choice</p> -->
 		<h2>Project Title</h2>
 	</div>
 
-	<div class="content">
-    	<div class="tags">
-        	<!-- Type (bg1): <p>Platformer</p> <p>3rd-Person Shooter</p> <p>1st-Person Shooter</p>... -->
-        	<!-- Languages (bg2): <p>Unity</p> <p>UE5</p> <p>HTML</p> <p>Python</p> <p>C++</p> <p>C#</p> -->
-        	<!-- Purpose (bg3): <p>University</p> <p>Game Jam</p> <p>Personal</p> -->
-        </div>
-    	<p>Description</p>
-    	<p>Description p2</p>
+	<div class="ccontent">
+    	<div class="ctags">
+        	<!-- Type (cbg1): <p>Platformer</p> <p>3rd-Person Shooter</p> <p>1st-Person Shooter</p>... -->
+        	<!-- Languages (cbg2): <p>Unity</p> <p>UE5</p> <p>HTML</p> <p>Python</p> <p>C++</p> <p>C#</p> -->
+        	<!-- Purpose (cbg3): <p>University</p> <p>Game Jam</p> <p>Personal</p> -->
+    </div>
+    <p>Description</p>
+    <p>Description p2</p>
 	</div>
 </div> */
 
@@ -52,27 +52,27 @@
 
 	h2, p { margin: 0; }
 
-	>.title, >.content { background-color: fade(@card-bg-color, 50%); }
-	>.title {
+	>.ctitle, >.ccontent { background-color: fade(@card-bg-color, 50%); }
+	>.ctitle {
 		grid-row-start: 2; padding: .8em 0;
 		display: flex; flex-direction: column;
 		>p { font-size: .9em; }
 	}
-	>.content {
+	>.ccontent {
 		grid-row-start: 3; overflow: hidden; overflow-wrap: break-word;
 		border-top: 2px solid @card-txt-color; padding: 1ex;
 		
 		display: grid; place-items: center; gap: $padding;
 		grid-template-rows: auto; grid-auto-rows: 1fr;
 
-		>.tags {
+		>.ctags {
 			display: flex; justify-content: center;
 			flex-wrap: wrap; gap: 1ex;
 			>p {
 				padding: .2em .8ex; border-radius: .6em;
-				&.bg1 { background-color: #131420; }
-				&.bg2 { background-color: #393C60; }
-				&.bg3 { background-color: #262840; }
+				&.cbg1 { background-color: #131420; }
+				&.cbg2 { background-color: #393C60; }
+				&.cbg3 { background-color: #262840; }
 			}
 		}
 	}
