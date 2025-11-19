@@ -25,9 +25,10 @@
 
 @cardTH: .3s; @cardTHSlow: .5s;
 
-.projectCardContainer {width: 100%; display: flex; justify-content: space-evenly; gap: 2em; flex-wrap: wrap; font-size: .9em;
-@media @phone-req {font-size: .55em; gap: 1em;
-}
+.projectCardContainer {
+	width: 100%; display: flex; justify-content: space-evenly;
+	gap: 2em; flex-wrap: wrap; font-size: .9em;
+	@media @phone-req { font-size: .65em; gap: 1em; }
 }
 
 .projectCard {
@@ -62,7 +63,7 @@
 		grid-row-start: 2; padding: .7em 0; gap: .25ex;
 		display: flex; flex-direction: column;
 		>p { font-size: .9em; }
-		border-bottom: 2px solid @card-txt-color;
+		border-bottom: .25ex solid @card-txt-color;
 	}
 	>.ccontent {
 		grid-row-start: 3; overflow: hidden; overflow-wrap: break-word;
