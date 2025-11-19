@@ -25,12 +25,13 @@
 
 @cardTH: .3s; @cardTHSlow: .5s;
 
-.projectCardContainer {width: 100%; display: flex; justify-content: space-evenly; gap: 2em; flex-wrap: wrap;
+.projectCardContainer {width: 100%; display: flex; justify-content: space-evenly; gap: 2em; flex-wrap: wrap; font-size: .9em;
+@media @phone-req {font-size: .55em; gap: 1em;
+}
 }
 
 .projectCard {
-	font-size: .9em;
-	width: (12em/.9); height: (16em/.9); position: relative; overflow: hidden;
+	width: 12em; height: 16em; position: relative; overflow: hidden;
 	color: @card-txt-color; text-shadow: 0 0 4px @card-bg-color;
 	text-align: center;
 	
