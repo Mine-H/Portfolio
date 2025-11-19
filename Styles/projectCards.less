@@ -26,13 +26,13 @@
 @cardTH: .3s; @cardTHSlow: .5s;
 
 .projectCardContainer {
-	width: 100%; display: flex; justify-content: space-evenly;
-	gap: 2em; flex-wrap: wrap; font-size: .9em;
+	display: flex; justify-content: space-evenly;
+	width: 100%; gap: 2em; flex-wrap: wrap; padding: 1em 0;
 	@media @phone-req { font-size: .65em; gap: 1em; }
 }
 
 .projectCard {
-	width: 12em; height: 16em; position: relative; overflow: hidden;
+	width: 12.9em; height: 17.2em; position: relative; overflow: hidden;
 	color: @card-txt-color; text-shadow: 0 0 4px @card-bg-color;
 	text-align: center;
 	
@@ -58,37 +58,35 @@
 
 	h2, p { margin: 0; }
 
+
+	@cellPadding: .65em;
+
 	>.ctitle, >.ccontent { background-color: fade(@card-bg-color, 60%); }
 	>.ctitle {
-		grid-row-start: 2; padding: .7em 0; gap: .25ex;
-		@media @phone-req { font-size: .95em; padding: (.5em/.95) 0; }
+		grid-row-start: 2; gap: .25ex;
+		font-size: .95em; padding: (@cellPadding/$font-size) 0;
 		display: flex; flex-direction: column;
-		>p { font-size: .9em; }
-		border-bottom: .25ex solid @card-txt-color;
+		>p { font-size: .75em; }
+		border-bottom: .275ex solid @card-txt-color;
 	}
 	>.ccontent {
 		grid-row-start: 3; overflow: hidden; overflow-wrap: break-word;
 		
-		display: grid; align-items: center; justify-items: center; gap: .5ex; padding: 0 $gap;
+		display: grid; align-items: center; justify-items: center; gap: 1ex;
 		grid-template-rows: auto; grid-auto-rows: 1fr;
 
 		>p {
-			font-size: .925em;
-			&:last-child { padding-bottom: (.7em/.925); }
-			@media @phone-req {
-				font-size: .875em;
-				&:last-child { padding-bottom: (.5em/.875); }
-			}
+			font-size: .9em; padding: 0 1ex;
+			&:last-child { padding-bottom: (@cellPadding/$font-size); }
 		}
 		>.ctags {
-			display: flex; justify-content: center; padding-top: (.7em/.7);
-			flex-wrap: wrap; gap: 1ex; font-size: .7em;
-			@media @phone-req { font-size: .6em; padding-top: (.5em/.6); }
+			display: flex; justify-content: center; flex-wrap: wrap; gap: 1ex;
+			font-size: .65em; padding-top: (@cellPadding/$font-size);
 			>p {
 				padding: .2em .8ex; border-radius: .6em;
 				&.cbg1 { background-color: #131420; }
 				&.cbg2 { background-color: #393C60; }
-				&.cbg3 { background-color: #262840; }
+				&.cbg3 { background-color: #24263D; }
 			}
 		}
 	}
