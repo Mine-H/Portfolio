@@ -61,6 +61,7 @@
 	>.ctitle, >.ccontent { background-color: fade(@card-bg-color, 60%); }
 	>.ctitle {
 		grid-row-start: 2; padding: .7em 0; gap: .25ex;
+		@media @phone-req { font-size: .95em; padding: (.5em/.95) 0; }
 		display: flex; flex-direction: column;
 		>p { font-size: .9em; }
 		border-bottom: .25ex solid @card-txt-color;
@@ -74,10 +75,15 @@
 		>p {
 			font-size: .925em;
 			&:last-child { padding-bottom: (.7em/.925); }
+			@media @phone-req {
+				font-size: .875em;
+				&:last-child { padding-bottom: (.5em/.875); }
+			}
 		}
 		>.ctags {
 			display: flex; justify-content: center; padding-top: (.7em/.7);
 			flex-wrap: wrap; gap: 1ex; font-size: .7em;
+			@media @phone-req { font-size: .6em; padding-top: (.5em/.6); }
 			>p {
 				padding: .2em .8ex; border-radius: .6em;
 				&.cbg1 { background-color: #131420; }
