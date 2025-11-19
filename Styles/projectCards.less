@@ -27,9 +27,9 @@
 
 .projectCard {
 	font-size: .9em;
-	width: 13.333333em; height: 17.7777778em; position: relative; overflow: hidden;
+	width: (12em/.9); height: (16em/.9); position: relative; overflow: hidden;
 	color: @card-txt-color; text-shadow: 0 0 4px @card-bg-color;
-	text-align: center;	
+	text-align: center;
 	
 	display: grid; grid-template-rows: 1fr auto 0fr;
 	transition: grid-template-rows @cardTH;
@@ -53,21 +53,25 @@
 
 	h2, p { margin: 0; }
 
-	>.ctitle, >.ccontent { background-color: fade(@card-bg-color, 50%); }
+	>.ctitle, >.ccontent { background-color: fade(@card-bg-color, 60%); }
 	>.ctitle {
-		grid-row-start: 2; padding: .8em 0;
+		grid-row-start: 2; padding: .7em 0; gap: .25ex;
 		display: flex; flex-direction: column;
 		>p { font-size: .9em; }
+		border-bottom: 2px solid @card-txt-color;
 	}
 	>.ccontent {
 		grid-row-start: 3; overflow: hidden; overflow-wrap: break-word;
-		border-top: 2px solid @card-txt-color; padding: 1ex;
 		
-		display: grid; place-items: center; gap: $padding;
+		display: grid; align-items: center; justify-items: center; gap: .5ex; padding: 0 $gap;
 		grid-template-rows: auto; grid-auto-rows: 1fr;
 
+		>p {
+			font-size: .925em;
+			&:last-child { padding-bottom: (.7em/.925); }
+		}
 		>.ctags {
-			display: flex; justify-content: center;
+			display: flex; justify-content: center; padding-top: (.7em/.7);
 			flex-wrap: wrap; gap: 1ex; font-size: .7em;
 			>p {
 				padding: .2em .8ex; border-radius: .6em;
