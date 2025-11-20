@@ -1,0 +1,45 @@
+GitHub Pages supports jQuery
+
+// =============================
+// For header data: use $.ajax()
+// =============================
+
+$.ajax({
+  url: "test.html",
+  headers : {header1 : "header1"}       
+  }).done(function(data) {
+     $('selector').html(data);
+});
+
+
+// ===========================
+// For body data, use $.load()
+// ===========================
+
+<body>
+<button id="home">Home</button>
+<button id="about">About</button>
+<button id="examples">Examples</button>
+<div id="content">
+  this is my home page
+</div>
+</body>
+
+<script language="Javascript">
+$("#home").click(function() {
+    $( "#content" ).load( "home.html" ); //Load all retrieved content
+});
+$("#about").click(function() {
+    //Only load content from a specific node
+    $( "#content" ).load( "about.html #desc" );
+});
+$("#examples").click(function() {
+    //More specific loading of node
+    $( "#content" ).load( "examples.html #storeMain .container" );
+});
+
+
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

@@ -1,0 +1,16 @@
+{
+"preconnect":[
+	{"href":"https://fonts.googleapis.com"},	{"href":"https://cdn.jsdelivr.net"}
+],
+"critical":[
+	{"filename":"style", "isless":0},
+	{"filename":"variables", "isless":1},
+	{"filename":"base-styles", "isless":1},
+	{"filename":"titleSection", "isless":1}
+],
+"otherstyles":[
+	{"filename":"quickLinks", "isless":1},
+	{"filename":"textBoxes", "isless":1},
+	{"filename":"projectCards", "isless":1}
+]
+}
