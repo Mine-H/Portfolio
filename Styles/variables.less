@@ -3,24 +3,24 @@
 
 
 
-#mixin_b {
+#mixin-b {
 	// light/dark modes color references
-	.get_c(text)	{ @light:#020203; @dark:#FFFFFF; }
-	.get_c(body)	{ @light:{def:#C5C5D3;hov:#C5C5D3;}; @dark:{def:#040406;hov:#040406;}; }
-	.get_c(s_1)		{ @light:{def:#F9F9FB;hov:#E7E7EF;}; @dark:{def:#131420;hov:#0A0B12;}; }
-	.get_c(s_2)		{ @light:{def:#F0F0F5;hov:#DADAE7;}; @dark:{def:#0E0F17;hov:#07080C;}; }
+	.get-col(text)	{ @light:#020203; @dark:#FFFFFF; }
+	.get-col(bod)	{ @light:{def:#C5C5D3;hov:#C5C5D3;}; @dark:{def:#040406;hov:#040406;}; }
+	.get-col(s1)		{ @light:{def:#F9F9FB;hov:#E7E7EF;}; @dark:{def:#131420;hov:#0A0B12;}; }
+	.get-col(s2)		{ @light:{def:#F0F0F5;hov:#DADAE7;}; @dark:{def:#0E0F17;hov:#07080C;}; }
 
 	.mode-color(@ruleset, @var-name) {
 		& {
-			@c: .get_c(@var-name);
+			@c: .get-col(@var-name);
 			
 			@c-ref: @c[@dark]; @ruleset();
 			body.light-mode & { @c-ref: @c[@light]; @ruleset(); }
 		}
 	}
-	.mode-color(@ruleset, @var-name, body) {
+	.mode-color(@ruleset, @var-name, bod) {
 		& {
-			@c: .get_c(@var-name);
+			@c: .get-col(@var-name);
 			
 			@c-ref: @c[@dark]; @ruleset();
 			&.light-mode { @c-ref: @c[@light]; @ruleset(); }
@@ -48,8 +48,8 @@
 		@ruleset: if((@is-hover) or (@is-hover=hover) or (@is-hover=h),
 			{ background-color: @c-ref[hov]; }, { background-color: @c-ref[def]; });
 
-		& when (@is-body), (@is-body=body) { .mode-color(@ruleset, @var-name, body); }
-		& when not (@is-body=body) { .mode-color(@ruleset, @var-name); }
+		& when (@is-body), (@is-body=bod) { .mode-color(@ruleset, @var-name, bod); }
+		& when not (@is-body=bod) { .mode-color(@ruleset, @var-name); }
 	}
 } // mixin bundle
 

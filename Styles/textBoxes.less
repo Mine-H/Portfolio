@@ -15,12 +15,12 @@
 	width: calc(100% - 4em); max-width: 1400px; padding: 1em 2em;
 	@media @phone-req { width: calc(100% - 1.5em); display: block; padding: .375em .75em; }
 
-	#mixin_b.quick-bg(s_1); border-radius: 0.2em;
+	#mixin-b.quick-bg(s1); border-radius: 0.2em;
 	position: relative; z-index: 1;
 
 	h1, h2 { font-weight: 500; margin: 10px 0; }
 
-	.title, .mainTitle { font-family: Merriweather, serif; #mixin_b.mode-color({ border: solid @c-ref; }, text); }
+	.title, .mainTitle { font-family: Merriweather, serif; #mixin-b.mode-color({ border: solid @c-ref; }, text); }
 	.title {
 		border-width: 0 2px 0 0; padding-right: 10px; text-align: right; align-content: center;
 
@@ -79,7 +79,7 @@
 
 
 	.toggleDiv { overflow: hidden; }
-	.toggleDivClick:hover { #mixin_b.quick-bg(s_1, hover); }
+	.toggleDivClick:hover { #mixin-b.quick-bg(s1, hover); }
 	
 	.openCloseIcon {
 		position: absolute; right: 0;
@@ -88,12 +88,12 @@
 
 	a {
 		text-decoration: underline;
-		#mixin_b.mode-color( { box-shadow: 0 0 0 0 @c-ref[def]; }, s_1);
+		#mixin-b.mode-color( { box-shadow: 0 0 0 0 @c-ref[def]; }, s1);
 		transition: background-color 0.18s, box-shadow 0.18s;
 		&:hover {
 			text-decoration: underline;
-			#mixin_b.quick-bg(s_1, hover);
-			#mixin_b.mode-color( { box-shadow: 0.15em 0 @c-ref[hov], -0.15em 0 @c-ref[hov]; }, s_1);
+			#mixin-b.quick-bg(s1, hover);
+			#mixin-b.mode-color( { box-shadow: 0.15em 0 @c-ref[hov], -0.15em 0 @c-ref[hov]; }, s1);
 		}
 	}
 }

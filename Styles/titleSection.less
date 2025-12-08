@@ -4,30 +4,25 @@
 /* ---- Title Section ---- */
 
 // #region Animations
-	@keyframes titleFadeIn {
-		from { top: 1em; opacity: 0; }
-		to { top: 0; opacity: 1; }
+	@keyframes title-fade-in {
+		from { transform: translateY(1em); opacity: 0; }
+		to { transform: translateY(0); opacity: 1; }
 	} // Title Box's title and subtitle
 
 
 	// #region Full-Width Arrow Container
-		@keyframes overshootUp {
-			from { transform: translate(0, 1em); }
-			to { transform: translate(0, -5.081em); }
+		@keyframes overshoot-up {
+			from { transform: translateY(0); }
+			to { transform: translateY(-5.981em); }
 		}
-		@keyframes fallInPosition {
-			from { transform: translate(0, -5.081em); }
-			to { transform: translate(0, -5em); }
-		}
-		
-		@keyframes growthPosCorrection {
-			from { transform: translate(0, -5em); }
-			to { transform: translate(0, -5.9em); }
+		@keyframes fall-in-position {
+			from { transform: translateY(-5.981em); }
+			to { transform: translateY(-5.9em); }
 		}
 	// #endregion Full-Width Arrow Container
 
 	// #region Circular Scroll-Down Link
-		@keyframes growCircle {
+		@keyframes grow-circle {
 			from {
 				width: 1em; height: 1em;
 				box-shadow: 0 2px 2px -2px #000000;
@@ -40,20 +35,25 @@
 	// #endregion Circular Link
 
 	// #region Arrow Icon
-		@keyframes spinArrow {
-			from { transform: rotate(-270deg); }
-			to { transform: rotate(0deg); }
+		@keyframes spin-arrow { from { transform: rotate(-270deg); } to { transform: rotate(0deg); } }
+		@keyframes grow-arrow { from { font-size: 0; } to { font-size: 1.4em; } }
+
+		@keyframes hint-fade-in {
+			from { opacity: 0; transform: translateY(1em); }
+			to { opacity: 1; transform: translateY(0); }
 		}
-		@keyframes growArrow {
-			from { font-size: 0; }
-			to { font-size: 1.4em; }
+		@keyframes hint-fade-loop {
+			from { opacity: 1; transform: translateY(0); }
+			to { opacity: 0; transform: translateY(.25em); }
 		}
 	// #endregion Arrow Icon
 // #endregion
 
 .opening {
+	@title-bgC: fade(@card-bg-color, 19%);
+
 	.titleBox {
-		@title-bgC: fade(@card-bg-color, 19%); @title-border: 2px solid @card-txt-color;
+		@title-border: 2px solid @card-txt-color;
 
 		position: relative; color: @card-txt-color; align-content: center; padding: 0 2ex;
 		min-height: 10em; width: 35%; max-width: 60ex; max-height: 100%; overflow: auto; // Desired size
@@ -80,24 +80,24 @@
 			font-size: 2.1em; margin: (1em / $font-size) 0;
 		} // Header Decor
 
-		h1, p { position: relative; animation: titleFadeIn 0.95s ease backwards; }
+		h1, p { animation: title-fade-in .95s ease both; }
 		p { animation-delay: .7s; } // Subtitle delay
 	} // Title Box - borders, page title, and subtitle
 
 
 	.arrowBox {
-		width: 100%; height: auto;
-		display: flex; justify-content: center;
+		width: 100%; height: 2.8em;
+		display: flex; justify-content: center; align-items: center;
 
 		position: absolute; left: 0; top: 100%;
 
-		@upTime: .7s; @upDelay: 2s;
-		@fallTime: .175s; @fallDelay: (@upDelay + @upTime);
-		@arrowTime: .95s; @arrowDelay: (@fallDelay + @fallTime);
+		@up-delay:		2s;									@up-time: .7s;
+		@fall-delay:	(@up-delay + @up-time);				@fall-time: .175s;
+		@arrow-delay:	(@fall-delay + @fall-time);			@arrow-time: .95s;
+		@hint-delay:	(@arrow-delay + @arrow-time + .4s);	@hint-time: .95s;
 
-		animation: overshootUp @upTime cubic-bezier(.4, .81, .54, 1) @upDelay backwards,
-			fallInPosition @fallTime cubic-bezier(.3, 0, .7, 1) @fallDelay forwards,
-			growthPosCorrection @arrowTime ease @arrowDelay forwards;
+		animation: overshoot-up @up-time cubic-bezier(.4, .81, .54, 1) @up-delay backwards,
+			fall-in-position @fall-time cubic-bezier(.3, 0, .7, 1) @fall-delay forwards;
 
 		>button {
 			padding: 0; border: none; border-radius: 5em;
@@ -106,18 +106,26 @@
 			display: flex; align-items: center; justify-content: center;
 
 			// Hover background transition
-			#mixin_b.quick-bg(s_1);
-			&:hover { #mixin_b.quick-bg(s_1, hover); transform: scale(1.1, 1.1); }
-			transition: background-color 0.18s, transform 0.12s ease-out;
+			#mixin-b.quick-bg(s1);
+			&:hover { #mixin-b.quick-bg(s1, hover); transform: scale(1.1, 1.1); }
+			transition: background-color .18s, transform .12s ease-out;
 			
-			animation: growCircle @arrowTime ease @arrowDelay both; // Circle growth anim
+			animation: grow-circle @arrow-time ease @arrow-delay both; // Circle growth anim
 		
 			i {
 				height: auto; margin: 0;
-				animation: growArrow @arrowTime ease-out @arrowDelay both,
-					spinArrow @arrowTime ease @arrowDelay backwards;
+				animation: grow-arrow @arrow-time ease-out @arrow-delay both,
+					spin-arrow @arrow-time ease @arrow-delay backwards;
 			} // Arrow Icon (anims. font increase and rotation)
 		} // Scroll-Down Circular Link (anims. circle growth)
+
+		>p {
+			position: absolute; bottom: 100%; font-size: .975em;
+			text-shadow: 0 0 4px #000; background-color: @title-bgC; // Easier to see in brighter backgrounds
+			
+			animation: hint-fade-in @hint-time ease @hint-delay backwards,
+				hint-fade-loop @hint-time ease-in (@hint-delay + @hint-time) infinite alternate;
+		}
 	} // Horiz. strip containing the scroll-down arrow (anims. overshoot, fall, and circle growth correction)
 
 
@@ -128,7 +136,7 @@
 		@content-spacing: 2.5em;
 		padding-top: calc(@content-spacing - 11px); gap: @content-spacing;
 
-		#mixin_b.quick-bg(body);
-		#mixin_b.mode-color({ box-shadow: 0 0 10px 11px @c-ref[def]; }, body);
+		#mixin-b.quick-bg(bod);
+		#mixin-b.mode-color({ box-shadow: 0 0 10px 11px @c-ref[def]; }, bod);
 	} // Post-Title Content - Places the page content in front of the title and gives it a fade-in shadow
 }
