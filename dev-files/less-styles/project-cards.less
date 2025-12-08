@@ -2,36 +2,16 @@
 
 /* ---- Project Cards Section ---- */
 
-/* Draft HTML:
-<div class="projectCard">
-	<img src="background.jpg">
-	
-	<div class="ctitle">
-		<!-- (OPTIONAL) <p>Author's Choice</p> -->
-		<h2>Project Title</h2>
-	</div>
-
-	<div class="ccontent">
-    	<div class="ctags">
-        	<!-- Type (cbg1): <p>Platformer</p> <p>3rd-Person Shooter</p> <p>1st-Person Shooter</p>... -->
-        	<!-- Languages (cbg2): <p>Unity</p> <p>UE5</p> <p>HTML</p> <p>Python</p> <p>C++</p> <p>C#</p> -->
-        	<!-- Purpose (cbg3): <p>University</p> <p>Game Jam</p> <p>Personal</p> -->
-    </div>
-    <p>Description</p>
-    <p>Description p2</p>
-	</div>
-</div> */
-
 
 @cardTH: .3s; @cardTHSlow: .5s;
 
-.projectCardContainer {
+.project-card-container {
 	display: flex; justify-content: space-evenly;
 	width: 100%; gap: 2em; flex-wrap: wrap; padding: 1em 0;
 	@media @phone-req { font-size: .65em; gap: 1em; }
 }
 
-.projectCard {
+.project-card {
 	width: 12.9em; height: 17.2em; position: relative; overflow: hidden;
 	color: @card-txt-color; text-shadow: 0 0 4px @card-bg-color;
 	text-align: center;

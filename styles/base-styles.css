@@ -1,0 +1,39 @@
+html { scroll-behavior: smooth; box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+html, body { width: 100%; height: 100%; margin: 0; }
+
+
+.opening { position: relative; overflow: hidden; }
+.opening, .opening > div { width: 100%; height: 100vh; height: 100svh; }
+.opening > div {
+	position: fixed; left: 0; top: 0;
+	align-content: center; overflow: hidden;
+}
+
+.opening > div > img {
+	width: 100%; height: 100%; object-fit: cover; background-color: #000;
+	position: absolute; left: 0; top: 0; z-index: -1;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  color: #FFFFFF;
+  background-color: #040406;
+}
+body.light-mode {
+  color: #020203;
+}
+body.light-mode {
+  background-color: #C5C5D3;
+}
+body.light-mode body {
+  background-color: #C5C5D3;
+}
+a {
+  color: inherit;
+}
+a i {
+  text-decoration: none;
+}

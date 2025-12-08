@@ -11,19 +11,13 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
 	
 	<!-- Preloading critical styles -->
-	<link href="Styles/style.css" rel="preload" as="style" type="text/css" />
-	<link href="Styles/variables.less" rel="preload" as="fetch" type="text/css" crossorigin />
-	<link href="Styles/base-styles.less" rel="preload" as="fetch" type="text/css" crossorigin />
-	<link href="Styles/titleSection.less" rel="preload" as="fetch" type="text/css" crossorigin />
+	<link href="styles/base-styles.css" rel="preload" as="style" />
+	<link href="styles/title-section.css" rel="preload" as="style" />
 	
-	<link href="Styles/style.css" rel="stylesheet" type="text/css" />
-
-	<link href="Styles/base-styles.less" rel="stylesheet/less" type="text/css" />
-	<link href="Styles/titleSection.less" rel="stylesheet/less" type="text/css" />
-	<link href="Styles/quickLinks.less" rel="stylesheet/less" type="text/css" />
-	<link href="Styles/textBoxes.less" rel="stylesheet/less" type="text/css" />
-	<script> less = { async: true, fileAsync: true, }; </script>
-	<script src="less.min.js" type="text/javascript"></script>
+	<link href="styles/base-styles.css" rel="stylesheet" />
+	<link href="styles/title-section.css" rel="stylesheet" />
+	<link href="styles/quick-links.css" rel="stylesheet" />
+	<link href="styles/text-boxes.css" rel="stylesheet" />
 
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Open Sans" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
 	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
@@ -40,13 +34,13 @@
 <body>
 	<div class="opening">
 		<div>
-			<img src="Images/TitleBgs/EducationBg.jpg">
-			<div class="titleBox tBLeft">
+			<img src="images/TitleBgs/EducationBg.jpg">
+			<div class="title-box tBLeft">
 				<h1>Education and Achievements</h1>
 				<p>From University to GCSEs to Maths competitions, you can find it all here</p>
 			</div>
 
-			<div class="arrowBox">
+			<div class="arrow-box">
 				<p>Click or scroll to continue</p>
 				<button type="button" onclick="ArrowScroll()">
 					<i class="material-symbols-outlined">south</i>
@@ -56,7 +50,7 @@
 	</div>
 	
 	<div>
-		<div class="navLinks">
+		<div class="nav-links">
 			<a href="">
 				<i class="material-icons">home</i>
 				<p>Home</p>
@@ -75,19 +69,19 @@
 			</a>
 		</div>
 
-		<div class="textBoxes">
-			<div class="mainTitle"><h1>Education</h1></div>
+		<div class="text-boxes">
+			<div class="main-title"><h1>Education</h1></div>
 			<div style="padding-top: 10px;">
-				<div class="flexTextBoxes">
-					<div class="sideContent title"><h1>University</h1></div>
+				<div class="flex-text-boxes">
+					<div class="side-content title"><h1>University</h1></div>
 					<div class="content">
 						<ul>
 							<li>Computer Games Design and Programming - Ongoing (Level 6)</li>
 						</ul>
 					</div>
 				</div>
-				<div class="flexTextBoxes">
-					<div class="sideContent title"><h1>A-Levels (2023)</h1></div>
+				<div class="flex-text-boxes">
+					<div class="side-content title"><h1>A-Levels (2023)</h1></div>
 					<div class="content">
 						<ul>
 							<li>Mathematics - A*</li>
@@ -97,8 +91,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="flexTextBoxes">
-					<div class="sideContent title"><h1>GCSE (2023)</h1></div>
+				<div class="flex-text-boxes">
+					<div class="side-content title"><h1>GCSE (2023)</h1></div>
 					<div class="content">
 						<ul>
 							<li>Computer Science - 8</li>
@@ -107,8 +101,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="flexTextBoxes">
-					<div class="sideContent title"><h1>GCSE (2022)</h1></div>
+				<div class="flex-text-boxes">
+					<div class="side-content title"><h1>GCSE (2022)</h1></div>
 					<div class="content">
 						<ul>
 							<li>Mathematics - 8</li>
@@ -116,8 +110,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="flexTextBoxes">
-					<div class="sideContent title"><h1>Courses and Miscellaneous</h1></div>
+				<div class="flex-text-boxes">
+					<div class="side-content title"><h1>Courses and Miscellaneous</h1></div>
 					<div class="content">
 						<ul>
 							<li>Online version of Harvard CS50 (2021)</li>
@@ -127,11 +121,11 @@
 			</div>
 		</div>
 
-		<div class="textBoxes">
-			<div class="mainTitle"><h1>Achievements</h1></div>
+		<div class="text-boxes">
+			<div class="main-title"><h1>Achievements</h1></div>
 			<div style="padding-top: 10px;">
-				<div class="flexTextBoxes">
-					<div class="sideContent title"><h1>Computer Science</h1></div>
+				<div class="flex-text-boxes">
+					<div class="side-content title"><h1>Computer Science</h1></div>
 					<div class="content">
 						<ul>
 							<li><a href="https://www.bebras.uk/" target="_blank">UK Bebras Challenge</a> - Gold Award (2021 [194/200] & 2022 [200/200])</li>
@@ -139,8 +133,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="flexTextBoxes">
-					<div class="sideContent title"><h1>Mathematics</h1></div>
+				<div class="flex-text-boxes">
+					<div class="side-content title"><h1>Mathematics</h1></div>
 					<div class="content">
 						<ul>
 							<li><a href="https://ukmt.org.uk/senior-challenges/senior-mathematical-challenge" target="_blank">UKMT Senior Mathematical Challenge</a> - Gold Certificate [Best in school] (2021 & 2022)</li>
@@ -148,8 +142,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="flexTextBoxes">
-					<div class="sideContent title"><h1>Courses and Miscellaneous</h1></div>
+				<div class="flex-text-boxes">
+					<div class="side-content title"><h1>Courses and Miscellaneous</h1></div>
 					<div class="content">
 						<ul>
 							<li>The Outward Bound Trust (Jan 2023)</li>
@@ -159,11 +153,11 @@
 			</div>
 		</div>
 
-		<div class="footer">
-			<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><svg class="icon"><use href="Styles/symbol-defs.svg#i-youtube"></use></svg></a>
-			<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><svg class="icon i-linkedin"><use href="Styles/symbol-defs.svg#i-linkedin"></use></svg></a>
-			<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="Styles/symbol-defs.svg#i-github"></use></svg></a>
-		</div>
+		<footer>
+			<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><svg class="icon"><use href="icons/symbol-defs.svg#i-youtube"></use></svg></a>
+			<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><svg class="icon i-linkedin"><use href="icons/symbol-defs.svg#i-linkedin"></use></svg></a>
+			<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="icons/symbol-defs.svg#i-github"></use></svg></a>
+		</footer>
 	</div>
 
 	<script src="script.js"></script>

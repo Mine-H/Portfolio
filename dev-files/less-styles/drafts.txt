@@ -1,0 +1,41 @@
+/* ---- Title Section ---- */
+
+<div class="opening">
+	<div>
+		<img src="Background.png">
+		<div class="title-box bgLeft">
+			<h1>Title</h1>
+			<p>Subtitle</p>
+		</div>
+
+		<div class="arrowBox">
+			<a href="#pageContent">
+				<i class="material-symbols-outlined">south</i>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div id="pageContent">...</div>
+
+/* ---- Project Cards ---- */
+<div class="project-card-container">
+	<div class="project-card">
+		<img src="background.jpg">
+		<div class="ctitle">
+			<p>[OPTIONAL: "Author's Choice, "][end month OR "Ongoing"]</p>
+			<h2>Project Title</h2>
+		</div>
+
+		<div class="ccontent">
+			<div class="ctags">
+				<!-- Type: <p class="cbg1">Website</p> <p class="cbg1">Platformer</p> <p class="cbg1">3rd-Person Shooter</p>... -->
+				<!-- Languages: <p class="cbg2">Unity</p> <p class="cbg2">UE5</p> <p class="cbg2">HTML</p> <p class="cbg2">Python</p>... -->
+				<!-- Purpose: <p class="cbg3">University</p> <p class="cbg3">Game Jam</p> <p class="cbg3">Personal</p>... -->
+			</div>
+			<p>Description</p>
+			<p>Description p2</p>
+		</div>
+	</div>
+	<!-- ... -->
+</div>

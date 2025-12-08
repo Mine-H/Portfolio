@@ -1,0 +1,195 @@
+/* ---- Title Section ---- */
+@keyframes title-fade-in {
+  from {
+    transform: translateY(1em);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes overshoot-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5.981em);
+  }
+}
+@keyframes fall-in-position {
+  from {
+    transform: translateY(-5.981em);
+  }
+  to {
+    transform: translateY(-5.9em);
+  }
+}
+@keyframes grow-circle {
+  from {
+    width: 1em;
+    height: 1em;
+    box-shadow: 0 2px 2px -2px #000000;
+  }
+  to {
+    width: 2.8em;
+    height: 2.8em;
+    box-shadow: 0 2px 5px -2px #000000;
+  }
+}
+@keyframes spin-arrow {
+  from {
+    transform: rotate(-270deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes grow-arrow {
+  from {
+    font-size: 0;
+  }
+  to {
+    font-size: 1.4em;
+  }
+}
+@keyframes hint-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes hint-fade-loop {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0.25em);
+  }
+}
+.opening .title-box {
+  position: relative;
+  color: #FFFFFF;
+  align-content: center;
+  padding: 0 2ex;
+  min-height: 10em;
+  width: 35%;
+  max-width: 60ex;
+  max-height: 100%;
+  overflow: auto;
+  text-shadow: 0 0 4px #000;
+  background-color: rgba(0, 0, 0, 0.19);
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .opening .title-box {
+    min-height: 1em;
+    width: 75%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-top: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+  }
+}
+@media not screen and ((orientation: portrait) or (max-width: 800px)) {
+  .opening .title-box.tBRight {
+    margin-left: 60%;
+    border-left: 2px solid #FFFFFF;
+  }
+  .opening .title-box.tBLeft {
+    margin-right: 60%;
+    border-right: 2px solid #FFFFFF;
+    float: right;
+    text-align: right;
+  }
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .opening .title-box.tBRight,
+  .opening .title-box.tBLeft {
+    text-align: center;
+  }
+}
+.opening .title-box h1 {
+  font-family: Merriweather, serif;
+  font-weight: 500;
+  font-size: 2.1em;
+  margin: 0.47619048em 0;
+}
+.opening .title-box h1,
+.opening .title-box p {
+  animation: title-fade-in 0.95s ease both;
+}
+.opening .title-box p {
+  animation-delay: 0.7s;
+}
+.opening .arrow-box {
+  width: 100%;
+  height: 2.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  animation: overshoot-up 0.7s cubic-bezier(0.4, 0.81, 0.54, 1) 2s backwards, fall-in-position 0.175s cubic-bezier(0.3, 0, 0.7, 1) 2.7s forwards;
+}
+.opening .arrow-box > button {
+  padding: 0;
+  border: none;
+  border-radius: 5em;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #131420;
+  transition: background-color 0.18s, transform 0.12s ease-out;
+  animation: grow-circle 0.95s ease 2.875s both;
+}
+body.light-mode .opening .arrow-box > button {
+  background-color: #F9F9FB;
+}
+.opening .arrow-box > button:hover {
+  background-color: #0A0B12;
+  transform: scale(1.1, 1.1);
+}
+body.light-mode .opening .arrow-box > button:hover {
+  background-color: #E7E7EF;
+}
+.opening .arrow-box > button i {
+  height: auto;
+  margin: 0;
+  animation: grow-arrow 0.95s ease-out 2.875s both, spin-arrow 0.95s ease 2.875s backwards;
+}
+.opening .arrow-box > p {
+  position: absolute;
+  bottom: 100%;
+  font-size: 0.975em;
+  text-shadow: 0 0 4px #000;
+  background-color: rgba(0, 0, 0, 0.19);
+  animation: hint-fade-in 0.95s ease 4.225s backwards, hint-fade-loop 0.95s ease-in 5.175s infinite alternate;
+}
+.opening + div {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: calc(2.5em - 11px);
+  gap: 2.5em;
+  background-color: #040406;
+  box-shadow: 0 0 10px 11px #040406;
+}
+body.light-mode .opening + div {
+  background-color: #C5C5D3;
+}
+body.light-mode .opening + div {
+  box-shadow: 0 0 10px 11px #C5C5D3;
+}

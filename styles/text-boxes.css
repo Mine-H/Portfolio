@@ -1,0 +1,186 @@
+.flex-text-boxes {
+  display: flex;
+  margin-bottom: 20px;
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .flex-text-boxes {
+    display: block;
+    margin-bottom: 3.125em;
+  }
+  .flex-text-boxes:last-of-type {
+    margin-bottom: 1.25em;
+  }
+}
+.text-boxes {
+  width: calc(100% - 4em);
+  max-width: 1400px;
+  padding: 1em 2em;
+  background-color: #131420;
+  border-radius: 0.2em;
+  position: relative;
+  z-index: 1;
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .text-boxes {
+    width: calc(100% - 1.5em);
+    display: block;
+    padding: 0.375em 0.75em;
+  }
+}
+body.light-mode .text-boxes {
+  background-color: #F9F9FB;
+}
+.text-boxes h1,
+.text-boxes h2 {
+  font-weight: 500;
+  margin: 10px 0;
+}
+.text-boxes .title,
+.text-boxes .main-title {
+  font-family: Merriweather, serif;
+  border: solid #FFFFFF;
+}
+body.light-mode .text-boxes .title,
+body.light-mode .text-boxes .main-title {
+  border: solid #020203;
+}
+.text-boxes .title {
+  border-width: 0 2px 0 0;
+  padding-right: 10px;
+  text-align: right;
+  align-content: center;
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .text-boxes .title {
+    width: 100%;
+    max-width: none;
+    float: none;
+    text-align: center;
+    padding-right: 0;
+    border-width: 0 0 2px 0;
+    padding-bottom: 10px;
+  }
+}
+.text-boxes .main-title {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  align-content: center;
+  border-width: 0 0 2px 0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.text-boxes .side-content {
+  width: 30%;
+  max-width: 14em;
+  float: left;
+  margin-right: 10px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .text-boxes .side-content {
+    width: 100%;
+    max-width: none;
+    float: none;
+    margin-right: 0;
+    justify-content: center;
+  }
+}
+.text-boxes .side-content h1 {
+  font-size: 1.5em;
+}
+.text-boxes .side-content img {
+  width: 100%;
+}
+.text-boxes .sc-opposite {
+  order: 2;
+  justify-content: left;
+  margin-right: 0;
+  margin-left: 10px;
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .text-boxes .sc-opposite {
+    order: 1;
+    margin-left: 0;
+  }
+}
+.text-boxes .content {
+  min-width: calc(100% - 14em);
+  width: 70%;
+  float: left;
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .text-boxes .content {
+    width: 100%;
+    min-width: none;
+    float: none;
+    padding-top: 10px;
+  }
+}
+.text-boxes .centered-content {
+  width: 100%;
+  text-align: center;
+  align-content: center;
+}
+.showcase .text-boxes .side-content {
+  width: 40%;
+  max-width: 28em;
+  margin-right: 30px;
+}
+.showcase .text-boxes .sc-opposite {
+  margin-right: 0;
+  margin-left: 30px;
+}
+.showcase .text-boxes .content {
+  min-width: calc(100% - 28em);
+  width: 60%;
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .showcase .text-boxes .side-content {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+  }
+  .showcase .text-boxes .sc-opposite {
+    margin-left: 0;
+  }
+  .showcase .text-boxes .content {
+    width: 100%;
+    min-width: none;
+  }
+}
+.text-boxes .toggle-div {
+  overflow: hidden;
+}
+.text-boxes .toggle-div-click:hover {
+  background-color: #0A0B12;
+}
+body.light-mode .text-boxes .toggle-div-click:hover {
+  background-color: #E7E7EF;
+}
+.text-boxes .open-close-icon {
+  position: absolute;
+  right: 0;
+  font-size: inherit;
+}
+.text-boxes a {
+  text-decoration: underline;
+  box-shadow: 0 0 0 0 #131420;
+  transition: background-color 0.18s, box-shadow 0.18s;
+}
+body.light-mode .text-boxes a {
+  box-shadow: 0 0 0 0 #F9F9FB;
+}
+.text-boxes a:hover {
+  text-decoration: underline;
+  background-color: #0A0B12;
+  box-shadow: 0.15em 0 #0A0B12, -0.15em 0 #0A0B12;
+}
+body.light-mode .text-boxes a:hover {
+  background-color: #E7E7EF;
+}
+body.light-mode .text-boxes a:hover {
+  box-shadow: 0.15em 0 #E7E7EF, -0.15em 0 #E7E7EF;
+}

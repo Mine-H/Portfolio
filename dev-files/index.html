@@ -5,20 +5,26 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<base href="./">
-	<link rel="canonical" href="./" />
+	<base href="../">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 	
 	<!-- Preloading critical styles -->
-	<link href="styles/base-styles.css" rel="preload" as="style" />
-	<link href="styles/title-section.css" rel="preload" as="style" />
+	<link href="dev-files/less-styles/style.css" rel="preload" as="style" />
+	<link href="dev-files/less-styles/variables.less" rel="preload" as="fetch" crossorigin />
+	<link href="dev-files/less-styles/base-styles.less" rel="preload" as="fetch" crossorigin />
+	<link href="dev-files/less-styles/titleSection.less" rel="preload" as="fetch" crossorigin />
 	
-	<link href="styles/base-styles.css" rel="stylesheet" />
-	<link href="styles/title-section.css" rel="stylesheet" />
-	<link href="styles/quick-links.css" rel="stylesheet" />
-	<link href="styles/text-boxes.css" rel="stylesheet" />
-	<link href="styles/project-cards.css" rel="stylesheet" />
+	<link href="dev-files/less-styles/style.css" rel="stylesheet" />
+
+	<link href="dev-files/less-styles/base-styles.less" rel="stylesheet/less" type="text/css" />
+	<link href="dev-files/less-styles/title-section.less" rel="stylesheet/less" type="text/css" />
+	<link href="dev-files/less-styles/quick-links.less" rel="stylesheet/less" type="text/css" />
+	<link href="dev-files/less-styles/text-boxes.less" rel="stylesheet/less" type="text/css" />
+	<link href="dev-files/less-styles/project-cards.less" rel="stylesheet/less" type="text/css" />
+	<script> less = { async: true, fileAsync: true }; </script>
+	<script src="https://cdn.jsdelivr.net/npm/less" type="text/javascript"></script>
 
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Open Sans" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
 	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
@@ -29,16 +35,16 @@
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,south" rel="stylesheet" />
 	</noscript>
 	
-	<title>Henrique's Portfolio</title>
+	<title>Dev Mode | Henrique's Portfolio</title>
 </head>
 
 <body>
-	<section class="opening">
+	<section class="opening"><!--</section> style="visibility: hidden;"-->
 		<div>
 			<img style="object-position: 32% 50%;" src="images/TitleBgs/HomeBg.png">
 			<header class="title-box tBRight">
-				<h1>Henrique Matos</h1>
-				<p>Third-Year student of Games Design and Programming at the University of Staffordshire</p>
+				<h1>Developer Page</h1>
+				<p>The sandbox, the playground</p>
 			</header>
 
 			<div class="arrow-box">
@@ -89,7 +95,9 @@
 		</div>
 
 		<div class="text-boxes">
-			<div class="main-title"><h1>Project Showcase Demo</h1></div>
+			<div class="main-title">
+				<h1>Project Showcase Demo</h1>
+			</div>
 			<div class="centered-content">
 				<p>This page is currently under maintenance to improve your viewing experience.</p>
 				<p>The <a href="projects-showcase/">Projects Showcase</a> page will eventually be moved to the Homepage, below the "Welcome" section.</p>

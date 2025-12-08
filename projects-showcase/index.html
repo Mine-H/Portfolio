@@ -11,20 +11,14 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
 	
 	<!-- Preloading critical styles -->
-	<link href="Styles/style.css" rel="preload" as="style" type="text/css" />
-	<link href="Styles/base-styles.less" rel="preload" as="fetch" type="text/css" crossorigin />
-	<link href="Styles/titleSection.less" rel="preload" as="fetch" type="text/css" crossorigin />
-	<link href="Styles/variables.less" rel="preload" as="fetch" type="text/css" crossorigin />
+	<link href="styles/base-styles.css" rel="preload" as="style" />
+	<link href="styles/title-section.css" rel="preload" as="style" />
 	
-	<link href="Styles/style.css" rel="stylesheet" type="text/css" />
-
-	<link href="Styles/base-styles.less" rel="stylesheet/less" type="text/css" />
-	<link href="Styles/titleSection.less" rel="stylesheet/less" type="text/css" />
-	<link href="Styles/quickLinks.less" rel="stylesheet/less" type="text/css" />
-	<link href="Styles/textBoxes.less" rel="stylesheet/less" type="text/css" />
-	<link href="Styles/projectCards.less" rel="stylesheet/less" type="text/css" />
-	<script> less = { async: true, fileAsync: true, }; </script>
-	<script src="less.min.js" type="text/javascript"></script>
+	<link href="styles/base-styles.css" rel="stylesheet" />
+	<link href="styles/title-section.css" rel="stylesheet" />
+	<link href="styles/quick-links.css" rel="stylesheet" />
+	<link href="styles/text-boxes.css" rel="stylesheet" />
+	<link href="styles/project-cards.css" rel="stylesheet" />
 
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Open Sans" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
 	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
@@ -32,7 +26,7 @@
 	<noscript>
 		<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,keyboard_arrow_down,keyboard_arrow_up,south" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,south" rel="stylesheet" />
 	</noscript>
 	
 	<title>Projects Showcase | Henrique's Portfolio</title>
@@ -41,13 +35,13 @@
 <body class="showcase">
 	<div class="opening">
 		<div>
-			<img src="Images/TitleBgs/ShowcaseBg.jpg">
-			<div class="titleBox tBLeft">
+			<img src="images/TitleBgs/ShowcaseBg.jpg">
+			<div class="title-box tBLeft">
 				<h1>Projects Showcase</h1>
 				<p>An assembly of the highlights of my work</p>
 			</div>
 
-			<div class="arrowBox">
+			<div class="arrow-box">
 				<p>Click or scroll to continue</p>
 				<button type="button" onclick="ArrowScroll()">
 					<i class="material-symbols-outlined">south</i>
@@ -57,7 +51,7 @@
 	</div>
 	
 	<div>
-		<div class="navLinks">
+		<div class="nav-links">
 			<a href="">
 				<i class="material-icons">home</i>
 				<p>Home</p>
@@ -76,15 +70,15 @@
 			</a>
 		</div>
 
-		<div class="textBoxes">
-			<div class="mainTitle">
+		<div class="text-boxes">
+			<div class="main-title">
 				<h1>Maintenance Information</h1>
 			</div>
-			<div class="centeredContent">
+			<div class="centered-content">
 				<p>This page is currently under maintenance to improve your viewing experience.</p>
 				<p>While the content here is being updated to the new format, here is a sneak peek at how the new project summaries will look like!</p>
-				<div class="projectCard" style="margin: auto;">
-					<img src="Images/Website_Image.png">
+				<div class="project-card" style="margin: auto;">
+					<img src="images/Website_Image.png">
 					<div class="ctitle">
 						<p>Author's Choice, Ongoing</p>
 						<h2>Portfolio</h2>
@@ -103,25 +97,25 @@
 			</div>
 		</div>
 
-		<div class="textBoxes">
-			<div class="mainTitle toggleDivClick" onclick="toggleHide('UnityContent', 'UnityIcon')">
-				<h1>Unity<span class="material-symbols-outlined openCloseIcon" id="UnityIcon">keyboard_arrow_up</span></h1>
+		<div class="text-boxes">
+			<div class="main-title toggle-div-click" onclick="toggleHide('UnityContent', 'UnityIcon')">
+				<h1>Unity<span class="material-symbols-outlined open-close-icon" id="UnityIcon">keyboard_arrow_up</span></h1>
 			</div>
-			<div class="toggleDiv" id="UnityContent" style="padding-top: 10px;">
-				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="Images/TankGame.png" width="100%"></div>
+			<div class="toggle-div" id="UnityContent" style="padding-top: 10px;">
+				<div class="flex-text-boxes">
+					<div class="side-content"><img src="images/TankGame.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2><a href="https://www.youtube.com/playlist?list=PLd1an7leeXOjvPgyhp4SmwYAhyQR_TtJP" target="_blank">Tank Game</a> - March 2025</h2>
 						</div>
 						<p>Used as an introduction to steering, suspension, and other physics-based concepts, this project was still in development during the portfolio's last content update.</p>
 					</div>
 				</div>
 
-				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="Images/Walking_In_The_Dark.png" width="100%"></div>
+				<div class="flex-text-boxes">
+					<div class="side-content scOpposite"><img src="images/Walking_In_The_Dark.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<p>Author's Choice</p>
 							<h2>Platformer - November 2024</h2>
 						</div>
@@ -129,20 +123,20 @@
 					</div>
 				</div>
 
-				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="Images/6-Week.png" width="100%"></div>
+				<div class="flex-text-boxes">
+					<div class="side-content"><img src="images/6-Week.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2><a href="https://www.youtube.com/watch?v=hkK36lpIyYw&list=PLd1an7leeXOimR8180lKtLXiNQEGjLs2M&index=3&t=2s&pp=iAQB" target="_blank">6-Week</a> - May 2024</h2>
 						</div>
 						<p>Using the Agile development methodology (with the help of Kanban boards), this compilation of 7 minigames was developed in a tight timeframe of six weeks.</p>
 					</div>
 				</div>
 
-				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="Images/3-Week.png" width="100%"></div>
+				<div class="flex-text-boxes">
+					<div class="side-content scOpposite"><img src="images/3-Week.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2><a href="https://www.youtube.com/watch?v=sPBy3ZTfwUA&list=PLd1an7leeXOimR8180lKtLXiNQEGjLs2M&index=1&pp=iAQB" target="_blank">3-Week</a> - April 2024</h2>
 						</div>
 						<p>
@@ -152,10 +146,10 @@
 					</div>
 				</div>
 
-				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="Images/Dash_Into_Explosion_Square_In_A_Box.png" width="100%"></div>
+				<div class="flex-text-boxes">
+					<div class="side-content"><img src="images/Dash_Into_Explosion_Square_In_A_Box.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2>Square-in-a-box - Mid-2022 to May 2023</h2>
 						</div>
 						<p>
@@ -167,15 +161,15 @@
 			</div>
 		</div>
 
-		<div class="textBoxes">
-			<div class="mainTitle toggleDivClick" onclick="toggleHide('UnrealContent', 'UnrealIcon')">
-				<h1>Unreal<span class="material-symbols-outlined openCloseIcon" id="UnrealIcon">keyboard_arrow_up</span></h1>
+		<div class="text-boxes">
+			<div class="main-title toggle-div-click" onclick="toggleHide('UnrealContent', 'UnrealIcon')">
+				<h1>Unreal<span class="material-symbols-outlined open-close-icon" id="UnrealIcon">keyboard_arrow_up</span></h1>
 			</div>
-			<div class="toggleDiv" id="UnrealContent" style="padding-top: 10px;">
-				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="Images/C4Engines.png" width="100%"></div>
+			<div class="toggle-div" id="UnrealContent" style="padding-top: 10px;">
+				<div class="flex-text-boxes">
+					<div class="side-content"><img src="images/C4Engines.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2><a href="https://youtu.be/1hyZLO3XiFk?si=aEhe99oaGfaIZ7re" target="_blank">C++ for Engines</a> - November 2024</h2>
 						</div>
 						<p>
@@ -185,10 +179,10 @@
 					</div>
 				</div>
 
-				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="Images/Neon_Tank_City.png" width="100%"></div>
+				<div class="flex-text-boxes">
+					<div class="side-content scOpposite"><img src="images/Neon_Tank_City.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<p>Author's Choice</p>
 							<h2><a href="https://www.youtube.com/playlist?list=PLd1an7leeXOg-r88vBkDMCPwP-2Et30td" target="_blank">Neon Tank Game</a> - March 2024</h2>
 						</div>
@@ -199,10 +193,10 @@
 					</div>
 				</div>
 				
-				<div class="flexTextBoxes">
-					<div class="sideContent"><h1>Image Unavailable</h1></div>
+				<div class="flex-text-boxes">
+					<div class="side-content"><h1>Image Unavailable</h1></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2>Regimen (University Game Jam) - October 2023</h2>
 						</div>
 						<p>
@@ -214,15 +208,15 @@
 			</div>
 		</div>
 		
-		<div class="textBoxes">
-			<div class="mainTitle toggleDivClick" onclick="toggleHide('MiscContent', 'MiscIcon')">
-				<h1>Misc<span class="material-symbols-outlined openCloseIcon" id="MiscIcon">keyboard_arrow_up</span></h1>
+		<div class="text-boxes">
+			<div class="main-title toggle-div-click" onclick="toggleHide('MiscContent', 'MiscIcon')">
+				<h1>Misc<span class="material-symbols-outlined open-close-icon" id="MiscIcon">keyboard_arrow_up</span></h1>
 			</div>
-			<div class="toggleDiv" id="MiscContent" style="padding-top: 10px;">
-				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="Images/Table_Solar_System.png" width="100%"></div>
+			<div class="toggle-div" id="MiscContent" style="padding-top: 10px;">
+				<div class="flex-text-boxes">
+					<div class="side-content"><img src="images/Table_Solar_System.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2><a href="https://www.youtube.com/watch?v=6xRuM9K6pCg&list=PLd1an7leeXOjSSH0vsWRA8B9oaEYxk5IO&index=1&pp=iAQB" target="_blank">C++ OpenGL Solar Table</a> - May 2024</h2>
 						</div>
 						<p>
@@ -232,10 +226,10 @@
 					</div>
 				</div>
 
-				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="Images/Tree_Game.png" width="100%"></div>
+				<div class="flex-text-boxes">
+					<div class="side-content scOpposite"><img src="images/Tree_Game.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2><a href="https://www.youtube.com/watch?v=ArhJ2mVF5bY&list=PLd1an7leeXOg2jDHtzkpSVp-n1Deu0g_n" target="_blank">C++ Seasons</a> - November 2023</h2>
 						</div>
 						<p>
@@ -245,10 +239,10 @@
 					</div>
 				</div>
 
-				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="Images/DiscordBot.png" width="100%"></div>
+				<div class="flex-text-boxes">
+					<div class="side-content"><img src="images/DiscordBot.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2>Python Order of Operations + Dice - Early 2024</h2>
 						</div>
 						<p>
@@ -258,10 +252,10 @@
 					</div>
 				</div>
 
-				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="Images/Pong.png" width="100%"></div>
+				<div class="flex-text-boxes">
+					<div class="side-content scOpposite"><img src="images/Pong.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2><a href="https://mine-h.github.io/Pong/" target="_blank">HTML Pong</a> - Mid-2022</h2>
 						</div>
 						<p>
@@ -272,10 +266,10 @@
 					</div>
 				</div>
 
-				<div class="flexTextBoxes">
-					<div class="sideContent"><img src="Images/Floating_Point.png" width="100%"></div>
+				<div class="flex-text-boxes">
+					<div class="side-content"><img src="images/Floating_Point.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<h2><a href="https://mine-h.github.io/FloatingPointHelp/" target="_blank">HTML Floating Point Visualisation</a> - Early-2022</h2>
 						</div>
 						<p>
@@ -285,10 +279,10 @@
 					</div>
 				</div>
 
-				<div class="flexTextBoxes">
-					<div class="sideContent scOpposite"><img src="Images/Website_Image.png" width="100%"></div>
+				<div class="flex-text-boxes">
+					<div class="side-content scOpposite"><img src="images/Website_Image.png" width="100%"></div>
 					<div class="content">
-						<div class="mainTitle">
+						<div class="main-title">
 							<p>Author's Choice</p>
 							<h2><a href="">HTML Portfolio</a> - Ongoing</h2>
 						</div>
@@ -300,11 +294,11 @@
 			</div>
 		</div>
 
-		<div class="footer">
-			<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><svg class="icon"><use href="Styles/symbol-defs.svg#i-youtube"></use></svg></a>
-			<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><svg class="icon i-linkedin"><use href="Styles/symbol-defs.svg#i-linkedin"></use></svg></a>
-			<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="Styles/symbol-defs.svg#i-github"></use></svg></a>
-		</div>
+		<footer>
+			<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><svg class="icon"><use href="icons/symbol-defs.svg#i-youtube"></use></svg></a>
+			<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><svg class="icon i-linkedin"><use href="icons/symbol-defs.svg#i-linkedin"></use></svg></a>
+			<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="icons/symbol-defs.svg#i-github"></use></svg></a>
+		</footer>
 	</div>
 
 	<script src="script.js"></script>
