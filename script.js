@@ -15,11 +15,11 @@ function toggleHide(idContent, idIcon) {
 function ArrowScroll() { window.scroll(0, document.querySelector(".opening").offsetHeight * 0.75); }
 
 
-function adjustViewportHeight() {
+/* function adjustViewportHeight() {
     const viewportHeight = window.innerHeight;
     document.documentElement.style.setProperty("--vh", `${viewportHeight * 0.01}px`);
 }
 window.addEventListener("resize", adjustViewportHeight); adjustViewportHeight();
-// less.addEventListener("modifyVars", adjustViewportHeight);
+// less.addEventListener("modifyVars", adjustViewportHeight); */
 
 function toggleLightMode() { document.body.classList.toggle("light-mode"); }
