@@ -1,23 +1,39 @@
 function toggleHide(idContent, idIcon) {
-    var content = document.getElementById(idContent);
-    var icon = document.getElementById(idIcon);
+	var content = document.getElementById(idContent);
+	var icon = document.getElementById(idIcon);
 
-    if (content.style.height == "0px") {
-        content.style.removeProperty("height");
-        icon.innerHTML = "keyboard_arrow_up";
-    }
-    else {
-        content.style.height = "0";
-        icon.innerHTML = "keyboard_arrow_down";
-    }
+	if (content.style.height == "0px") {
+		content.style.removeProperty("height");
+		icon.innerHTML = "keyboard_arrow_up";
+	}
+	else {
+		content.style.height = "0";
+		icon.innerHTML = "keyboard_arrow_down";
+	}
 }
 
-function ArrowScroll() { window.scroll(0, document.querySelector(".opening").offsetHeight * 0.75); }
+
+const titleSection = document.querySelector(".opening") || document.querySelector(".p-opening");
+
+function ArrowScroll() { window.scroll(0, titleSection.offsetHeight * 0.75); }
+
+const topBar = document.querySelector(".top-bar") || document.querySelector(".p-top-bar");
+if (topBar != null) {
+	let observer = new IntersectionObserver(entries => {
+	console.log(entries);
+	if (!entries[0].intersectionRatio > 0) {
+		topBar.classList.add("shown");
+	} else {
+		topBar.classList.remove("shown");
+	}
+	});
+	observer.observe(titleSection);
+}
 
 
 /* function adjustViewportHeight() {
-    const viewportHeight = window.innerHeight;
-    document.documentElement.style.setProperty("--vh", `${viewportHeight * 0.01}px`);
+	const viewportHeight = window.innerHeight;
+	document.documentElement.style.setProperty("--vh", `${viewportHeight * 0.01}px`);
 }
 window.addEventListener("resize", adjustViewportHeight); adjustViewportHeight();
 // less.addEventListener("modifyVars", adjustViewportHeight); */

@@ -50,7 +50,17 @@
 // #endregion
 
 .opening {
-	@title-bgC: fade(@card-bg-color, 19%);
+	position: relative; overflow: hidden;
+	
+	&, > div { width: 100%; height: 100vh; height: 100svh; }
+	> div {
+		position: fixed; left: 0; top: 0;
+		align-content: center; overflow: hidden;
+		> img {
+			width: 100%; height: 100%; object-fit: cover; background-color: #000;
+			position: absolute; left: 0; top: 0; z-index: -1;
+		}
+	}
 
 	.title-box {
 		@title-border: 2px solid @card-txt-color;
@@ -73,7 +83,7 @@
 
 
 
-		text-shadow: 0 0 4px #000; background-color: @title-bgC; // Easier to see in brighter backgrounds
+		text-shadow: 0 0 4px #000; background-color: @title-bg-c; // Easier to see in brighter backgrounds
 	
 		h1 {
 			font-family: Merriweather, serif; font-weight: 500;
@@ -121,7 +131,7 @@
 
 		>p {
 			position: absolute; bottom: 100%; font-size: .975em;
-			text-shadow: 0 0 4px #000; background-color: @title-bgC; // Easier to see in brighter backgrounds
+			text-shadow: 0 0 4px #000; background-color: @title-bg-c; // Easier to see in brighter backgrounds
 			
 			animation: hint-fade-in @hint-time ease @hint-delay backwards,
 				hint-fade-loop @hint-time ease-in (@hint-delay + @hint-time) infinite alternate;

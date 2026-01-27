@@ -1,0 +1,61 @@
+@import (reference) "variables.less";
+
+
+/* ---- Title Section ---- */
+
+// #region Animations
+	@keyframes title-fade-in {
+		from { transform: translateY(1em); opacity: 0; }
+		to { transform: translateY(0); opacity: 1; }
+	} // Title Box's title and subtitle
+// #endregion
+
+.p-opening {
+	position: relative; overflow: hidden;
+	
+	&, > div {
+		width: 100%; height: 60vh; height: 60svh;
+		@media @phone-req { height: 50vh; height: 50svh; }
+	}
+	> div {
+		position: fixed; left: 0; top: 0;
+		align-content: center; overflow: hidden;
+		> img {
+			width: 100%; height: 100%; object-fit: cover; background-color: #000;
+			position: absolute; left: 0; top: 0; z-index: -1;
+			filter: brightness(95%) saturate(90%) blur(1.5px);
+		}
+	}
+
+	.title-box {
+		@title-border: 2px solid @card-txt-color;
+
+		position: relative; color: @card-txt-color; align-content: center; padding: 0 2ex;
+		
+		min-height: 1em; width: 75%; max-width: 500px; max-height: 100%; overflow: auto; // Desired size
+		margin: 0 auto; text-align: center; // Centers self
+		
+		border-top: @title-border; border-bottom: @title-border; // Border
+
+		text-shadow: 0 0 4px #000; background-color: @title-bg-c; // Easier to see in brighter backgrounds
+
+		h1, p { animation: title-fade-in .95s ease both; }
+		p { margin-bottom: .5em; }
+		h1 {
+			font-family: Merriweather, serif; font-weight: 500;
+			font-size: 2.1em; margin: 0 0 (1em / $font-size) 0;
+			animation-delay: .25s;
+		} // Header Decor
+	} // Title Box - borders, page title, and subtitle
+
+	+div {
+		width: 100%; position: relative; z-index: 1;
+		display: flex; justify-content: center; flex-wrap: wrap;
+		
+		@content-spacing: 2.5em;
+		padding-top: calc(@content-spacing - 11px); gap: @content-spacing;
+
+		#mixin-b.quick-bg(bod);
+		#mixin-b.mode-color({ box-shadow: 0 0 10px 11px @c-ref[def]; }, bod);
+	} // Post-Title Content - Places the page content in front of the title and gives it a fade-in shadow
+}
