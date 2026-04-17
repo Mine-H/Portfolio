@@ -18,14 +18,11 @@
 		font-size: 1.8em; margin: 0; padding: 0;
 	}
 
-	.back {
-		width: 4em; height: 100%; // Desired size
+	.back, .menu {
+		height: 100%; color: @card-txt-color; overflow: hidden;
+		text-align: center; place-content: center; // Centers text
 		
-		color: @card-txt-color;
-		text-align: center; align-content: center; // Centers text
-		
-		position: absolute; left: 0; top: 100%;
-		transition: top .18s;
+		position: absolute; top: calc(100% + 1px); transition: top .18s;
 
 		text-shadow: 0 0 4px #000; // Remove when top bar gains bg color?
 		&:hover { background-color: @title-bg-c; } // Highlight
@@ -33,28 +30,9 @@
 		p { width: 100%; height: 1.5em; margin: 0; transition: font-size .18s; }
 		i { font-size: 1.5em; }
 		&:hover p { font-size: 1.1em; }
-
-		cursor: pointer;
 	}
-
-	.menu {
-		width: 3em; height: 100%; // Desired size
-		
-		color: @card-txt-color;
-		text-align: center; align-content: center; // Centers text
-		
-		position: absolute; right: 0; top: 100%;
-		transition: top .18s;
-
-		text-shadow: 0 0 4px #000;
-		&:hover { background-color: @title-bg-c; } // Highlight
-
-		p { width: 100%; height: 1.5em; margin: 0; transition: font-size .18s; }
-		i { font-size: 1.5em; }
-		&:hover p { font-size: 1.1em; }
-
-		cursor: pointer;
-	}
+	.back { width: 4em; left: 0; text-decoration: none; }
+	.menu { width: 3em; right: 0; cursor: pointer; }
 
 	&.shown {
 		box-shadow: 0 -5px 10px 10px #000;
