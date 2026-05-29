@@ -5,16 +5,44 @@
 	display: flex; place-content: stretch;
 
 	> .img-preview {
-		width: 50%; aspect-ratio: 16/9; position: relative;
+		width: 50%; aspect-ratio: 16/9; position: relative; overflow: hidden;
+		#mixin-b.quick-bg(s2);
+		
+		// Previewed image
 		> img {
-			width: 100%; height: 100%; object-fit: cover;
+			width: 100%; height: 100%; object-fit: contain;
 		}
 
+		// Container of image options
 		> div {
-			width: 100%; height: 20%; position: absolute; bottom: 0;
+			width: 100%; height: 25%; position: absolute; bottom: -20%;
+			display: flex; padding: 8px; gap: 8px; justify-content: center;
+			background-color: fade(@card-bg-color, 60%); opacity: .5;
+			
+			> img {
+				cursor: pointer;
+				height: 100%; aspect-ratio: 16/9; object-fit: contain;
+				&.selected { outline: solid 1px #FFFFFF88; }
+			}
+			transition: bottom .36s, opacity .36s;
 		}
+		&:hover > div { bottom: 0; opacity: 1; }
 	}
-	>img {
-		width: 50%; aspect-ratio: 16/9;
+
+	> nav {
+		width: 50%; display: flex; flex-direction: column;
+		justify-content: stretch;
+
+		> button {
+			padding: 0 0 0 1.5ex; border: none; border-radius: 0;
+			font-size: 1em; color: inherit; cursor: pointer;
+
+			flex-grow: 1;
+
+			text-align: left; #mixin-b.quick-bg(s1);
+			transition: background-color .18s;
+
+			&:hover { #mixin-b.quick-bg(s1, hover); }
+		}
 	}
 }

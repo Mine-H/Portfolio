@@ -20,8 +20,11 @@
 
 	<link href="dev-files/less-styles/base-styles.less" rel="stylesheet/less" type="text/css" />
 	<link href="dev-files/less-styles/title-section.less" rel="stylesheet/less" type="text/css" />
+	
 	<link href="dev-files/less-styles/p-title.less" rel="stylesheet/less" type="text/css" />
 	<link href="dev-files/less-styles/p-heading.less" rel="stylesheet/less" type="text/css" />
+	<link href="dev-files/less-styles/p-content-preview.less" rel="stylesheet/less" type="text/css" />
+
 	<link href="dev-files/less-styles/quick-links.less" rel="stylesheet/less" type="text/css" />
 	<link href="dev-files/less-styles/text-boxes.less" rel="stylesheet/less" type="text/css" />
 	<link href="dev-files/less-styles/project-cards.less" rel="stylesheet/less" type="text/css" />
@@ -42,7 +45,7 @@
 
 <body>
 	<div class="p-top-bar">
-		<a class="back" href="javascript:OpenHomePage()"><p><i class="material-symbols-outlined">arrow_back_ios_new</i><i class="material-icons">home</i></p></a>
+		<a class="back" data-homepage="dev-files" href="javascript:OpenHomePage()"><p><i class="material-symbols-outlined">arrow_back_ios_new</i><i class="material-icons">home</i></p></a>
 		<h1>Portfolio</h1>
 		<div class="menu"><p><i class="material-symbols-outlined">menu</i></p></div>
 	</div>
@@ -58,21 +61,37 @@
 	</section>
 	
 	<div>
-		<div class="text-boxes">
-			<div class="main-title"><h1>Content</h1></div>
-			<div class="centered-content">
-				<p><b>Left div:</b> project images and videos. <b>Right div:</b> navigation tab.</p>
-				<p><b>Top Bar buttons:</b> "back to homepage" and "quick navigation tab". Currently not functional.</p>
+		<div class="text-boxes preview-box">
+			<div class="img-preview">
+				<img id="previewed-img">
+				<div>
+					<img src="images/Website_Image.png" onclick="ChangePreviewSrc(this)" onload="ChangePreviewSrc(this)">
+					<img src="images/landbridge-thumbnail.jpg" onclick="ChangePreviewSrc(this)">
+					<img src="images/TitleBgs/EducationBg.jpg" onclick="ChangePreviewSrc(this)">
+				</div>
 			</div>
+			<nav>
+				<button data-section="Overview"></button>
+				<button data-section="Development"></button>
+				<button data-section="Iterations"></button>
+				<button data-section="Reflection"></button>
+			</nav>
 		</div>
 
-		<div class="text-boxes">
+		<div class="text-boxes" id="overview">
 			<div class="main-title">
 				<h1>Overview</h1>
 			</div>
 			<div class="centered-content">
-				<p>Coded in HTML, CSS, JavaScript, and LESS, this project has been ongoing since late 2024.</p>
-				<p>This webpage was created for showcasing my skills as a Games Designer/Programmer via presenting my previous projects in a more digestible fashion.</p>
+				<p>
+					Coded in HTML, CSS, JavaScript, and LESS, this project has been ongoing since late 2024. The experience of creating and maintaining this webpage has
+					taught me a lot of these languages that I would otherwise not have come across, and it still gives me great insights into User Experience considerations
+					on every iteration of the page.
+				</p>
+				<p>
+					Understanding that recruiters, colleagues, and curious aquaintances do not have the time to dive through <i>all</i> I've contributed to, I designed and
+					programmed this website. Its purpose is to serve as a platform for showcasing my skills as a Games Designer and Programmer in a more digestible fashion.
+				</p>
 				<p>
 					Initially organised with collapsible categories of projects, where each category was organised by "latest", the current Portfolio maintenance aims to
 					rework that into a more grid-like, "Home Feed"-inspired approach for a better user experience.
@@ -80,9 +99,62 @@
 			</div>
 		</div>
 
-		<div class="text-boxes">
+		<div class="text-boxes" id="development">
 			<div class="main-title">
-				<h1>Lorem Ipsum time:</h1>
+				<h1>Development</h1>
+			</div>
+			<div class="centered-content">
+				<p>
+					Initially designed for HTML/CSS/JS only, the page's style started to slow down the project's overall development speed. This pushed me to move the style's
+					source code to a language that handles Object Oriented Programming -like syntax, with added benefits including in-line maths and variables with (subjectivelly)
+					better syntax than raw CSS. This was around the time I created the homepage's title card, the code of which was noticeably more organised than the rest of the
+					page's stylesheets and has become the standard I now hold any source code additions to.
+				</p>
+				<p>
+					A major design shift happened around mid-2025, where I noticed mobile usage of the Projects Showcase section involved a lot of scrolling for not much detail
+					communicated. The observation led me to begin drafting the layouts for individual project pages (thus removing clutter information from the showcase) and
+					improving the project navigation, which resulted in the modern Project Card design present in the homepage. I also set myself a deadline to complete these
+					updates by: the 2026 GradEx, around the end of May and beginning of June.
+				</p>
+				<p>
+					Most other small improvements came in the form of User Experience considerations (such as the floating tooltip to "Click or Scroll" in the homepage's arrow, in case
+					the user had not noticed the arrow appearing) or file compression to shorten the time the page's critical information takes to load.
+				</p>
+			</div>
+		</div>
+
+		<div class="text-boxes" id="iterations">
+			<div class="main-title">
+				<h1>Iterations</h1>
+			</div>
+			<div class="centered-content">
+				<img src="images/old-projects-showcase.jpg" style="width: 40%; float: left; margin: 1.5ex 1.5ex 1.5ex 0;">
+				<p>Picture 1: the previous Projects Showcase page.</p>
+				<p>
+					The headings were collapsible to allow searching in just one engine's category, and the descriptions were kept
+					short to prevent cluttering. On mobile, the images would appear on top of their headers instead of beside them. This, together with the smaller screen width,
+					resulted in the experience involving a lot of scrolling.
+				</p>
+				<p>
+					The shorter descriptions also meant I would not be able to go this much in detail into any one decision made in any project. Instead, each project would get
+					an overall view and no deeper dives. This is not ideal, especially in a professional context where those interested in my work were not able to find out <i>why</i> a feature
+					was implemented a certain way and very little of <i>how</i> it was implemented in the first place.
+				</p>
+			</div>
+			<div class="centered-content">
+				<img src="images/old-title-screen-no-tooltip.jpg" style="width: 40%; float: left; margin: 1.5ex 1.5ex 1.5ex 0;">
+				<p>Picture 2: the Homepage title screen without the tooltip.</p>
+				<p>
+					When user-testing the then-recently-implemented scroll-down arrow on a mobile device, the tester waited for the
+					arrow to appear every time the page loaded, then click it to continue exploring the page rather than scrolling. This was an unintended consequence of the arrow being clickable,
+					and a similar incident has not occurred since adding the clarification "Click or scroll to continue".
+				</p>
+			</div>
+		</div>
+
+		<div class="text-boxes" id="reflection">
+			<div class="main-title">
+				<h1>Reflection</h1>
 			</div>
 			<div class="centered-content">
 				<p>

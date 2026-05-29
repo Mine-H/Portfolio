@@ -121,7 +121,7 @@ body.light-mode .text-boxes .main-title {
 }
 .text-boxes .centered-content {
   width: 100%;
-  text-align: center;
+  text-align: justify;
   align-content: center;
 }
 .showcase .text-boxes .side-content {

@@ -17,6 +17,17 @@ const titleSection = document.querySelector(".opening") || document.querySelecto
 
 function ArrowScroll() { window.scroll(0, titleSection.offsetHeight * 0.75); }
 
+const previewedImg = document.getElementById("previewed-img");
+var activeImg = null;
+
+function ChangePreviewSrc(thisImg) {
+	previewedImg.src = thisImg.src;
+	if (activeImg != null) { activeImg.classList.remove("selected"); }
+	thisImg.classList.add("selected");
+	activeImg = thisImg;
+}
+
+
 const topBar = document.querySelector(".top-bar") || document.querySelector(".p-top-bar");
 if (topBar != null) {
 	let observer = new IntersectionObserver((entries) => {
@@ -39,9 +50,25 @@ window.addEventListener("resize", adjustViewportHeight); adjustViewportHeight();
 
 function toggleLightMode() { document.body.classList.toggle("light-mode"); }
 
+const backButton = document.querySelector(".back");
+if (backButton != null) {
+	backButton.addEventListener("auxclick", e => {
+		if (e && (e.which == 2 || e.button == 4)) {
+			window.open(backButton.dataset.homepage, 'henriquePortfolioHomepage');
+		}
+	});
+}
 function OpenHomePage() {
 	const lastPageUrl = document.referrer;
 
 	if (lastPageUrl.includes(document.location.host) && lastPageUrl != document.location) { history.back(); } 
-	else { window.location.href = "dev-files"; }
+	else { window.location.href = backButton != null ? backButton.dataset.homepage : ""; }
 }
+
+document.querySelectorAll(".preview-box > nav > button").forEach((navButton) => {
+	navButton.innerHTML = "<p>" + navButton.dataset.section + "</p>";
+	navButton.addEventListener("click", e => {
+		let tryFindSection = document.getElementById(navButton.dataset.section.toLowerCase());
+		if (tryFindSection != null) { window.scroll(0, tryFindSection.getBoundingClientRect().top + window.scrollY - 60); }
+	})
+});
