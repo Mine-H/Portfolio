@@ -12,6 +12,8 @@
 }
 
 .project-card {
+	&:not(.shown) { display: none; }
+
 	width: 12.9em; height: 17.2em; position: relative; overflow: hidden;
 	color: @card-txt-color; text-shadow: 0 0 4px @card-bg-color;
 	text-align: center; text-decoration: none;
@@ -19,11 +21,15 @@
 	display: grid; grid-template-rows: 1fr auto 0fr;
 	transition: grid-template-rows @cardTH;
 
-	>img {
+	> img {
 		width: 100%; height: 100%; object-fit: cover;
 		position: absolute; top: 0; left: 0; z-index: -1;
 
 		transition: transform @cardTH, filter @cardTH;
+	}
+	> a {
+		width: 100%; height: 0%;
+		position: absolute; bottom: 0; left: 0; z-index: 1;
 	}
 
 	&:hover {
@@ -33,11 +39,10 @@
 			transform: scale(1.05, 1.05); filter: blur(1.5px);
 			transition: transform @cardTHSlow, filter @cardTHSlow;
 		}
+		> a { height: 100%; }
 	}
 
-
 	h2, p { margin: 0; }
-
 
 	@cellPadding: .65em;
 

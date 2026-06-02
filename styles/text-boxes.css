@@ -154,6 +154,9 @@ body.light-mode .text-boxes .main-title {
 .text-boxes .toggle-div {
   overflow: hidden;
 }
+.text-boxes .toggle-div:not(.shown) {
+  display: none;
+}
 .text-boxes .toggle-div-click:hover {
   background-color: #0A0B12;
 }

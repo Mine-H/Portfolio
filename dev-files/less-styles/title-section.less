@@ -139,14 +139,5 @@
 	} // Horiz. strip containing the scroll-down arrow (anims. overshoot, fall, and circle growth correction)
 
 
-	+div {
-		width: 100%; position: relative; z-index: 1;
-		display: flex; justify-content: center; flex-wrap: wrap;
-		
-		@content-spacing: 2.5em;
-		padding-top: calc(@content-spacing - 11px); gap: @content-spacing;
-
-		#mixin-b.quick-bg(bod);
-		#mixin-b.mode-color({ box-shadow: 0 0 10px 11px @c-ref[def]; }, bod);
-	} // Post-Title Content - Places the page content in front of the title and gives it a fade-in shadow
+	+div { .post-title-content; }
 }

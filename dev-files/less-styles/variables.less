@@ -9,6 +9,7 @@
 	.get-col(bod)	{ @light:{def:#C5C5D3;hov:#C5C5D3;}; @dark:{def:#040406;hov:#040406;}; }
 	.get-col(s1)		{ @light:{def:#F9F9FB;hov:#E7E7EF;}; @dark:{def:#131420;hov:#0A0B12;}; }
 	.get-col(s2)		{ @light:{def:#F0F0F5;hov:#DADAE7;}; @dark:{def:#0E0F17;hov:#07080C;}; }
+	.get-col(s3)		{ @light:{def:#E7E7EF;hov:#D1D1E0;}; @dark:{def:#0A0A10;hov:#060609;}; }
 
 	.mode-color(@ruleset, @var-name) {
 		& {
@@ -55,3 +56,23 @@
 
 @card-txt-color: #FFFFFF; @card-bg-color: #000000;
 @title-bg-c: fade(@card-bg-color, 19%);
+
+
+.post-title-content() {
+	width: 100%; position: relative; z-index: 1;
+	display: flex; justify-content: center; flex-wrap: wrap;
+	
+	padding-left: 4em;
+	padding-right: $padding-left;
+	@media @phone-req {
+		padding-left: 1.5em;
+		padding-right: $padding-left;
+	}
+
+	@content-spacing: 2.5em;
+	padding-top: calc(@content-spacing - 11px); gap: @content-spacing;
+	padding-bottom: @content-spacing;
+
+	#mixin-b.quick-bg(bod);
+	#mixin-b.mode-color({ box-shadow: 0 0 10px 11px @c-ref[def]; }, bod);
+} // Post-Title Content - Places the page content in front of the title and gives it a fade-in shadow

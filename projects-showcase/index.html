@@ -98,10 +98,10 @@
 		</div>
 
 		<div class="text-boxes">
-			<div class="main-title toggle-div-click" onclick="toggleHide('UnityContent', 'UnityIcon')">
-				<h1>Unity<span class="material-symbols-outlined open-close-icon" id="UnityIcon">keyboard_arrow_up</span></h1>
+			<div class="main-title toggle-div-click" onclick="ToggleHide('#UnityContent', this.children[0].children[0])">
+				<h1>Unity<span class="material-symbols-outlined open-close-icon" data-showing="toggle" data-next-icon="keyboard_arrow_down">keyboard_arrow_up</span></h1>
 			</div>
-			<div class="toggle-div" id="UnityContent" style="padding-top: 10px;">
+			<div class="toggle-div shown" id="UnityContent" style="padding-top: 10px;">
 				<div class="flex-text-boxes">
 					<div class="side-content"><img src="images/TankGame.png" width="100%"></div>
 					<div class="content">
@@ -162,10 +162,10 @@
 		</div>
 
 		<div class="text-boxes">
-			<div class="main-title toggle-div-click" onclick="toggleHide('UnrealContent', 'UnrealIcon')">
-				<h1>Unreal<span class="material-symbols-outlined open-close-icon" id="UnrealIcon">keyboard_arrow_up</span></h1>
+			<div class="main-title toggle-div-click" onclick="ToggleHide('#UnrealContent', this.children[0].children[0])">
+				<h1>Unreal<span class="material-symbols-outlined open-close-icon" data-showing="toggle" data-next-icon="keyboard_arrow_down">keyboard_arrow_up</span></h1>
 			</div>
-			<div class="toggle-div" id="UnrealContent" style="padding-top: 10px;">
+			<div class="toggle-div shown" id="UnrealContent" style="padding-top: 10px;">
 				<div class="flex-text-boxes">
 					<div class="side-content"><img src="images/C4Engines.png" width="100%"></div>
 					<div class="content">
@@ -209,10 +209,10 @@
 		</div>
 		
 		<div class="text-boxes">
-			<div class="main-title toggle-div-click" onclick="toggleHide('MiscContent', 'MiscIcon')">
-				<h1>Misc<span class="material-symbols-outlined open-close-icon" id="MiscIcon">keyboard_arrow_up</span></h1>
+			<div class="main-title toggle-div-click" onclick="ToggleHide('#MiscContent', this.children[0].children[0])">
+				<h1>Misc<span class="material-symbols-outlined open-close-icon" data-showing="toggle" data-next-icon="keyboard_arrow_down">keyboard_arrow_up</span></h1>
 			</div>
-			<div class="toggle-div" id="MiscContent" style="padding-top: 10px;">
+			<div class="toggle-div shown" id="MiscContent" style="padding-top: 10px;">
 				<div class="flex-text-boxes">
 					<div class="side-content"><img src="images/Table_Solar_System.png" width="100%"></div>
 					<div class="content">

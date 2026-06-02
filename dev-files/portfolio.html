@@ -33,11 +33,11 @@
 
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Open Sans" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
 	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
-	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=arrow_back_ios_new,book_2,menu,south" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=arrow_back_ios_new,book_2,close,menu,south" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
 	<noscript>
 		<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&arrow_back_ios_new,book_2,menu,south" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&arrow_back_ios_new,book_2,close,menu,south" rel="stylesheet" />
 	</noscript>
 	
 	<title>Portfolio Project View | Dev Mode | Henrique's Portfolio</title>
@@ -45,9 +45,19 @@
 
 <body>
 	<div class="p-top-bar">
-		<a class="back" data-homepage="dev-files" href="javascript:OpenHomePage()"><p><i class="material-symbols-outlined">arrow_back_ios_new</i><i class="material-icons">home</i></p></a>
+		<a class="left" href="dev-files/" target="homepage"><p><i class="material-symbols-outlined">arrow_back_ios_new</i><i class="material-icons">home</i></p></a>
 		<h1>Portfolio</h1>
-		<div class="menu"><p><i class="material-symbols-outlined">menu</i></p></div>
+		<div class="menu" onclick="ToggleHide('.hidden-nav', this.children[0].children[0])">
+			<p><i class="material-symbols-outlined" data-showing="toggle" data-next-icon="close">menu</i></p>
+		</div>
+		<div class="hidden-nav">
+			<div>
+				<p data-section="Overview"></p>
+				<p data-section="Development"></p>
+				<p data-section="Iterations"></p>
+				<p data-section="Reflection"></p>
+			</div>
+		</div>
 	</div>
 
 	<section class="p-opening"><!--</section> style="visibility: hidden;"-->
@@ -61,7 +71,7 @@
 	</section>
 	
 	<div>
-		<div class="text-boxes preview-box">
+		<div class="preview-box" id="overview">
 			<div class="img-preview">
 				<img id="previewed-img">
 				<div>
@@ -70,34 +80,28 @@
 					<img src="images/TitleBgs/EducationBg.jpg" onclick="ChangePreviewSrc(this)">
 				</div>
 			</div>
-			<nav>
-				<button data-section="Overview"></button>
-				<button data-section="Development"></button>
-				<button data-section="Iterations"></button>
-				<button data-section="Reflection"></button>
-			</nav>
+			<div class="text-boxes text-overview">
+				<div class="main-title">
+					<h1>Overview</h1>
+				</div>
+				<div class="centered-content">
+					<p>
+						Coded in HTML, CSS, JavaScript, and LESS, this project has been ongoing since late 2024. The experience of creating and maintaining this webpage has
+						taught me a lot of these languages that I would otherwise not have come across, and it still gives me great insights into User Experience considerations
+						on every iteration of the page.
+					</p>
+					<p>
+						Understanding that recruiters, colleagues, and curious aquaintances do not have the time to dive through <i>all</i> I've contributed to, I designed and
+						programmed this website. Its purpose is to serve as a platform for showcasing my skills as a Games Designer and Programmer in a more digestible fashion.
+					</p>
+					<p>
+						Initially organised with collapsible categories of projects, where each category was organised by "latest", the current Portfolio maintenance aims to
+						rework that into a more grid-like, "Home Feed"-inspired approach for a better user experience.
+					</p>
+				</div>
+			</div>
 		</div>
 
-		<div class="text-boxes" id="overview">
-			<div class="main-title">
-				<h1>Overview</h1>
-			</div>
-			<div class="centered-content">
-				<p>
-					Coded in HTML, CSS, JavaScript, and LESS, this project has been ongoing since late 2024. The experience of creating and maintaining this webpage has
-					taught me a lot of these languages that I would otherwise not have come across, and it still gives me great insights into User Experience considerations
-					on every iteration of the page.
-				</p>
-				<p>
-					Understanding that recruiters, colleagues, and curious aquaintances do not have the time to dive through <i>all</i> I've contributed to, I designed and
-					programmed this website. Its purpose is to serve as a platform for showcasing my skills as a Games Designer and Programmer in a more digestible fashion.
-				</p>
-				<p>
-					Initially organised with collapsible categories of projects, where each category was organised by "latest", the current Portfolio maintenance aims to
-					rework that into a more grid-like, "Home Feed"-inspired approach for a better user experience.
-				</p>
-			</div>
-		</div>
 
 		<div class="text-boxes" id="development">
 			<div class="main-title">
@@ -189,15 +193,16 @@
 				</p>
 			</div>
 		</div>
-
-		<footer>
-			<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><svg class="icon"><use href="icons/symbol-defs.svg#i-youtube"></use></svg></a>
-			<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><svg class="icon i-linkedin"><use href="icons/symbol-defs.svg#i-linkedin"></use></svg></a>
-			<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="icons/symbol-defs.svg#i-github"></use></svg></a>
-		</footer>
 	</div>
 
+	<footer>
+		<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><svg class="icon"><use href="icons/symbol-defs.svg#i-youtube"></use></svg></a>
+		<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><svg class="icon i-linkedin"><use href="icons/symbol-defs.svg#i-linkedin"></use></svg></a>
+		<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="icons/symbol-defs.svg#i-github"></use></svg></a>
+	</footer>
+
 	<script src="script.js"></script>
+	<script src="project-pages.js"></script>
 </body>
 
 </html>

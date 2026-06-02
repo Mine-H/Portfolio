@@ -2,22 +2,25 @@
 
 
 .preview-box {
-	display: flex; place-content: stretch;
+	display: flex; flex-direction: column;
+	place-content: stretch; max-width: 1400px;
 
 	> .img-preview {
-		width: 50%; aspect-ratio: 16/9; position: relative; overflow: hidden;
+		width: 100%; aspect-ratio: 16/9;
+		position: relative; overflow: hidden;
+		
 		#mixin-b.quick-bg(s2);
 		
 		// Previewed image
-		> img {
-			width: 100%; height: 100%; object-fit: contain;
-		}
+		> img { width: 100%; height: 100%; object-fit: contain; }
 
 		// Container of image options
 		> div {
-			width: 100%; height: 25%; position: absolute; bottom: -20%;
-			display: flex; padding: 8px; gap: 8px; justify-content: center;
+			width: 100%; height: 96px; position: absolute; bottom: -72px;
+			display: flex; padding: 8px; gap: 8px; justify-content: space-evenly;
 			background-color: fade(@card-bg-color, 60%); opacity: .5;
+
+			overflow-x: auto;
 			
 			> img {
 				cursor: pointer;
@@ -29,20 +32,16 @@
 		&:hover > div { bottom: 0; opacity: 1; }
 	}
 
-	> nav {
-		width: 50%; display: flex; flex-direction: column;
-		justify-content: stretch;
+	@media @not-phone-req {
+		flex-direction: row;
 
-		> button {
-			padding: 0 0 0 1.5ex; border: none; border-radius: 0;
-			font-size: 1em; color: inherit; cursor: pointer;
-
-			flex-grow: 1;
-
-			text-align: left; #mixin-b.quick-bg(s1);
-			transition: background-color .18s;
-
-			&:hover { #mixin-b.quick-bg(s1, hover); }
+		> .img-preview, > .text-overview { width: 50%; }
+		> .text-overview {
+			border-top-left-radius: 0; border-bottom-left-radius: 0;
 		}
+	}
+	@media @phone-req {
+		flex-direction: column;
+		> .text-overview { border-top-left-radius: 0; border-top-right-radius: 0; }
 	}
 }

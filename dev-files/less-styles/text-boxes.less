@@ -12,8 +12,8 @@
 	}
 }
 .text-boxes {
-	width: calc(100% - 4em); max-width: 1400px; padding: 1em 2em;
-	@media @phone-req { width: calc(100% - 1.5em); display: block; padding: .375em .75em; }
+	width: 100%; max-width: 1400px; padding: 1em 2em;
+	@media @phone-req { display: block; padding: .375em .75em; }
 
 	#mixin-b.quick-bg(s1); border-radius: 0.2em;
 	position: relative; z-index: 1;
@@ -78,7 +78,7 @@
 	}
 
 
-	.toggle-div { overflow: hidden; }
+	.toggle-div { overflow: hidden; &:not(.shown) { display: none; } }
 	.toggle-div-click:hover { #mixin-b.quick-bg(s1, hover); }
 	
 	.open-close-icon {
