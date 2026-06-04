@@ -11,9 +11,10 @@
 
 	window.onload = (event) => {
 		let previewImages = previewedImg.parentElement.querySelectorAll("div > img");
+		let isFirst = true;
 		previewImages.forEach((selector) => {
 			selector.addEventListener("click", e => { ChangePreviewSrc(selector); });
+			if (isFirst) { ChangePreviewSrc(selector); isFirst = false; }
 		});
-		ChangePreviewSrc(previewImages[0]);
 	};
 } // Changing previewed image
