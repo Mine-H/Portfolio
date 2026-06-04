@@ -8,4 +8,12 @@
 		thisImg.classList.add("selected");
 		activeImg = thisImg;
 	}
+
+	window.onload = (event) => {
+		let previewImages = previewedImg.parentElement.querySelectorAll("div > img");
+		previewImages.forEach((selector) => {
+			selector.addEventListener("click", e => { ChangePreviewSrc(selector); });
+		});
+		ChangePreviewSrc(previewImages[0]);
+	};
 } // Changing previewed image
