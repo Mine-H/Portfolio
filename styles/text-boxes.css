@@ -12,7 +12,7 @@
   }
 }
 .text-boxes {
-  width: calc(100% - 4em);
+  width: 100%;
   max-width: 1400px;
   padding: 1em 2em;
   background-color: #131420;
@@ -22,7 +22,6 @@
 }
 @media screen and ((orientation: portrait) or (max-width: 800px)) {
   .text-boxes {
-    width: calc(100% - 1.5em);
     display: block;
     padding: 0.375em 0.75em;
   }
@@ -71,7 +70,7 @@ body.light-mode .text-boxes .main-title {
   margin-bottom: 10px;
 }
 .text-boxes .side-content {
-  width: 30%;
+  width: 50%;
   max-width: 14em;
   float: left;
   margin-right: 10px;
@@ -168,22 +167,71 @@ body.light-mode .text-boxes .toggle-div-click:hover {
   right: 0;
   font-size: inherit;
 }
-.text-boxes a {
+.text-boxes > * > a,
+.text-boxes > * > p > a {
   text-decoration: underline;
   box-shadow: 0 0 0 0 #131420;
   transition: background-color 0.18s, box-shadow 0.18s;
 }
-body.light-mode .text-boxes a {
+body.light-mode .text-boxes > * > a,
+body.light-mode .text-boxes > * > p > a {
   box-shadow: 0 0 0 0 #F9F9FB;
 }
-.text-boxes a:hover {
+.text-boxes > * > a:hover,
+.text-boxes > * > p > a:hover {
   text-decoration: underline;
   background-color: #0A0B12;
   box-shadow: 0.15em 0 #0A0B12, -0.15em 0 #0A0B12;
 }
-body.light-mode .text-boxes a:hover {
+body.light-mode .text-boxes > * > a:hover,
+body.light-mode .text-boxes > * > p > a:hover {
   background-color: #E7E7EF;
 }
-body.light-mode .text-boxes a:hover {
+body.light-mode .text-boxes > * > a:hover,
+body.light-mode .text-boxes > * > p > a:hover {
   box-shadow: 0.15em 0 #E7E7EF, -0.15em 0 #E7E7EF;
+}
+.side-images {
+  width: 40%;
+  float: left;
+  margin: 1.5ex 1.5ex 1.5ex 0;
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .side-images {
+    width: 100%;
+  }
+}
+.multi-list-wrappers {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  justify-items: center;
+}
+.multi-list-wrappers > div {
+  min-width: 35ex;
+  width: 25%;
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .multi-list-wrappers {
+    flex-direction: column;
+    padding: 10px 2.5ex 0 2.5ex;
+  }
+  .multi-list-wrappers > div {
+    min-width: unset;
+    width: 100%;
+  }
+}
+.multi-list-wrappers ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0.5ex;
+  justify-content: space-evenly;
+}
+@media not screen and ((orientation: portrait) or (max-width: 800px)) {
+  .multi-list-wrappers ul {
+    margin: 0;
+    padding-left: 4ex;
+  }
 }

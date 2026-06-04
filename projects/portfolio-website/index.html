@@ -5,31 +5,22 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<base href="../">
+	<base href="../../">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 	
 	<!-- Preloading critical styles -->
-	<link href="dev-files/less-styles/style.css" rel="preload" as="style" />
-	<link href="dev-files/less-styles/variables.less" rel="preload" as="fetch" crossorigin />
-	<link href="dev-files/less-styles/base-styles.less" rel="preload" as="fetch" crossorigin />
-	<link href="dev-files/less-styles/titleSection.less" rel="preload" as="fetch" crossorigin />
-	
-	<link href="dev-files/less-styles/style.css" rel="stylesheet" />
+	<link href="styles/base-styles.css" rel="preload" as="style" fetchpriority="high" />
+	<link href="styles/p-title.css" rel="preload" as="style" fetchpriority="high" />
+	<link href="styles/p-content-preview.css" rel="preload" as="style" fetchpriority="high" />
+	<link href="styles/top-bar.css" rel="preload" as="style" fetchpriority="high" />
 
-	<link href="dev-files/less-styles/base-styles.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/title-section.less" rel="stylesheet/less" type="text/css" />
-	
-	<link href="dev-files/less-styles/p-title.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/top-bar.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/p-content-preview.less" rel="stylesheet/less" type="text/css" />
-
-	<link href="dev-files/less-styles/quick-links.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/text-boxes.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/project-cards.less" rel="stylesheet/less" type="text/css" />
-	<script> less = { async: true, fileAsync: true }; </script>
-	<script src="https://cdn.jsdelivr.net/npm/less" type="text/javascript"></script>
+	<link href="styles/base-styles.css" rel="stylesheet" fetchpriority="high" />
+	<link href="styles/p-title.css" rel="stylesheet" fetchpriority="high" />
+	<link href="styles/p-content-preview.css" rel="stylesheet" fetchpriority="high" />
+	<link href="styles/top-bar.css" rel="stylesheet" fetchpriority="high" />
+	<link href="styles/quick-links.css" rel="stylesheet" />
+	<link href="styles/text-boxes.css" rel="stylesheet" />
 
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Open Sans" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
 	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
@@ -40,12 +31,12 @@
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&arrow_back_ios_new,book_2,close,menu,south" rel="stylesheet" />
 	</noscript>
 	
-	<title>Portfolio Project View | Dev Mode | Henrique's Portfolio</title>
+	<title>Portfolio Project View | Henrique's Portfolio</title>
 </head>
 
 <body>
 	<div class="top-bar">
-		<a class="left" href="dev-files/" target="homepage"><p><i class="material-symbols-outlined">arrow_back_ios_new</i><i class="material-icons">home</i></p></a>
+		<a class="left" href="/" target="homepage"><p><i class="material-symbols-outlined">arrow_back_ios_new</i><i class="material-icons">home</i></p></a>
 		<h1>Portfolio</h1>
 		<div class="menu" onclick="ToggleHide('.hidden-nav', this.children[0].children[0])">
 			<p><i class="material-symbols-outlined" data-showing="toggle" data-next-icon="close">menu</i></p>
@@ -59,7 +50,7 @@
 		</div>
 	</div>
 
-	<section class="p-opening"><!--</section> style="visibility: hidden;"-->
+	<section class="p-opening">
 		<div>
 			<img style="object-position: 32% 50%;" src="images/backgrounds/portfolio-website.jpg">
 			<header class="title-box tBRight">
@@ -75,8 +66,8 @@
 				<img id="previewed-img">
 				<div>
 					<img src="images/Website_Image.png" onclick="ChangePreviewSrc(this)" onload="ChangePreviewSrc(this)">
-					<img src="images/landbridge-thumbnail.jpg" onclick="ChangePreviewSrc(this)">
-					<img src="images/TitleBgs/EducationBg.jpg" onclick="ChangePreviewSrc(this)">
+					<img src="images/project-view/portfolio-website/mobile-website-emulation.jpg" onclick="ChangePreviewSrc(this)">
+					<img src="images/project-view/portfolio-website/project-view-website.jpg" onclick="ChangePreviewSrc(this)">
 				</div>
 			</div>
 			<div class="text-boxes text-overview">

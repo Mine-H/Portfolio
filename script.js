@@ -73,7 +73,7 @@ function ToggleHide(selector, iconRef) { // New show/hide content
 			topBar.querySelectorAll(".hidden-nav > div > p").forEach((navButton) => {
 				navButton.innerHTML = navButton.dataset.section;
 				navButton.addEventListener("click", e => {
-					let tryFindSection = document.getElementById(navButton.dataset.section.toLowerCase());
+					let tryFindSection = document.getElementById(navButton.dataset.section.toLowerCase().replaceAll(" ", "-"));
 					if (tryFindSection == null) { return; }
 					window.scroll(0, tryFindSection.getBoundingClientRect().top + window.scrollY - 60);
 				});

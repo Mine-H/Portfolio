@@ -6,33 +6,69 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<base href="./">
-	<link rel="canonical" href="./" />
+	<!-- <link rel="canonical" href="./" /> -->
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-	
+
 	<!-- Preloading critical styles -->
-	<link href="styles/base-styles.css" rel="preload" as="style" />
-	<link href="styles/title-section.css" rel="preload" as="style" />
-	
-	<link href="styles/base-styles.css" rel="stylesheet" />
-	<link href="styles/title-section.css" rel="stylesheet" />
+	<link href="styles/base-styles.css" rel="preload" as="style" fetchpriority="high" />
+	<link href="styles/title-section.css" rel="preload" as="style" fetchpriority="high" />
+	<link href="styles/top-bar.css" rel="preload" as="style" fetchpriority="high" />
+
+	<link href="styles/base-styles.css" rel="stylesheet" fetchpriority="high" />
+	<link href="styles/title-section.css" rel="stylesheet" fetchpriority="high" />
+	<link href="styles/top-bar.css" rel="stylesheet" fetchpriority="high" />
 	<link href="styles/quick-links.css" rel="stylesheet" />
 	<link href="styles/text-boxes.css" rel="stylesheet" />
 	<link href="styles/project-cards.css" rel="stylesheet" />
 
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Open Sans" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
 	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
-	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,south" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,close,menu,south" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
 	<noscript>
 		<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,south" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,close,menu,south" rel="stylesheet" />
 	</noscript>
-	
+
 	<title>Henrique's Portfolio</title>
 </head>
 
 <body>
+	<div class="top-bar">
+		<a class="left" href="about/" target="aboutMe"><p><i class="material-icons">person</i></p></a>
+		<h1>Homepage</h1>
+		<div class="menu" onclick="ToggleHide('.hidden-nav', this.children[0].children[0])">
+			<p><i class="material-symbols-outlined" data-showing="toggle" data-next-icon="close">menu</i></p>
+		</div>
+
+		<!-- Hiding Cards by Category -->
+		<div class="hidden-nav"><div>
+			<a class="hiderset-hider" data-hide-id="#type-category">Project Types</a>
+			<div class="tag-hider-set" id="type-category"><div>
+				<a data-hide-tag=".p-platformer">Platformers</a>
+				<a data-hide-tag=".p-top-down">Top-Down Games</a>
+				<a data-hide-tag=".p-map">Maps</a>
+				<a data-hide-tag=".p-website">Websites</a>
+			</div></div>
+			
+			<a class="hiderset-hider" data-hide-id="#language-category">Engines/Languages</a>
+			<div class="tag-hider-set" id="language-category"><div>
+				<a data-hide-tag=".p-unity">Unity</a>
+				<a data-hide-tag=".p-ue5">UE5</a>
+				<a data-hide-tag=".p-hammer">Hammer</a>
+				<a data-hide-tag=".p-html">HTML</a>
+			</div></div>
+			
+			<a class="hiderset-hider" data-hide-id="#purpose-category">Purposes</a>
+			<div class="tag-hider-set" id="purpose-category"><div>
+				<a data-hide-tag=".p-university">University</a>
+				<a data-hide-tag=".p-personal">Personal</a>
+			</div></div>
+		</div></div>
+		<!-- end Hiding Cards by Category -->
+	</div>
+
 	<section class="opening">
 		<div>
 			<img style="object-position: 32% 50%;" src="images/TitleBgs/HomeBg.png">
@@ -49,135 +85,74 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<div>
-		<nav class="nav-links">
-			<!-- <h2 class="title">Links</h2> -->
-			<a>
-				<i class="material-icons">home</i>
-				<p>Home</p>
-			</a>
-			<a href="about/">
-				<i class="material-icons">person</i>
-				<p>About Me</p>
-			</a>
-			<a href="education-and-achievements/">
-				<i class="material-symbols-outlined">book_2</i>
-				<p>Education and Achievements</p>
-			</a>
-			<a href="projects-showcase/">
-				<i class="material-icons">folder_open</i>
-				<p>Projects Showcase</p>
-			</a>
-			<!-- <a>
-				<i class="material-icons">more_horiz</i>
-				<p>Misc</p>
-			</a> -->
-		</nav>
-		
 		<div class="text-boxes">
 			<div class="main-title"><h1>Welcome</h1></div>
 			<div class="centered-content">
-				<p>Welcome to my portfolio! I am Henrique, a Games Design and Programming student, and I hope you enjoy your walk through the website.</p>
-				<p>
-					Using the links above, you'll be able to: learn more about who I am, what I do, and how I got here in the <a href="about/">About Me</a> section; look through my qualifications
-					and certificates under <a href="education-and-achievements/">Education and Achievements</a>; and navigate through some of my work in my <a href="projects-showcase/">Projects
-					Showcase</a> - from Unity or Unreal projects to small composures for games or demos that are significant to my story. Feel free to click any links you find along the way!
-				</p>
+				<p>Welcome to my portfolio! I am Henrique, a Games Designer and Programmer with strong Game Audio and Music skills, and I hope you enjoy your walk through the website. You can read more about me by clicking the icon at the top-left of the screen.</p>
 				<p>Thank you for taking the time to view my portfolio, and I look forward to connecting with you.</p>
 			</div>
 		</div>
 
 		<div class="text-boxes">
-			<div class="main-title"><h1>Project Showcase Demo</h1></div>
+			<div class="main-title">
+				<h1>Project Showcase</h1>
+				<p>This page is currently under maintenance to improve your viewing experience. More project cards and dedicated pages are in the making.</p>
+			</div>
 			<div class="centered-content">
-				<p>This page is currently under maintenance to improve your viewing experience.</p>
-				<p>The <a href="projects-showcase/">Projects Showcase</a> page will eventually be moved to the Homepage, below the "Welcome" section.</p>
-				<p>During implementation, these cards will begin to include links to individual project pages so descriptions of the design and development processes can be more in-depth. If you're on a computer, look out for pointer cursors!</p>
-				<p>While the content here is being updated to the new format, here is a sneak peek at how the new project summaries will look like!</p>
+				<p class="mouse-only">Hover over a project card for more details; left-click it to open its dedicated project page.</p>
+				<p class="touch-only">Tap a project card once for more details; tap it again to open its dedicated project page.</p>
+				<p>
+					To filter the projects by a category, click the hamburger menu at the top-right of the screen.
+					From there, select what you'd like to filter, then hide the tags you want to filter out.
+					In project view, this menu serves as the Navigation tab.
+				</p>
+
 				<div class="project-card-container">
-					<div class="project-card">
-						<img src="images/Website_Image.png">
-						<div class="ctitle">
-							<p>Author's Choice, Ongoing</p>
-							<h2>Portfolio</h2>
-						</div>
-
-						<div class="ccontent">
-							<div class="ctags">
-								<p class="cbg1">Website</p>
-								<p class="cbg2">HTML</p> <p class="cbg2">LESS</p>
-								<p class="cbg3">Personal</p>
-							</div>
-							<p>An ever-growing project where I can organise my past work and put myself forward to the world.</p>
-						</div>
+					<div class="project-card" data-choice="true"
+						data-title="Portfolio" data-end-date="Ongoing"
+						data-img-src="images/Website_Image.png" data-href="projects/portfolio-website/"
+						data-tags-a="Website" data-tags-b="HTML, LESS" data-tags-c="Personal">
+						<p>An ever-growing project where I can organise my past work and put myself forward to the world.</p>
 					</div>
 
-					<div class="project-card">
-						<img src="images/landbridge-thumbnail.jpg">
-						<div class="ctitle">
-							<p>November 2025</p>
-							<h2>KotH Landbridge</h2>
-						</div>
-
-						<div class="ccontent">
-							<div class="ctags">
-								<p class="cbg1">Map</p>
-								<p class="cbg2">Hammer</p>
-								<p class="cbg3">University</p>
-							</div>
-							<p>This map was sketched, blocked out, and is in the process of being meshed.</p>
-							<p>Each design choice and map iteration was made with balancing considerations for TF2's classes.</p>
-						</div>
+					<div class="project-card"
+						data-title="KotH Landbridge" data-end-date="November 2025"
+						data-img-src="images/landbridge-thumbnail.jpg" data-href=""
+						data-tags-a="Map" data-tags-b="Hammer" data-tags-c="University">
+						<p>This map was sketched in Krita, then blocked out and meshed in Hammer.</p>
+						<p>Each design choice and map iteration was made with balancing considerations for TF2's classes.</p>
 					</div>
 
-					<div class="project-card">
-						<img src="images/TitleBgs/AboutMeBg.png" style="object-position: 65% 50%;">
-						<div class="ctitle">
-							<p>November 2024</p>
-							<h2>Pinched Jumper</h2>
-						</div>
-
-						<div class="ccontent">
-							<div class="ctags">
-								<p class="cbg1">Platformer</p>
-								<p class="cbg2">Unity</p>
-								<p class="cbg3">University</p>
-							</div>
-							<p>Centered around game-feel and forgiveness mechanics, the game features collider pinching, coyote-time, Air State tracking, etc.</p>
-							<p>Its sound design includes a custom-made original piece.</p>
-						</div>
+					<div class="project-card"
+						data-title="Pinched Jumper" data-end-date="November 2024"
+						data-img-src="images/backgrounds/pinched-jumper-thumbnail.jpg" data-href=""
+						data-tags-a="Platformer" data-tags-b="Unity" data-tags-c="University">
+						<p>Centered around game-feel and forgiveness mechanics, the game features collider pinching, coyote-time, Air State tracking, etc.</p>
+						<p>Its sound design includes a custom-made original piece.</p>
 					</div>
 
-					<div class="project-card">
-						<img src="images/TitleBgs/EducationBg.jpg">
-						<div class="ctitle">
-							<p>March 2024</p>
-							<h2>Neon Tank City</h2>
-						</div>
-
-						<div class="ccontent">
-							<div class="ctags">
-								<p class="cbg1">Top-Down</p>
-								<p class="cbg2">UE5</p>
-								<p class="cbg3">University</p>
-							</div>
-							<p>This game's module aimed at creating game mechanics with an iterative design process.</p>
-							<p>It uses Blueprint for its player weapon variations, basic enemy AI, and more.</p>
-						</div>
+					<div class="project-card"
+						data-title="Neon Tank City" data-end-date="March 2024"
+						data-img-src="images/TitleBgs/EducationBg.jpg" data-href=""
+						data-tags-a="Top-Down" data-tags-b="UE5" data-tags-c="University">
+						<p>This game's module aimed at creating game mechanics with an iterative design process.</p>
+						<p>It uses Blueprint for its player weapon variations, basic enemy AI, and more.</p>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<footer>
-			<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><svg class="icon"><use href="icons/symbol-defs.svg#i-youtube"></use></svg></a>
-			<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><svg class="icon i-linkedin"><use href="icons/symbol-defs.svg#i-linkedin"></use></svg></a>
-			<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="icons/symbol-defs.svg#i-github"></use></svg></a>
-		</footer>
 	</div>
 
+	<footer>
+		<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><svg class="icon"><use href="icons/symbol-defs.svg#i-youtube"></use></svg></a>
+		<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><svg class="icon i-linkedin"><use href="icons/symbol-defs.svg#i-linkedin"></use></svg></a>
+		<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="icons/symbol-defs.svg#i-github"></use></svg></a>
+	</footer>
+
 	<script src="script.js"></script>
+	<script src="hide-by-tags.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,70 @@
+.preview-box {
+  display: flex;
+  flex-direction: column;
+  place-content: stretch;
+  max-width: 1400px;
+}
+.preview-box > .img-preview {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  background-color: #0E0F17;
+}
+body.light-mode .preview-box > .img-preview {
+  background-color: #F0F0F5;
+}
+.preview-box > .img-preview > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.preview-box > .img-preview > div {
+  width: 100%;
+  height: 96px;
+  position: absolute;
+  bottom: -72px;
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0.5;
+  overflow-x: auto;
+  transition: bottom 0.36s, opacity 0.36s;
+}
+.preview-box > .img-preview > div > img {
+  cursor: pointer;
+  height: 100%;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+.preview-box > .img-preview > div > img.selected {
+  outline: solid 1px #FFFFFF88;
+}
+.preview-box > .img-preview:hover > div {
+  bottom: 0;
+  opacity: 1;
+}
+@media not screen and ((orientation: portrait) or (max-width: 800px)) {
+  .preview-box {
+    flex-direction: row;
+  }
+  .preview-box > .img-preview,
+  .preview-box > .text-overview {
+    width: 50%;
+  }
+  .preview-box > .text-overview {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+@media screen and ((orientation: portrait) or (max-width: 800px)) {
+  .preview-box {
+    flex-direction: column;
+  }
+  .preview-box > .text-overview {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

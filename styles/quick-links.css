@@ -38,6 +38,8 @@ body.light-mode .nav-links a[href]:hover {
 }
 /* ---- Footer Section ---- */
 footer {
+  position: relative;
+  z-index: 1;
   width: 100%;
   display: flex;
   background-color: #131420;

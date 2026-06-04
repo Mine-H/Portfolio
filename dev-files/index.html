@@ -20,7 +20,7 @@
 
 	<link href="dev-files/less-styles/base-styles.less" rel="stylesheet/less" type="text/css" />
 	<link href="dev-files/less-styles/title-section.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/p-heading.less" rel="stylesheet/less" type="text/css" />
+	<link href="dev-files/less-styles/top-bar.less" rel="stylesheet/less" type="text/css" />
 	<link href="dev-files/less-styles/quick-links.less" rel="stylesheet/less" type="text/css" />
 	<link href="dev-files/less-styles/text-boxes.less" rel="stylesheet/less" type="text/css" />
 	<link href="dev-files/less-styles/project-cards.less" rel="stylesheet/less" type="text/css" />
@@ -40,56 +40,38 @@
 </head>
 
 <body>
-	<div class="p-top-bar">
+	<div class="top-bar">
 		<a class="left" href="about/" target="aboutMe"><p><i class="material-icons">person</i></p></a>
 		<h1>Developer Page</h1>
 		<div class="menu" onclick="ToggleHide('.hidden-nav', this.children[0].children[0])">
 			<p><i class="material-symbols-outlined" data-showing="toggle" data-next-icon="close">menu</i></p>
 		</div>
-		<div class="hidden-nav">
-			<div>
-				<a onclick="ToggleHide('#project-type-category, .hidden-nav > div > div.shown', this)"
-					data-showing="toggle">Project Types</a>
-				<div id="project-type-category">
-					<div>
-						<a onclick="ToggleHide('.p-platformer', this)" data-showing="true"
-							data-next-icon="Allow Platformers">Hide Platformers</a>
-						<a onclick="ToggleHide('.p-top-down', this)" data-showing="true"
-							data-next-icon="Allow Top-Down Games">Hide Top-Down Games</a>
-						<a onclick="ToggleHide('.p-map', this)" data-showing="true"
-							data-next-icon="Allow Maps">Hide Maps</a>
-						<a onclick="ToggleHide('.p-website', this)" data-showing="true"
-							data-next-icon="Allow Websites">Hide Websites</a>
-					</div>
-				</div>
-				
-				<a onclick="ToggleHide('#platforms-category, .hidden-nav > div > div.shown', this)"
-					data-showing="toggle">Engines/Languages</a>
-				<div id="platforms-category">
-					<div>
-						<a onclick="ToggleHide('.p-unity', this)" data-showing="true"
-							data-next-icon="Allow Unity">Hide Unity</a>
-						<a onclick="ToggleHide('.p-ue', this)" data-showing="true"
-							data-next-icon="Allow UE5">Hide UE5</a>
-						<a onclick="ToggleHide('.p-hammer', this)" data-showing="true"
-							data-next-icon="Allow Hammer">Hide Hammer</a>
-						<a onclick="ToggleHide('.p-html', this)" data-showing="true"
-							data-next-icon="Allow HTML">Hide HTML</a>
-					</div>
-				</div>
-				
-				<a onclick="ToggleHide('#purpose-category, .hidden-nav > div > div.shown', this)"
-					data-showing="toggle">Purposes</a>
-				<div id="purpose-category">
-					<div>
-						<a onclick="ToggleHide('.p-university', this)" data-showing="true"
-							data-next-icon="Allow University">Hide University</a>
-						<a onclick="ToggleHide('.p-personal', this)" data-showing="true"
-							data-next-icon="Allow Personal">Hide Personal</a>
-					</div>
-				</div>
-			</div>
-		</div>
+
+		<!-- Hiding Cards by Category -->
+		<div class="hidden-nav"><div>
+			<a class="hiderset-hider" data-hide-id="#type-category">Project Types</a>
+			<div class="tag-hider-set" id="type-category"><div>
+				<a data-hide-tag=".p-platformer">Platformers</a>
+				<a data-hide-tag=".p-top-down">Top-Down Games</a>
+				<a data-hide-tag=".p-map">Maps</a>
+				<a data-hide-tag=".p-website">Websites</a>
+			</div></div>
+			
+			<a class="hiderset-hider" data-hide-id="#language-category">Engines/Languages</a>
+			<div class="tag-hider-set" id="language-category"><div>
+				<a data-hide-tag=".p-unity">Unity</a>
+				<a data-hide-tag=".p-ue5">UE5</a>
+				<a data-hide-tag=".p-hammer">Hammer</a>
+				<a data-hide-tag=".p-html">HTML</a>
+			</div></div>
+			
+			<a class="hiderset-hider" data-hide-id="#purpose-category">Purposes</a>
+			<div class="tag-hider-set" id="purpose-category"><div>
+				<a data-hide-tag=".p-university">University</a>
+				<a data-hide-tag=".p-personal">Personal</a>
+			</div></div>
+		</div></div>
+		<!-- end Hiding Cards by Category -->
 	</div>
 
 	<section class="opening"><!--</section> style="visibility: hidden;"-->
@@ -108,32 +90,8 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<div>
-		<nav class="nav-links" style="display: none;">
-			<!-- <h2 class="title">Links</h2> -->
-			<a>
-				<i class="material-icons">home</i>
-				<p>Home</p>
-			</a>
-			<a href="about/">
-				<i class="material-icons">person</i>
-				<p>About Me</p>
-			</a>
-			<a href="education-and-achievements/">
-				<i class="material-symbols-outlined">book_2</i>
-				<p>Education and Achievements</p>
-			</a>
-			<a href="projects-showcase/">
-				<i class="material-icons">folder_open</i>
-				<p>Projects Showcase</p>
-			</a>
-			<!-- <a>
-				<i class="material-icons">more_horiz</i>
-				<p>Misc</p>
-			</a> -->
-		</nav>
-		
 		<div class="text-boxes">
 			<div class="main-title"><h1>Welcome</h1></div>
 			<div class="centered-content">
@@ -145,89 +103,46 @@
 		<div class="text-boxes">
 			<div class="main-title">
 				<h1>Project Showcase</h1>
+				<p>This page is currently under maintenance to improve your viewing experience. More project cards and dedicated pages are in the making.</p>
 			</div>
 			<div class="centered-content">
-				<p>This page is currently under maintenance to improve your viewing experience. More project cards and dedicated pages are in construction.</p>
-
-				<p>
-					To filter the projects by a category, you can click the hamburger menu at the top-right of the screen.
-					From there, select the menu you'd like to modify, then hide the tags you do not want to see.
-				</p>
 				<p class="mouse-only">Hover over a project card for more details; left-click it to open its dedicated project page.</p>
 				<p class="touch-only">Tap a project card once for more details; tap it again to open its dedicated project page.</p>
-				
+				<p>
+					To filter the projects by a category, click the hamburger menu at the top-right of the screen.
+					From there, select what you'd like to filter, then hide the tags you want to filter out.
+				</p>
+
 				<div class="project-card-container">
-					<div class="project-card p-website p-html p-less p-personal shown" data-hidden-by="0">
-						<img src="images/Website_Image.png" loading="lazy">
-						<div class="ctitle">
-							<p>Author's Choice, Ongoing</p>
-							<h2>Portfolio</h2>
-						</div>
-
-						<div class="ccontent">
-							<div class="ctags">
-								<p class="cbg1">Website</p>
-								<p class="cbg2">HTML</p> <p class="cbg2">LESS</p>
-								<p class="cbg3">Personal</p>
-							</div>
-							<p>An ever-growing project where I can organise my past work and put myself forward to the world.</p>
-						</div>
-
-						<a href="dev-files/portfolio.html"></a>
+					<div class="project-card" data-choice="true"
+						data-title="Portfolio" data-end-date="Ongoing"
+						data-img-src="images/Website_Image.png" data-href="dev-files/portfolio.html"
+						data-tags-a="Website" data-tags-b="HTML, LESS" data-tags-c="Personal">
+						<p>An ever-growing project where I can organise my past work and put myself forward to the world.</p>
 					</div>
 
-					<div class="project-card p-map p-hammer p-university shown" data-hidden-by="0">
-						<img src="images/landbridge-thumbnail.jpg" loading="lazy">
-						<div class="ctitle">
-							<p>November 2025</p>
-							<h2>KotH Landbridge</h2>
-						</div>
-
-						<div class="ccontent">
-							<div class="ctags">
-								<p class="cbg1">Map</p>
-								<p class="cbg2">Hammer</p>
-								<p class="cbg3">University</p>
-							</div>
-							<p>This map was sketched, blocked out, and is in the process of being meshed.</p>
-							<p>Each design choice and map iteration was made with balancing considerations for TF2's classes.</p>
-						</div>
+					<div class="project-card"
+						data-title="KotH Landbridge" data-end-date="November 2025"
+						data-img-src="images/landbridge-thumbnail.jpg" data-href=""
+						data-tags-a="Map" data-tags-b="Hammer" data-tags-c="University">
+						<p>This map was sketched in Krita, then blocked out and meshed in Hammer.</p>
+						<p>Each design choice and map iteration was made with balancing considerations for TF2's classes.</p>
 					</div>
 
-					<div class="project-card p-platformer p-unity p-university shown" data-hidden-by="0">
-						<img src="images/TitleBgs/AboutMeBg.png" style="object-position: 65% 50%;" loading="lazy">
-						<div class="ctitle">
-							<p>November 2024</p>
-							<h2>Pinched Jumper</h2>
-						</div>
-
-						<div class="ccontent">
-							<div class="ctags">
-								<p class="cbg1">Platformer</p>
-								<p class="cbg2">Unity</p>
-								<p class="cbg3">University</p>
-							</div>
-							<p>Centered around game-feel and forgiveness mechanics, the game features collider pinching, coyote-time, Air State tracking, etc.</p>
-							<p>Its sound design includes a custom-made original piece.</p>
-						</div>
+					<div class="project-card"
+						data-title="Pinched Jumper" data-end-date="November 2024"
+						data-img-src="images/backgrounds/pinched-jumper-thumbnail.jpg" data-href=""
+						data-tags-a="Platformer" data-tags-b="Unity" data-tags-c="University">
+						<p>Centered around game-feel and forgiveness mechanics, the game features collider pinching, coyote-time, Air State tracking, etc.</p>
+						<p>Its sound design includes a custom-made original piece.</p>
 					</div>
 
-					<div class="project-card p-top-down p-ue p-university shown" data-hidden-by="0">
-						<img src="images/TitleBgs/EducationBg.jpg" loading="lazy">
-						<div class="ctitle">
-							<p>March 2024</p>
-							<h2>Neon Tank City</h2>
-						</div>
-
-						<div class="ccontent">
-							<div class="ctags">
-								<p class="cbg1">Top-Down</p>
-								<p class="cbg2">UE5</p>
-								<p class="cbg3">University</p>
-							</div>
-							<p>This game's module aimed at creating game mechanics with an iterative design process.</p>
-							<p>It uses Blueprint for its player weapon variations, basic enemy AI, and more.</p>
-						</div>
+					<div class="project-card"
+						data-title="Neon Tank City" data-end-date="March 2024"
+						data-img-src="images/TitleBgs/EducationBg.jpg" data-href=""
+						data-tags-a="Top-Down" data-tags-b="UE5" data-tags-c="University">
+						<p>This game's module aimed at creating game mechanics with an iterative design process.</p>
+						<p>It uses Blueprint for its player weapon variations, basic enemy AI, and more.</p>
 					</div>
 				</div>
 			</div>
@@ -241,6 +156,7 @@
 	</footer>
 
 	<script src="script.js"></script>
+	<script src="hide-by-tags.js"></script>
 </body>
 
 </html>
