@@ -17,11 +17,11 @@
 	let activeCard;
 	function ActivateCard(thisCard, isMobile) {
 		if (window.matchMedia(isMobile ? "(hover: none)" : "(hover: hover").matches) {
-			thisCard.classList.add("active");
+			thisCard.classList.add("selected");
 			activeCard = thisCard;
 		}
 	}
-	const hideActiveCard = () => { activeCard.classList.remove("active"); activeCard = null; }
+	const hideActiveCard = () => { activeCard.classList.remove("selected"); activeCard = null; }
 	const handleClosure = event => activeCard == null && !activeCard.contains(event.target) && hideActiveCard();
 
 	window.addEventListener('click', handleClosure);
