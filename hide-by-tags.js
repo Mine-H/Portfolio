@@ -14,31 +14,31 @@
 		hider.dataset.showing = "toggle";
 	});
 
-	let activeCard;
-	function ActivateCard(thisCard, isMobile) {
-		if (window.matchMedia(isMobile ? "(hover: none)" : "(hover: hover").matches) {
-			thisCard.classList.add("selected");
-			activeCard = thisCard;
-		}
-	}
-	function DeactivateCard(thisCard) {
-		thisCard.classList.remove("selected");
-		if (activeCard == thisCard) { activeCard == null; }
-	}
-	const hideActiveCard = () => { DeactivateCard(activeCard) }
-	const handleClosure = event => activeCard == null && activeCard.contains(event.target) && hideActiveCard();
+	// let activeCard;
+	// function ActivateCard(thisCard, isMobile) {
+	// 	if (window.matchMedia(isMobile ? "(hover: none)" : "(hover: hover").matches) {
+	// 		thisCard.classList.add("selected");
+	// 		activeCard = thisCard;
+	// 	}
+	// }
+	// function DeactivateCard(thisCard) {
+	// 	thisCard.classList.remove("selected");
+	// 	if (activeCard == thisCard) { activeCard == null; }
+	// }
+	// const hideActiveCard = () => { DeactivateCard(activeCard) }
+	// const handleClosure = event => activeCard == null && activeCard.contains(event.target) && hideActiveCard();
 
-	window.addEventListener('click', handleClosure);
-	window.addEventListener('focusin', handleClosure);
+	// window.addEventListener('click', handleClosure);
+	// window.addEventListener('focusin', handleClosure);
 
 	// Dynamically build project cards based on data-XYZ
 	document.querySelectorAll(".project-card").forEach((card) => {
 		let content = card.innerHTML;
 		card.textContent = "";
 		card.classList.add("shown");
-		card.addEventListener("click", ActivateCard(card, true));
-		card.addEventListener("mouseenter", ActivateCard(card, false));
-		card.addEventListener("mouseleave", DeactivateCard(card, false));
+		// card.addEventListener("click", ActivateCard(card, true));
+		// card.addEventListener("mouseenter", ActivateCard(card, false));
+		// card.addEventListener("mouseleave", DeactivateCard(card, false));
 
 		if (card.dataset.imgSrc) {
 			let bg = document.createElement("img");
