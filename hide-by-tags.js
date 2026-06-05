@@ -26,7 +26,7 @@
 		if (activeCard == thisCard) { activeCard == null; }
 	}
 	const hideActiveCard = () => { DeactivateCard(activeCard) }
-	const handleClosure = event => activeCard == null && !activeCard.contains(event.target) && hideActiveCard();
+	const handleClosure = event => activeCard == null && activeCard.contains(event.target) && hideActiveCard();
 
 	window.addEventListener('click', handleClosure);
 	window.addEventListener('focusin', handleClosure);
