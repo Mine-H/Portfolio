@@ -21,7 +21,11 @@
 			activeCard = thisCard;
 		}
 	}
-	const hideActiveCard = () => { activeCard.classList.remove("selected"); activeCard = null; }
+	function DeactivateCard(thisCard) {
+		thisCard.classList.remove("selected");
+		if (activeCard == thisCard) { activeCard == null; }
+	}
+	const hideActiveCard = () => { DeactivateCard(activeCard) }
 	const handleClosure = event => activeCard == null && !activeCard.contains(event.target) && hideActiveCard();
 
 	window.addEventListener('click', handleClosure);
@@ -33,7 +37,8 @@
 		card.textContent = "";
 		card.classList.add("shown");
 		card.addEventListener("click", ActivateCard(card, true));
-		card.addEventListener("hover", ActivateCard(card, false));
+		card.addEventListener("mouseenter", ActivateCard(card, false));
+		card.addEventListener("mouseleave", DeactivateCard(card, false));
 
 		if (card.dataset.imgSrc) {
 			let bg = document.createElement("img");
