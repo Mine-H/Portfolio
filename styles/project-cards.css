@@ -46,6 +46,7 @@
   bottom: 0;
   left: 0;
   z-index: 1;
+  transition: height 0.3s;
 }
 .project-card:hover {
   grid-template-rows: 0fr auto 1fr;
