@@ -14,11 +14,26 @@
 		hider.dataset.showing = "toggle";
 	});
 
+	let activeCard;
+	function ActivateCard(thisCard, isMobile) {
+		if (window.matchMedia(isMobile ? "(hover: none)" : "(hover: hover").matches) {
+			thisCard.classList.add("active");
+			activeCard = thisCard;
+		}
+	}
+	const hideActiveCard = () => { activeCard.classList.remove("active"); activeCard = null; }
+	const handleClosure = event => activeCard == null && !activeCard.contains(event.target) && hideActiveCard();
+
+	window.addEventListener('click', handleClosure);
+	window.addEventListener('focusin', handleClosure);
+
 	// Dynamically build project cards based on data-XYZ
 	document.querySelectorAll(".project-card").forEach((card) => {
 		let content = card.innerHTML;
 		card.textContent = "";
 		card.classList.add("shown");
+		card.addEventListener("click", ActivateCard(card, true));
+		card.addEventListener("hover", ActivateCard(card, false));
 
 		if (card.dataset.imgSrc) {
 			let bg = document.createElement("img");
