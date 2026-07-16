@@ -12,15 +12,18 @@
 	}
 }
 .text-boxes {
-	width: 100%; max-width: 1400px; padding: 1em 2em;
-	@media @phone-req { display: block; padding: .375em .75em; }
+	width: 100%; max-width: 1400px; padding: .625em 2em;
+	@media @phone-req { display: block; padding: .375em 1.5ex; }
 
 	#mixin-b.quick-bg(s1); border-radius: 0.2em;
 	position: relative; z-index: 1;
 
-	h1, h2 { font-weight: 500; margin: 10px 0; }
+	h1, h2 { font-weight: 500; margin: 8px 0; }
 
-	.title, .main-title { font-family: Merriweather, serif; #mixin-b.mode-color({ border: solid @c-ref; }, text); }
+	.title, .main-title {
+		font-family: Merriweather, serif; #mixin-b.mode-color({ border: solid @c-ref; }, text);
+		p { margin-top: 0; }
+	}
 	.title {
 		border-width: 0 2px 0 0; padding-right: 10px; text-align: right; align-content: center;
 
@@ -28,12 +31,12 @@
 			width: 100%; max-width: none; float: none;
 
 			text-align: center; padding-right: 0;
-			border-width: 0 0 2px 0; padding-bottom: 10px;
+			border-width: 0 0 2px 0;
 		}
 	}
 	.main-title {
 		width: 100%; position: relative; text-align: center; align-content: center;
-		border-width: 0 0 2px 0; padding-bottom: 10px; margin-bottom: 10px;
+		border-width: 0 0 2px 0;
 	}
 	.side-content {
 		width: 50%; max-width: 14em;

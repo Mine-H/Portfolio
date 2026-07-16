@@ -7,8 +7,9 @@
 
 .project-card-container {
 	display: flex; justify-content: space-evenly;
-	width: 100%; gap: 2em; flex-wrap: wrap; padding: 1em 0;
-	@media @phone-req { font-size: .65em; gap: 1em; }
+	width: 100%; gap: 2em; flex-wrap: wrap; padding: .625em 0;
+	letter-spacing: .25px;
+	@media @phone-req { font-size: .675em; gap: 1.24ex; }
 }
 
 .project-card {
@@ -49,9 +50,10 @@
 	>.ctitle, >.ccontent { background-color: fade(@card-bg-color, 60%); }
 	>.ctitle {
 		grid-row-start: 2; gap: .25ex;
-		font-size: .95em; padding: (@cellPadding/$font-size) 0;
+		font-size: .95em; font-weight: 600;
+		padding: (@cellPadding/$font-size) 0;
 		display: flex; flex-direction: column;
-		>p { font-size: .75em; }
+		>p { font-weight: 250; }
 		border-bottom: .275ex solid @card-txt-color;
 	}
 	>.ccontent {
@@ -61,12 +63,12 @@
 		grid-template-rows: auto; grid-auto-rows: 1fr;
 
 		>p {
-			font-size: .9em; padding: 0 1ex;
+			font-size: .935em; padding: 0 1ex;
 			&:last-child { padding-bottom: (@cellPadding/$font-size); }
 		}
 		>.ctags {
 			display: flex; justify-content: center; flex-wrap: wrap; gap: 1ex;
-			font-size: .65em; padding-top: (@cellPadding/$font-size);
+			font-size: .775em; font-weight: 500; padding-top: (@cellPadding/$font-size);
 			>p {
 				padding: .2em .8ex; border-radius: .6em;
 				&.cbg1 { background-color: #131420; }

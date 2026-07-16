@@ -9,36 +9,43 @@
 	<base href="../">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 	
-	<!-- Preloading critical styles -->
-	<link href="dev-files/less-styles/style.css" rel="preload" as="style" />
-	<link href="dev-files/less-styles/variables.less" rel="preload" as="fetch" crossorigin />
-	<link href="dev-files/less-styles/base-styles.less" rel="preload" as="fetch" crossorigin />
-	<link href="dev-files/less-styles/titleSection.less" rel="preload" as="fetch" crossorigin />
-	
-	<link href="dev-files/less-styles/style.css" rel="stylesheet" />
+	<!-- Preventing FOUT for icons -->
+	<style id="fout-prevention">.icon-fill { font-variation-settings: 'FILL' 1; }</style>
+	<script>
+		if (document.styleSheets) {
+			const styleSheet = document.getElementById('fout-prevention').sheet;
+			const hideIconsRuleID = styleSheet.insertRule('i.material-symbols-outlined { color: #0000; }', 0);
+			let doOnceCheck = true;
+			function RemoveHideIconsRule() { if (doOnceCheck) { doOnceCheck = false; styleSheet.deleteRule(hideIconsRuleID); }}
+		}
+	</script>
 
-	<link href="dev-files/less-styles/base-styles.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/title-section.less" rel="stylesheet/less" type="text/css" />
-	
-	<link href="dev-files/less-styles/p-title.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/top-bar.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/p-content-preview.less" rel="stylesheet/less" type="text/css" />
+	<!-- Critical styles -->
+	<link rel="preload" as="style" href="dev-files/less-styles/style.css" fetchpriority="high" />
+	<link rel="stylesheet" href="dev-files/less-styles/style.css" fetchpriority="high" />
 
-	<link href="dev-files/less-styles/quick-links.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/text-boxes.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/project-cards.less" rel="stylesheet/less" type="text/css" />
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/base-styles.less" />
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/p-title.less" />
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/p-content-preview.less" />
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/top-bar.less" />
+
+	<!-- Lower-priority styles -->
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/quick-links.less" />
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/text-boxes.less" />
 	<script> less = { async: true, fileAsync: true }; </script>
 	<script src="https://cdn.jsdelivr.net/npm/less" type="text/javascript"></script>
 
-	<link rel="preload" href="https://fonts.googleapis.com/css?family=Open Sans" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
-	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
-	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=arrow_back_ios_new,book_2,close,menu,south" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" onload="this.rel='stylesheet';this.onload=null;" crossorigin />
+	<link rel="preload" as="style" href=
+		"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios_new,close,home,menu,south"
+		onload="this.rel='stylesheet';RemoveHideIconsRule();this.onload=null;" crossorigin />
 	<noscript>
-		<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&arrow_back_ios_new,book_2,close,menu,south" rel="stylesheet" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" />
+		<link rel="stylesheet" href=
+			"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios_new,close,home,menu,south" />
 	</noscript>
 	
 	<title>Portfolio Project View | Dev Mode | Henrique's Portfolio</title>
@@ -46,7 +53,7 @@
 
 <body>
 	<div class="top-bar">
-		<a class="left" href="dev-files/" target="homepage"><p><i class="material-symbols-outlined">arrow_back_ios_new</i><i class="material-icons">home</i></p></a>
+		<a class="left" href="dev-files/"><p><i class="material-symbols-outlined">arrow_back_ios_new</i><i class="material-symbols-outlined icon-fill">home</i></p></a>
 		<h1>Portfolio</h1>
 		<div class="menu" onclick="ToggleHide('.hidden-nav', this.children[0].children[0])">
 			<p><i class="material-symbols-outlined" data-showing="toggle" data-next-icon="close">menu</i></p>

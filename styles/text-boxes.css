@@ -14,7 +14,7 @@
 .text-boxes {
   width: 100%;
   max-width: 1400px;
-  padding: 1em 2em;
+  padding: .625em 2em;
   background-color: #131420;
   border-radius: 0.2em;
   position: relative;
@@ -23,7 +23,7 @@
 @media screen and ((orientation: portrait) or (max-width: 800px)) {
   .text-boxes {
     display: block;
-    padding: 0.375em 0.75em;
+    padding: 0.375em 1.5ex;
   }
 }
 body.light-mode .text-boxes {
@@ -32,12 +32,16 @@ body.light-mode .text-boxes {
 .text-boxes h1,
 .text-boxes h2 {
   font-weight: 500;
-  margin: 10px 0;
+  margin: 8px 0;
 }
 .text-boxes .title,
 .text-boxes .main-title {
   font-family: Merriweather, serif;
   border: solid #FFFFFF;
+}
+.text-boxes .title p,
+.text-boxes .main-title p {
+  margin-top: 0;
 }
 body.light-mode .text-boxes .title,
 body.light-mode .text-boxes .main-title {
@@ -57,7 +61,6 @@ body.light-mode .text-boxes .main-title {
     text-align: center;
     padding-right: 0;
     border-width: 0 0 2px 0;
-    padding-bottom: 10px;
   }
 }
 .text-boxes .main-title {
@@ -66,8 +69,6 @@ body.light-mode .text-boxes .main-title {
   text-align: center;
   align-content: center;
   border-width: 0 0 2px 0;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
 }
 .text-boxes .side-content {
   width: 50%;

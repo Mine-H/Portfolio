@@ -9,32 +9,43 @@
 	<base href="../">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 	
-	<!-- Preloading critical styles -->
-	<link href="dev-files/less-styles/style.css" rel="preload" as="style" />
-	<link href="dev-files/less-styles/variables.less" rel="preload" as="fetch" crossorigin />
-	<link href="dev-files/less-styles/base-styles.less" rel="preload" as="fetch" crossorigin />
-	<link href="dev-files/less-styles/title-section.less" rel="preload" as="fetch" crossorigin />
-	
-	<link href="dev-files/less-styles/style.css" rel="stylesheet" />
+	<!-- Preventing FOUT for icons -->
+	<style id="fout-prevention">.icon-fill { font-variation-settings: 'FILL' 1; }</style>
+	<script>
+		if (document.styleSheets) {
+			const styleSheet = document.getElementById('fout-prevention').sheet;
+			const hideIconsRuleID = styleSheet.insertRule('i.material-symbols-outlined { color: #0000; }', 0);
+			let doOnceCheck = true;
+			function RemoveHideIconsRule() { if (doOnceCheck) { doOnceCheck = false; styleSheet.deleteRule(hideIconsRuleID); }}
+		}
+	</script>
 
-	<link href="dev-files/less-styles/base-styles.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/title-section.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/top-bar.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/quick-links.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/text-boxes.less" rel="stylesheet/less" type="text/css" />
-	<link href="dev-files/less-styles/project-cards.less" rel="stylesheet/less" type="text/css" />
+	<!-- Critical styles -->
+	<link rel="preload" as="style" href="dev-files/less-styles/style.css" fetchpriority="high" />
+	<link rel="stylesheet" href="dev-files/less-styles/style.css" fetchpriority="high" />
+
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/base-styles.less" />
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/title-section.less" />
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/top-bar.less" />
+
+	<!-- Lower-priority styles -->
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/quick-links.less" />
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/text-boxes.less" />
+	<link rel="stylesheet/less" type="text/css" href="dev-files/less-styles/project-cards.less" />
 	<script> less = { async: true, fileAsync: true }; </script>
 	<script src="https://cdn.jsdelivr.net/npm/less" type="text/javascript"></script>
 
-	<link rel="preload" href="https://fonts.googleapis.com/css?family=Open Sans" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
-	<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
-	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,close,menu,south" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" onload="this.rel='stylesheet';this.onload=null;" crossorigin />
+	<link rel="preload" as="style" href=
+		"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close,menu,person,south"
+		onload="this.rel='stylesheet';RemoveHideIconsRule();this.onload=null;" crossorigin />
 	<noscript>
-		<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons&icon_names=folder_open,home,person" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=book_2,close,menu,south" rel="stylesheet" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" />
+		<link rel="stylesheet" href=
+			"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close,menu,person,south" />
 	</noscript>
 	
 	<title>Dev Mode | Henrique's Portfolio</title>
@@ -42,7 +53,7 @@
 
 <body>
 	<div class="top-bar">
-		<a class="left" href="about/" target="aboutMe"><p><i class="material-icons">person</i></p></a>
+		<a class="left" href="about/"><p><i class="material-symbols-outlined icon-fill">person</i></p></a>
 		<h1>Developer Page</h1>
 		<div class="menu" onclick="ToggleHide('.hidden-nav', this.children[0].children[0])">
 			<p><i class="material-symbols-outlined" data-showing="toggle" data-next-icon="close">menu</i></p>
@@ -134,16 +145,16 @@
 						data-title="Pinched Jumper" data-end-date="November 2024"
 						data-img-src="images/backgrounds/pinched-jumper-thumbnail.jpg" data-href=""
 						data-tags-a="Platformer" data-tags-b="Unity" data-tags-c="University">
-						<p>Centered around game-feel and forgiveness mechanics, the game features collider pinching, coyote-time, Air State tracking, etc.</p>
-						<p>Its sound design includes a custom-made original piece.</p>
+						<p>Centered on game-feel & forgiveness mechanics, the game features collider pinching, coyote-time, Air State tracking, etc.</p>
+						<p>Its sound design includes SFX and a custom-made original piece.</p>
 					</div>
 
 					<div class="project-card"
 						data-title="Neon Tank City" data-end-date="March 2024"
 						data-img-src="images/TitleBgs/EducationBg.jpg" data-href=""
 						data-tags-a="Top-Down" data-tags-b="UE5" data-tags-c="University">
-						<p>This game's module aimed at creating game mechanics with an iterative design process.</p>
-						<p>It uses Blueprint for its player weapon variations, basic enemy AI, and more.</p>
+						<p>This game's module aimed at using an iterative design process to create game mechanics.</p>
+						<p>It uses Blueprints for its player weapon variations, basic enemy AI, and more.</p>
 					</div>
 				</div>
 			</div>
@@ -156,8 +167,8 @@
 		<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="icons/symbol-defs.svg#i-github"></use></svg></a>
 	</footer>
 
-	<script src="script.js"></script>
-	<script src="hide-by-tags.js"></script>
+	<script src="script.js" defer></script>
+	<script src="hide-by-tags.js" defer></script>
 </body>
 
 </html>

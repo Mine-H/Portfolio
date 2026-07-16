@@ -5,12 +5,13 @@
   width: 100%;
   gap: 2em;
   flex-wrap: wrap;
-  padding: 1em 0;
+  padding: .625em 0;
+  letter-spacing: .25px;
 }
 @media screen and ((orientation: portrait) or (max-width: 800px)) {
   .project-card-container {
-    font-size: 0.65em;
-    gap: 1em;
+    font-size: 0.675em;
+    gap: 1.24ex;
   }
 }
 .project-card {
@@ -75,9 +76,10 @@
   display: flex;
   flex-direction: column;
   border-bottom: 0.275ex solid #FFFFFF;
+  font-weight: 600;
 }
 .project-card > .ctitle > p {
-  font-size: 0.75em;
+  font-weight: 250;
 }
 .project-card > .ccontent {
   grid-row-start: 3;
@@ -91,19 +93,20 @@
   grid-auto-rows: 1fr;
 }
 .project-card > .ccontent > p {
-  font-size: 0.9em;
+  font-size: .935em;
   padding: 0 1ex;
 }
 .project-card > .ccontent > p:last-child {
-  padding-bottom: 0.72222222em;
+  padding-bottom: 0.69518717em;
 }
 .project-card > .ccontent > .ctags {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1ex;
-  font-size: 0.65em;
-  padding-top: 1em;
+  font-size: .775em;
+  font-weight: 500;
+  padding-top: .83870968em;
 }
 .project-card > .ccontent > .ctags > p {
   padding: 0.2em 0.8ex;

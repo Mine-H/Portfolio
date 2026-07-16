@@ -192,8 +192,8 @@ body.light-mode .opening .arrow-box > button:hover {
 }
 @media screen and ((orientation: portrait) or (max-width: 800px)) {
   .opening + div {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    padding-left: .75em;
+    padding-right: .75em;
   }
 }
 body.light-mode .opening + div {
