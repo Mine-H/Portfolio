@@ -43,6 +43,11 @@
 		if (card.dataset.imgSrc) {
 			let bg = document.createElement("img");
 			bg.src = card.dataset.imgSrc;
+			delete card.dataset.imgSrc;
+			if (card.dataset.imgAlt) {
+				bg.alt = card.dataset.imgAlt;
+				delete card.dataset.imgAlt;
+			}
 			bg.loading = "lazy";
 			card.appendChild(bg);
 		}
@@ -53,11 +58,16 @@
 
 			let dateP = document.createElement("p");
 			dateP.textContent = card.dataset.endDate;
-			if (card.dataset.choice) { dateP.textContent = "Author's Choice, " + dateP.textContent; }
+			delete card.dataset.endDate;
+			if (card.dataset.choice) {
+				dateP.textContent = "Author's Choice, " + dateP.textContent;
+				delete card.dataset.choice;
+			}
 			titleDiv.appendChild(dateP);
 
 			let cardTitle = document.createElement("h2");
 			cardTitle.textContent = card.dataset.title;
+			delete card.dataset.title;
 			titleDiv.appendChild(cardTitle);
 			
 			card.appendChild(titleDiv);
@@ -89,6 +99,10 @@
 				}
 				contentDiv.appendChild(tagsDiv);
 				contentDiv.innerHTML += content;
+
+				delete card.dataset.tagsA;
+				delete card.dataset.tagsB;
+				delete card.dataset.tagsC;
 			}
 			
 			card.appendChild(contentDiv);
@@ -99,7 +113,7 @@
 		if (card.dataset.href) {
 			let anchor = document.createElement("a");
 			anchor.href = card.dataset.href;
-			anchor.target = card.dataset.title.replaceAll(" ", "");
+			delete card.dataset.href;
 			card.appendChild(anchor);
 		}
 	});
