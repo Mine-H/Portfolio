@@ -82,4 +82,13 @@ function ToggleHide(selector, iconRef) { // New show/hide content
 	}
 } // Title section (arrow scroll button & top bar)
 
+{ // Add footer section (YouTube, GitHub, & LinkedIn links)
+	let footerElem = document.createElement("footer");
+	footerElem.innerHTML =
+`		<a rel="author external noopener" href="https://www.youtube.com/@HenriqueMatos-is3tl" target="_blank"><svg class="icon"><use href="icons/symbol-defs.svg#i-youtube"></use></svg></a>
+		<a rel="author external noopener" href="https://github.com/Mine-H" target="_blank"><svg class="icon i-github"><use href="icons/symbol-defs.svg#i-github"></use></svg></a>
+		<a rel="author external noopener" href="https://www.linkedin.com/in/henrique-matos-14260b284" target="_blank"><svg class="icon i-linkedin"><use href="icons/symbol-defs.svg#i-linkedin"></use></svg></a>`;
+	document.body.appendChild(footerElem);
+} // Add footer section (YouTube, GitHub, & LinkedIn links)
+
 function toggleLightMode() { document.body.classList.toggle("light-mode"); }

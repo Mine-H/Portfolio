@@ -30,11 +30,12 @@
 
 footer {
 	position: relative; z-index: 1;
-	width: 100%; display: flex;
+	width: 100%; display: flex; justify-content: center;
 	#mixin-b.quick-bg(s1);
 
 	a {
-		width: 3.6em; padding: 1em; text-align: center; justify-items: center;
+		width: 3.6em; padding: 1em; text-align: center;
+		display: flex; justify-content: center;
 
 		&:hover { #mixin-b.quick-bg(s1, hover); }
 		transition: background-color .18s;
