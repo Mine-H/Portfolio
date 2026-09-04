@@ -99,8 +99,17 @@ body.light-mode .top-bar > .hidden-nav > div {
 .top-bar > .hidden-nav > div > *:first-child {
   margin-top: 3rem;
 }
+.top-bar > .hidden-nav > div button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: left;
+  padding: 0;
+}
 .top-bar > .hidden-nav > div p,
-.top-bar > .hidden-nav > div a {
+.top-bar > .hidden-nav > div button {
   cursor: pointer;
   margin: 0;
   height: 2.2rem;
@@ -109,13 +118,13 @@ body.light-mode .top-bar > .hidden-nav > div {
   transition: background-color 0.18s, font-size 0.18s, line-height 0.18s;
 }
 .top-bar > .hidden-nav > div p:hover,
-.top-bar > .hidden-nav > div a:hover {
+.top-bar > .hidden-nav > div button:hover {
   font-size: 1.1em;
   line-height: 2.1rem;
   background-color: #07080C;
 }
 body.light-mode .top-bar > .hidden-nav > div p:hover,
-body.light-mode .top-bar > .hidden-nav > div a:hover {
+body.light-mode .top-bar > .hidden-nav > div button:hover {
   background-color: #DADAE7;
 }
 .top-bar > .hidden-nav > div > div {
@@ -134,15 +143,15 @@ body.light-mode .top-bar > .hidden-nav > div > div > div {
   background-color: #E7E7EF;
 }
 .top-bar > .hidden-nav > div > div p,
-.top-bar > .hidden-nav > div > div a {
+.top-bar > .hidden-nav > div > div button {
   padding-left: 2rex;
 }
 .top-bar > .hidden-nav > div > div p:hover,
-.top-bar > .hidden-nav > div > div a:hover {
+.top-bar > .hidden-nav > div > div button:hover {
   background-color: #060609;
 }
 body.light-mode .top-bar > .hidden-nav > div > div p:hover,
-body.light-mode .top-bar > .hidden-nav > div > div a:hover {
+body.light-mode .top-bar > .hidden-nav > div > div button:hover {
   background-color: #D1D1E0;
 }
 .top-bar > .hidden-nav > div > div.shown {

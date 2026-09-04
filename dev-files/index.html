@@ -53,7 +53,7 @@
 
 <body>
 	<div class="top-bar">
-		<a class="left" href="about/"><p><i class="material-symbols-outlined icon-fill">person</i></p></a>
+		<a class="left" href="about/" aria-label="Link to About Me page"><p><i class="material-symbols-outlined icon-fill">person</i></p></a>
 		<h1>Developer Page</h1>
 		<div class="menu" onclick="ToggleHide('.hidden-nav', this.children[0].children[0])">
 			<p><i class="material-symbols-outlined" data-showing="toggle" data-next-icon="close">menu</i></p>
@@ -61,26 +61,26 @@
 
 		<!-- Hiding Cards by Category -->
 		<div class="hidden-nav"><div>
-			<a class="hiderset-hider" data-hide-id="#type-category">Project Types</a>
+			<button class="hiderset-hider" data-hide-id="#type-category">Project Types</button>
 			<div class="tag-hider-set" id="type-category"><div>
-				<a data-hide-tag=".p-platformer">Platformers</a>
-				<a data-hide-tag=".p-top-down">Top-Down Games</a>
-				<a data-hide-tag=".p-map">Maps</a>
-				<a data-hide-tag=".p-website">Websites</a>
+				<button data-hide-tag=".p-platformer">Platformers</button>
+				<button data-hide-tag=".p-top-down">Top-Down Games</button>
+				<button data-hide-tag=".p-map">Maps</button>
+				<button data-hide-tag=".p-website">Websites</button>
 			</div></div>
 			
-			<a class="hiderset-hider" data-hide-id="#language-category">Engines/Languages</a>
+			<button class="hiderset-hider" data-hide-id="#language-category">Engines/Languages</button>
 			<div class="tag-hider-set" id="language-category"><div>
-				<a data-hide-tag=".p-unity">Unity</a>
-				<a data-hide-tag=".p-ue5">UE5</a>
-				<a data-hide-tag=".p-hammer">Hammer</a>
-				<a data-hide-tag=".p-html">HTML</a>
+				<button data-hide-tag=".p-unity">Unity</button>
+				<button data-hide-tag=".p-ue5">UE5</button>
+				<button data-hide-tag=".p-hammer">Hammer</button>
+				<button data-hide-tag=".p-html">HTML</button>
 			</div></div>
 			
-			<a class="hiderset-hider" data-hide-id="#purpose-category">Purposes</a>
+			<button class="hiderset-hider" data-hide-id="#purpose-category">Purposes</button>
 			<div class="tag-hider-set" id="purpose-category"><div>
-				<a data-hide-tag=".p-university">University</a>
-				<a data-hide-tag=".p-personal">Personal</a>
+				<button data-hide-tag=".p-university">University</button>
+				<button data-hide-tag=".p-personal">Personal</button>
 			</div></div>
 		</div></div>
 		<!-- end Hiding Cards by Category -->
