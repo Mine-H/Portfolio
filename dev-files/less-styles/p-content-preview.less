@@ -32,16 +32,16 @@
 		&:hover > div { bottom: 0; opacity: 1; }
 	}
 
-	@media @not-phone-req {
+	#media-phone({
 		flex-direction: row;
 
 		> .img-preview, > .text-overview { width: 50%; }
 		> .text-overview {
 			border-top-left-radius: 0; border-bottom-left-radius: 0;
 		}
-	}
-	@media @phone-req {
+	}, false);
+	#media-phone({
 		flex-direction: column;
 		> .text-overview { border-top-left-radius: 0; border-top-right-radius: 0; }
-	}
+	});
 }

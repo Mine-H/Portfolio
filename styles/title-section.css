@@ -182,18 +182,19 @@ body.light-mode .opening .arrow-box > button:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding-left: 4em;
-  padding-right: 4em;
-  padding-top: calc(2.5em - 11px);
-  gap: 2.5em;
-  padding-bottom: 2.5em;
+  gap: 2em;
+  padding: calc(2em - 11px) 4em 2em;
   background-color: #040406;
   box-shadow: 0 0 10px 11px #040406;
 }
 @media screen and ((orientation: portrait) or (max-width: 800px)) {
   .opening + div {
-    padding-left: .75em;
-    padding-right: .75em;
+    padding: calc(2em - 11px) 1.5ex 2em;
+  }
+}
+@media (max-width: 389px) {
+  .opening + div {
+    padding: calc(2em - 11px) 1ex 2em;
   }
 }
 body.light-mode .opening + div {

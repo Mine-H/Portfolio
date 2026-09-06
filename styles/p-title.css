@@ -83,18 +83,19 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding-left: 4em;
-  padding-right: 4em;
-  padding-top: calc(2.5em - 11px);
-  gap: 2.5em;
-  padding-bottom: 2.5em;
+  gap: 2em;
+  padding: calc(2em - 11px) 4em 2em;
   background-color: #040406;
   box-shadow: 0 0 10px 11px #040406;
 }
 @media screen and ((orientation: portrait) or (max-width: 800px)) {
   .p-opening + div {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    padding: calc(2em - 11px) 1.5ex 2em;
+  }
+}
+@media (max-width: 389px) {
+  .p-opening + div {
+    padding: calc(2em - 11px) 1ex 2em;
   }
 }
 body.light-mode .p-opening + div {

@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth; box-sizing: border-box;
-  font-size: 108%; font-family: "Urbanist", sans-serif;
+  font-size: 18px; font-family: "Urbanist", sans-serif;
   font-optical-sizing: auto;
 }
 *, *:before, *:after { box-sizing: inherit; }

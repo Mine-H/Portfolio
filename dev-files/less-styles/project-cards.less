@@ -9,7 +9,9 @@
 	display: flex; justify-content: space-evenly;
 	width: 100%; gap: 2em; flex-wrap: wrap; padding: .625em 0;
 	letter-spacing: .25px;
-	@media @phone-req { font-size: .675em; gap: 1.24ex; }
+	#media-phone({ font-size: 13.5px; gap: 1.24ex; });
+	#media-phone({ font-size: 12.5px; }, custom, 410px);
+	#media-phone({ font-size: 12px; }, thin);
 }
 
 .project-card {

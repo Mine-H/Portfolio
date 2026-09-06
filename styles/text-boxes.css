@@ -14,7 +14,7 @@
 .text-boxes {
   width: 100%;
   max-width: 1400px;
-  padding: .625em 2em;
+  padding: 0.625em 2em;
   background-color: #131420;
   border-radius: 0.2em;
   position: relative;
@@ -24,6 +24,11 @@
   .text-boxes {
     display: block;
     padding: 0.375em 1.5ex;
+  }
+}
+@media (max-width: 389px) {
+  .text-boxes {
+    padding: 0.375em 1ex;
   }
 }
 body.light-mode .text-boxes {
@@ -39,13 +44,13 @@ body.light-mode .text-boxes {
   font-family: Merriweather, serif;
   border: solid #FFFFFF;
 }
-.text-boxes .title p,
-.text-boxes .main-title p {
-  margin-top: 0;
-}
 body.light-mode .text-boxes .title,
 body.light-mode .text-boxes .main-title {
   border: solid #020203;
+}
+.text-boxes .title p,
+.text-boxes .main-title p {
+  margin-top: 0;
 }
 .text-boxes .title {
   border-width: 0 2px 0 0;
