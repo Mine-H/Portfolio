@@ -29,7 +29,7 @@ function ToggleHide(selector, iconRef) { // New show/hide content
 			}
 			else { content.classList.remove('shown'); }
 		};
-		iconRef.dataset.showing = "";
+		iconRef.dataset.showing = '';
 	}
 	else {
 		forEachSelected = (content) => {
@@ -55,11 +55,11 @@ function ToggleHide(selector, iconRef) { // New show/hide content
 
 function UpdateTabIndex(parentContent) {
 	parentContent.querySelectorAll(
-		'.hidden-nav button, .hidden-nav p, .project-card:not(.shown) a'
+		'.hidden-nav button, .project-card:not(.shown) a'
 	).forEach((elem) => { elem.tabIndex = -1; });
 
 	parentContent.querySelectorAll(
-		'.hidden-nav.shown > div > button, .hidden-nav.shown > div > div.shown > div > button, .hidden-nav.shown > div > p, .hidden-nav.shown > div > div.shown > div > p, .project-card.shown a'
+		'.hidden-nav.shown > div > button, .hidden-nav.shown > div > div.shown > div > button, .project-card.shown a'
 	).forEach((elem) => { elem.tabIndex = 0; });
 }
 UpdateTabIndex(document.querySelector('.hidden-nav'));
@@ -72,7 +72,7 @@ function EmulateButtonKeyDown(thisElem, event) {
 }
 
 { // Title section (arrow scroll button & top bar)
-	const titleSection = document.querySelector(".opening") || document.querySelector(".p-opening");
+	const titleSection = document.querySelector('.opening') || document.querySelector('.p-opening');
 	function ArrowScroll() {
 		if (titleSection == null) { return; }
 		window.scroll(0, titleSection.offsetHeight * 0.75);
@@ -80,7 +80,7 @@ function EmulateButtonKeyDown(thisElem, event) {
 
 	// Scrolled past title section ? show top bar : hide top bar
 	if (titleSection != null) {
-		const topBar = document.querySelector(".top-bar") || document.querySelector(".p-top-bar");
+		const topBar = document.querySelector('.top-bar') || document.querySelector('.p-top-bar');
 		if (topBar != null) {
 			let observer = new IntersectionObserver((entries) => {
 				if (!entries[0].intersectionRatio > 0)
@@ -91,10 +91,10 @@ function EmulateButtonKeyDown(thisElem, event) {
 			observer.observe(titleSection);
 
 			// Navigation skip
-			topBar.querySelectorAll(".hidden-nav > div > p").forEach((navButton) => {
+			topBar.querySelectorAll('.hidden-nav > div > button:not(.hiderset-hider)').forEach((navButton) => {
 				navButton.innerHTML = navButton.dataset.section;
-				navButton.addEventListener("click", e => {
-					let tryFindSection = document.getElementById(navButton.dataset.section.toLowerCase().replaceAll(" ', '-"));
+				navButton.addEventListener('click', e => {
+					let tryFindSection = document.getElementById(navButton.dataset.section.toLowerCase().replaceAll(' ', '-'));
 					if (tryFindSection == null) { return; }
 					window.scroll(0, tryFindSection.getBoundingClientRect().top + window.scrollY - 60);
 				});
